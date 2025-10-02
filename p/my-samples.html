@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Moved - melcom</title>
+
+    <!-- This meta tag handles the automatic redirect after 5 seconds -->
+    <meta http-equiv="refresh" content="5; url=../creations.html#ffmpeg">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Main Container Wrapper -->
+    <div class="container">
+
+        <!-- Header Section -->
+        <header>
+            <a href="../index.html"><img src="../images/header-image.png" alt="melcom - Demoscene Musician"></a>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="nav-container">
+                <div class="nav-dropdown">
+                    <a href="../index.html" class="nav-button">🏠 Home</a>
+                </div>
+                <span class="separator">|</span>
+                <div class="nav-dropdown">
+                    <button class="nav-dropbtn">♪ My Music ▼</button>
+                    <div class="nav-dropdown-content">
+                        <a href="../music.html">💾 Modules & MP3s</a>
+                        <a href="../albums.html">💾 Music Disks / Albums</a>
+                    </div>
+                </div>
+                <span class="separator">|</span>
+                <div class="nav-dropdown">
+                    <button class="nav-dropbtn nav-active">🎨 My Creations ▼</button>
+                    <div class="nav-dropdown-content">
+                        <a href="../creations.html#ffmpeg">🔧 FFmpeg Audio Normalizer</a>
+                        <a href="../creations.html#samples">💾 My Samples</a>
+                        <a href="../creations.html#highlighter">✏️ Highlighter with X – Tampermonkey Scripts</a>
+                        <a href="../creations.html#mytools">🛠️ My tools i use</a>
+                        <a href="../creations.html#myfavstplugins">🎹 My favorite VST plugins</a>
+                    </div>
+                </div>
+                <span class="separator">|</span>
+                <div class="nav-dropdown">
+                    <a href="../links.html" class="nav-button">🔗 Links</a>
+                </div>
+                <span class="separator">|</span>
+                <div class="nav-dropdown">
+                    <a href="../aboutme.html" class="nav-button">🙂 About Me</a>
+                </div>
+                <span class="separator">|</span>
+                <div class="nav-dropdown">
+                    <a href="../contact.html" class="nav-button">📧 Contact</a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Main Content Area (Sidebar + Content) -->
+        <div class="main-content">
+
+            <!-- Sidebar (Left Column) -->
+            <aside class="sidebar">
+                <!-- Sidebar content is optional here, but kept for layout consistency -->
+            </aside>
+
+            <!-- Main Content (Right Column) -->
+            <main class="content">
+                
+                <div class="content-box" style="text-align: center;">
+                    <h1 class="page-title">This Page Has Moved</h1>
+                    <div class="box-content">
+                        <p>Hey there! The page you're looking for has a new home.</p>
+                        <p>You will be automatically redirected to the new address in <b id="countdown">5</b> seconds.</p>
+                        <br>
+                        <p>If you are not redirected, please click the button below:</p>
+                        <a href="../creations.html#ffmpeg" class="download-button">Go to the new page</a>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="../index.html">
+                        <img src="../images/melcom88x31.gif" alt="melcom Logo">
+                    </a>
+                    <p>© 2014 - 2025 melcom (Andreas Thomas Urban)</p>
+                </div>
+                <div class="footer-right">
+                    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener noreferrer" target="_blank">
+                        <img src="../images/creative-commons-88x31.png" alt="Creative Commons License">
+                    </a>
+                    <p>
+                        The music on this website is licensed under a <br>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener noreferrer" target="_blank">
+                            Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+                        </a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Countdown Script -->
+    <script>
+      let count = 5;
+      const countdownElement = document.getElementById('countdown');
+      const interval = setInterval(() => {
+        if (count > 1) {
+          countdownElement.innerText = --count;
+        } else {
+          clearInterval(interval);
+        }
+      }, 1000);
+    </script>
+
+</body>
+</html>
