@@ -15,6 +15,7 @@
       - "Albums" & "Music" Pages (Tables, Dropdowns)
       - Album/Track Detail Pages (Info Boxes, Grids)
    9. UTILITY STYLES (Highlights, Buttons etc.)
+   10. RESPONSIVE STYLES (Mobile Devices)
    ========================================================================== */
 
 
@@ -738,7 +739,7 @@ nav {
 }
 
 
-/* === 8. UTILITY STYLES === */
+/* === 9. UTILITY STYLES === */
 
 /* --- News Archive Link --- */
 .archive-link {
@@ -818,27 +819,27 @@ nav {
 }
 
 /* ==========================================================================
-   10. RESPONSIVE STYLES (für Mobilgeräte)
+   10. RESPONSIVE STYLES (Mobile Devices)
    ========================================================================== */
 @media (max-width: 800px) {
 
-    /* === 1. GRUNDLAYOUT & STRUKTUR === */
+    /* === 1. CORE LAYOUT & STRUCTURE === */
     body {
-        padding: 0; /* Entfernt den seitlichen Leerraum am Körper der Seite */
+        padding: 0; /* Remove padding from the body on small screens */
     }
 
     .main-content {
-        flex-direction: column; /* Stapelt Hauptinhalt und Seitenleiste vertikal */
+        flex-direction: column; /* Stack main content and sidebar vertically */
         padding: 15px;
     }
 
     .sidebar {
-        width: 100%; /* Seitenleiste nimmt die volle Breite ein */
+        width: 100%; /* Sidebar takes full width */
         margin-bottom: 20px;
     }
 
     .intro-text {
-        padding: 20px; /* Passt den Innenabstand für schmalere Bildschirme an */
+        padding: 20px; /* Adjust padding for smaller screens */
     }
     
     /* === 2. NAVIGATION === */
@@ -847,35 +848,35 @@ nav {
     }
 
     .nav-button, .nav-dropbtn {
-        display: block; /* Macht jeden Menüpunkt zu einem eigenen Block */
+        display: block; /* Make each nav item a full-width block element */
         width: 100%;
         box-sizing: border-box;
-        text-align: left; /* Richtet den Text links aus */
+        text-align: left; /* Align text to the left */
         padding: 12px 20px;
     }
     
     .nav-dropdown {
-        display: block; /* Stapelt die Dropdown-Container */
+        display: block; /* Stack dropdown containers */
     }
 
     .separator {
-        display: none; /* Versteckt die Trennlinien im Menü */
+        display: none; /* Hide the separators in the nav menu */
     }
 
     .nav-dropdown-content {
-        position: static; /* Dropdown-Inhalt wird direkt darunter angezeigt */
+        position: static; /* Display dropdown content statically below the button */
         box-shadow: none;
         border-radius: 0;
-        background-color: #3a3a3a; /* Leichte Hintergrundfarbe zur Unterscheidung */
+        background-color: #3a3a3a; /* Slightly different background to distinguish it */
     }
     
     .nav-dropdown-content a {
-        padding-left: 30px; /* Rückt Untermenüpunkte ein */
+        padding-left: 30px; /* Indent sub-menu items */
     }
     
-    /* === 3. BEITRÄGE & SEITENINHALT === */
+    /* === 3. POSTS & PAGE CONTENT === */
     .post-with-image {
-        flex-direction: column; /* Stapelt Bild und Text im Beitrag */
+        flex-direction: column; /* Stack image and text in posts vertically */
         align-items: center;
     }
 
@@ -884,27 +885,27 @@ nav {
     }
     
     .post-with-image .post-image img {
-        max-width: 100%; /* Stellt sicher, dass Bilder nicht über den Bildschirm hinausragen */
+        max-width: 100%; /* Ensure images do not overflow their container */
         height: auto;
     }
 
     .page-title, .archive-title {
-        font-size: 24px; /* Verkleinert die Hauptüberschriften */
+        font-size: 24px; /* Reduce main page title font size */
     }
     
     .post-title {
-        font-size: 20px; /* Verkleinert die Beitragstitel */
+        font-size: 20px; /* Reduce post title font size */
     }
 
-    /* === 4. FUSSZEILE === */
+    /* === 4. FOOTER === */
     .footer-content {
-        flex-direction: column; /* Stapelt die Inhalte der Fußzeile */
+        flex-direction: column; /* Stack footer content vertically */
         gap: 25px;
     }
     
-    /* === 5. SEITENSPEZIFISCHE ANPASSUNGEN === */
+    /* === 5. PAGE-SPECIFIC ADJUSTMENTS === */
     .screenshot-grid {
-        grid-template-columns: 1fr; /* Macht aus dem 3-spaltigen ein 1-spaltiges Gitter */
+        grid-template-columns: 1fr; /* Change screenshot grid to a single column layout */
     }
     
     .page-header {
@@ -915,6 +916,6 @@ nav {
     
     .album-table .col-year, 
     .album-table .col-format {
-        display: none; /* Versteckt die Spalten "Jahr" und "Format" in Tabellen */
+        display: none; /* Hide the "Year" and "Format" columns in tables to save space */
     }
 }
