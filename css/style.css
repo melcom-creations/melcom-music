@@ -816,3 +816,105 @@ nav {
     right: 20px;
   }
 }
+
+/* ==========================================================================
+   10. RESPONSIVE STYLES (für Mobilgeräte)
+   ========================================================================== */
+@media (max-width: 800px) {
+
+    /* === 1. GRUNDLAYOUT & STRUKTUR === */
+    body {
+        padding: 0; /* Entfernt den seitlichen Leerraum am Körper der Seite */
+    }
+
+    .main-content {
+        flex-direction: column; /* Stapelt Hauptinhalt und Seitenleiste vertikal */
+        padding: 15px;
+    }
+
+    .sidebar {
+        width: 100%; /* Seitenleiste nimmt die volle Breite ein */
+        margin-bottom: 20px;
+    }
+
+    .intro-text {
+        padding: 20px; /* Passt den Innenabstand für schmalere Bildschirme an */
+    }
+    
+    /* === 2. NAVIGATION === */
+    .nav-container {
+        padding: 0;
+    }
+
+    .nav-button, .nav-dropbtn {
+        display: block; /* Macht jeden Menüpunkt zu einem eigenen Block */
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left; /* Richtet den Text links aus */
+        padding: 12px 20px;
+    }
+    
+    .nav-dropdown {
+        display: block; /* Stapelt die Dropdown-Container */
+    }
+
+    .separator {
+        display: none; /* Versteckt die Trennlinien im Menü */
+    }
+
+    .nav-dropdown-content {
+        position: static; /* Dropdown-Inhalt wird direkt darunter angezeigt */
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #3a3a3a; /* Leichte Hintergrundfarbe zur Unterscheidung */
+    }
+    
+    .nav-dropdown-content a {
+        padding-left: 30px; /* Rückt Untermenüpunkte ein */
+    }
+    
+    /* === 3. BEITRÄGE & SEITENINHALT === */
+    .post-with-image {
+        flex-direction: column; /* Stapelt Bild und Text im Beitrag */
+        align-items: center;
+    }
+
+    .post-with-image .post-content {
+        margin-top: 20px;
+    }
+    
+    .post-with-image .post-image img {
+        max-width: 100%; /* Stellt sicher, dass Bilder nicht über den Bildschirm hinausragen */
+        height: auto;
+    }
+
+    .page-title, .archive-title {
+        font-size: 24px; /* Verkleinert die Hauptüberschriften */
+    }
+    
+    .post-title {
+        font-size: 20px; /* Verkleinert die Beitragstitel */
+    }
+
+    /* === 4. FUSSZEILE === */
+    .footer-content {
+        flex-direction: column; /* Stapelt die Inhalte der Fußzeile */
+        gap: 25px;
+    }
+    
+    /* === 5. SEITENSPEZIFISCHE ANPASSUNGEN === */
+    .screenshot-grid {
+        grid-template-columns: 1fr; /* Macht aus dem 3-spaltigen ein 1-spaltiges Gitter */
+    }
+    
+    .page-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .album-table .col-year, 
+    .album-table .col-format {
+        display: none; /* Versteckt die Spalten "Jahr" und "Format" in Tabellen */
+    }
+}
