@@ -832,10 +832,15 @@ nav {
         flex-direction: column; /* Stack main content and sidebar vertically */
         padding: 15px;
     }
+    
+    .content {
+        order: 1; /* Display main content first */
+    }
 
     .sidebar {
         width: 100%; /* Sidebar takes full width */
         margin-bottom: 20px;
+        order: 2; /* Display sidebar after main content */
     }
 
     .intro-text {
