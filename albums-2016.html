@@ -247,7 +247,7 @@
     </script>
     
     <script>
-      // --- Smooth Header Banner Fader Script ---
+      // --- Smooth Header Banner Fader Script (Randomized) ---
       document.addEventListener('DOMContentLoaded', function() {
         
         // 1. Defines an array of all banner image paths.
@@ -282,8 +282,18 @@
 
           // Wait for the fade-out to complete
           setTimeout(() => {
-            // Go to the next image, looping back to the start if necessary
-            currentIndex = (currentIndex + 1) % banners.length;
+            // --- RANDOM LOGIC ---
+            // Create a variable for the next index.
+            let nextIndex;
+            
+            // Keep picking a new random index until it's different from the current one.
+            do {
+              nextIndex = Math.floor(Math.random() * banners.length);
+            } while (banners.length > 1 && nextIndex === currentIndex); // Ensure it runs only if there is more than one banner
+            
+            // Update the current index for the next cycle.
+            currentIndex = nextIndex;
+            // --- END OF RANDOM LOGIC ---
             
             // Change the image source
             bannerElement.src = banners[currentIndex];
