@@ -27,7 +27,31 @@
 
         <!-- Header Section -->
         <header>
-            <a href="index.html"><img id="header-banner" src="images/header/header-image07.png" alt="melcom - Demoscene Musician" title="melcom - Demoscene Musician"></a>
+            <script>
+              // --- Random Header Banner Script (Inline) ---
+              (function() {
+                // 1. Defines an array of banner image paths.
+                const banners = [
+                  'images/header/header-image03.png',
+                  'images/header/header-image04.png',
+                  'images/header/header-image07.png',
+                  'images/header/header-image14.png',
+                ];
+            
+                // 2. Selects a random index from the banners array.
+                const randomIndex = Math.floor(Math.random() * banners.length);
+                const selectedBanner = banners[randomIndex];
+            
+                // 3. Writes the complete HTML for the banner directly into the page.
+                document.write(
+                  '<a href="index.html"><img id="header-banner" src="' + selectedBanner + '" alt="melcom - Demoscene Musician" title="melcom - Demoscene Musician"></a>'
+                );
+              })();
+            </script>
+            <noscript>
+              <!-- Fallback for users without JavaScript -->
+              <a href="index.html"><img id="header-banner" src="images/header/header-image07.png" alt="melcom - Demoscene Musician" title="melcom - Demoscene Musician"></a>
+            </noscript>
         </header>
 
         <!-- Navigation Bar -->
@@ -288,30 +312,5 @@
       }
     </script>
     
-    <script>
-      // --- Random Header Banner Script ---
-      (function() {
-        // 1. Defines an array of banner image paths.
-        const banners = [
-          'images/header/header-image03.png',
-          'images/header/header-image04.png',
-          'images/header/header-image07.png',
-          'images/header/header-image14.png',
-        ];
-    
-        // 2. Selects a random index from the banners array.
-        const randomIndex = Math.floor(Math.random() * banners.length);
-        const selectedBanner = banners[randomIndex];
-    
-        // 3. Finds the header image element by its ID.
-        const bannerElement = document.getElementById('header-banner');
-        
-        // 4. If the element exists, set its 'src' attribute to the randomly selected banner path.
-        if (bannerElement) {
-            bannerElement.src = selectedBanner;
-        }
-      })();
-    </script>
-
 </body>
 </html>
