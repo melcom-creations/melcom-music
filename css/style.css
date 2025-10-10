@@ -16,6 +16,7 @@
       - Album/Track Detail Pages (Info Boxes, Grids)
    9. UTILITY STYLES (Highlights, Buttons etc.)
    10. RESPONSIVE STYLES (Mobile Devices)
+   11. HEADER BANNER FADER
    ========================================================================== */
 
 
@@ -923,4 +924,10 @@ nav {
     .album-table .col-format {
         display: none; /* Hide the "Year" and "Format" columns in tables to save space */
     }
+}
+/* ==========================================================================
+   11. HEADER BANNER FADER
+   ========================================================================== */
+#header-banner {
+    transition: opacity 1s ease-in-out; /* Animates the opacity change over 1 second */
 }
