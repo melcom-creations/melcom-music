@@ -31,7 +31,7 @@
         <nav>
             <div class="nav-container">
                 <div class="nav-dropdown">
-                    <a href="index.html" class="nav-dropbtn nav-active">🏠 Home</a>
+                    <a href="index.html" class="nav-button nav-active">🏠 Home</a>
                 </div>
                 <span class="separator">|</span>
                 <div class="nav-dropdown">
@@ -59,7 +59,7 @@
                     <button class="nav-dropbtn">🙂 About Me ▼</button>
                     <div class="nav-dropdown-content">
                         <a href="aboutme.html#about-melcom">🙂 About melcom</a>
-                        <a href="aboutme.html#my-tools">🛠️ My Tools I Use</a>
+                        <a href="aboutme.html#my-tools">🛠️ My Tools</a>
                         <a href="aboutme.html#vst-plugins">🎹 Favorite VSTs</a>
                     </div>
                 </div>
@@ -92,33 +92,17 @@
                 </div>
             <!-- Widget: Disclaimer, GitHub Pages Button, W3C Validator, Statcounter -->
                 <div class="widget text-center-widget">
-                    <!-- Disclaimer Link -->
                     <a href="disclaimer.html"><img src="images/Disclaimer.png" alt="Disclaimer" title="Disclaimer"></a>
-
-                    <!-- GitHub Pages Button -->
                     <a href="https://github.com/melcom-creations/melcom-music" target="_blank" rel="noopener noreferrer"><img src="images/GitHub‑Pages‑Button88x31.png" alt="Hosted by GitHub Pages" title="Hosted by GitHub Pages" width="88" height="31"></a>
-
-                    <!-- W3C Validator Button -->
                     <a href="https://validator.w3.org/nu/?doc=https://www.melcom-music.de" target="_blank" rel="noopener noreferrer"><img src="images/W3C‑Button88x31.png" alt="melcom-valid HTML5" title="melcom-valid HTML5" width="88" height="31"></a>
-                    
-                    <!-- Default Statcounter code for melcom @ Github Pages
-                    https://www.melcom-music.de -->
                     <script>
                     var sc_project=13174008; 
                     var sc_invisible=1; 
                     var sc_security="b2c21c8e"; 
                     var sc_project_config = {"cookie": "disabled"}; 
                     </script>
-                    <script
-                    src="https://www.statcounter.com/counter/counter.js"
-                    async></script>
-                    <noscript><div class="statcounter"><a title="Web Analytics"
-                    href="https://statcounter.com/" target="_blank"><img
-                    class="statcounter"
-                    src="https://c.statcounter.com/13174008/0/b2c21c8e/1/"
-                    alt="Web Analytics"
-                    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-                    <!-- End of Statcounter Code -->
+                    <script src="https://www.statcounter.com/counter/counter.js" async></script>
+                    <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13174008/0/b2c21c8e/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                 </div>
             </aside>
 
@@ -130,8 +114,8 @@
                 <!-- News Post: Fernweh 3 -->
                 <article id="fernweh-3" class="post post-with-image">
                     <div class="post-image">
-                        <a href="images/news-fernweh-echofall.jpg" rel="noopener noreferrer" target="_blank">
-                            <img src="images/news-fernweh-echofall.jpg" alt="Fernweh 3: Echofall" title="View full-size image: Fernweh 3 Echofall" width="320" height="320">
+                        <a href="images/news-fernweh-echofall.jpg" rel="noopener noreferrer" target="_blank" class="track-image-link">
+                            <img src="images/news-fernweh-echofall.jpg" alt="Fernweh 3: Echofall" title="View full-size image: Fernweh 3 Echofall">
                         </a>
                     </div>
                     <div class="post-content">
@@ -160,8 +144,8 @@
                 <!--News Post (Archived): Pixelvielfalt -->
                 <article id="pixelvielfalt" class="post post-with-image">
                     <div class="post-image">
-                        <a href="images/news-pixelvielfalt.jpg" rel="noopener noreferrer" target="_blank">
-                             <img src="images/news-pixelvielfalt.jpg" alt="Pixelvielfalt" title="View full-size image: Pixelvielfalt" width="320" height="320">
+                        <a href="images/news-pixelvielfalt.jpg" rel="noopener noreferrer" target="_blank" class="track-image-link">
+                             <img src="images/news-pixelvielfalt.jpg" alt="Pixelvielfalt" title="View full-size image: Pixelvielfalt">
                         </a>
                     </div>
                     <div class="post-content">
@@ -178,7 +162,7 @@
 				<!-- News Post (Archived): FFmpeg Normalizer -->
                 <article id="ffmpeg-normalizer" class="post post-with-image">
                     <div class="post-image">
-                        <a href="images/news-ffmpeg-normalizer.png" rel="noopener noreferrer" target="_blank">
+                        <a href="images/news-ffmpeg-normalizer.png" rel="noopener noreferrer" target="_blank" class="track-image-link">
                             <img src="images/news-ffmpeg-normalizer.png" alt="melcom's FFmpeg Audio Normalizer v2.2.1" title="View full-size image: FFmpeg Audio Normalizer" width="282" height="320">
                         </a>
                     </div>
@@ -257,7 +241,12 @@
                 </div>
             </div>
         </footer>
+	</div>
 
+    <!-- The Modal / Lightbox HTML -->
+    <div id="imageModal" class="image-modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modalImage">
     </div>
 
     <!-- "Back to top" Button & Script -->
@@ -340,6 +329,38 @@
 
         // Start the rotation after the first image has been displayed for the full duration
         setInterval(changeBanner, displayDuration);
+      });
+    </script>
+
+    <script>
+      // --- Image Lightbox / Modal Script ---
+      document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeBtn = document.querySelector(".modal-close");
+        const imageLinks = document.querySelectorAll('.track-image-link');
+
+        if (modal && modalImg && closeBtn) {
+            imageLinks.forEach(link => {
+              link.addEventListener('click', function(event) {
+                event.preventDefault();
+                modal.style.display = "block";
+                modalImg.src = this.href;
+              });
+            });
+
+            function closeModal() {
+              modal.style.display = "none";
+            }
+
+            closeBtn.onclick = closeModal;
+
+            modal.onclick = function(event) {
+              if (event.target === modal) {
+                closeModal();
+              }
+            }
+        }
       });
     </script>
 

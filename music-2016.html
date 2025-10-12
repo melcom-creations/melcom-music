@@ -345,35 +345,39 @@
                 </div>
             </div>
         </footer>
+	</div>
 
+    <!-- START: Lightbox / Modal Code -->
+    <!-- The Modal / Lightbox HTML -->
+    <div id="imageModal" class="image-modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modalImage">
     </div>
 
-    <!-- "Back to top" Button & Script -->
+    <!-- "Back to top" Button -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">
         <img src="images/melcom-puzzle-icon.png" alt="Back to top" width="48" height="48">
     </button>
 
+    <!-- START: Combined Page Scripts -->
     <script>
-      var mybutton = document.getElementById("myBtn");
-      window.onscroll = function() { scrollFunction() };
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
-    
-    <script>
-      // --- Smooth Header Banner Fader Script (Randomized) ---
+      // --- Execute scripts after DOM content is loaded ---
       document.addEventListener('DOMContentLoaded', function() {
         
-        // 1. Defines an array of all banner image paths.
+        // --- Back to Top Button Script ---
+        var mybutton = document.getElementById("myBtn");
+        if (mybutton) {
+          window.onscroll = function() { scrollFunction() };
+          function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              mybutton.style.display = "block";
+            } else {
+              mybutton.style.display = "none";
+            }
+          }
+        }
+
+        // --- Smooth Header Banner Fader Script (Randomized) ---
         const banners = [
           'images/header/header-image03.png',
           'images/header/header-image04.png',
@@ -381,54 +385,65 @@
           'images/header/header-image12.png',
           'images/header/header-image14.png',
         ];
-
-        // --- Configuration ---
-        const displayDuration = 10000; // How long each image is visible (10 seconds)
-        const fadeDuration = 1000;    // How long the fade transition takes (1 second)
-        
+        const displayDuration = 10000;
+        const fadeDuration = 1000;
         const bannerElement = document.getElementById('header-banner');
-        if (!bannerElement) return; // Exit if the banner element doesn't exist
+        
+        if (bannerElement) {
+          let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
+          if (currentIndex === -1) currentIndex = 0;
 
-        // Find the starting index based on the initial src, with a fallback to 0
-        let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
-        if (currentIndex === -1) currentIndex = 0;
+          banners.forEach(src => { (new Image()).src = src; });
 
-        // Preload all images to ensure smooth transitions
-        banners.forEach(src => {
-          const img = new Image();
-          img.src = src;
-        });
-
-        function changeBanner() {
-          // Fade out the current image
-          bannerElement.style.opacity = 0;
-
-          // Wait for the fade-out to complete
-          setTimeout(() => {
-            // --- RANDOM LOGIC ---
-            // Create a variable for the next index.
-            let nextIndex;
-            
-            // Keep picking a new random index until it's different from the current one.
-            do {
-              nextIndex = Math.floor(Math.random() * banners.length);
-            } while (banners.length > 1 && nextIndex === currentIndex); // Ensure it runs only if there is more than one banner
-            
-            // Update the current index for the next cycle.
-            currentIndex = nextIndex;
-            // --- END OF RANDOM LOGIC ---
-            
-            // Change the image source
-            bannerElement.src = banners[currentIndex];
-            
-            // Fade the new image in
-            bannerElement.style.opacity = 1;
-          }, fadeDuration);
+          function changeBanner() {
+            bannerElement.style.opacity = 0;
+            setTimeout(() => {
+              let nextIndex;
+              do {
+                nextIndex = Math.floor(Math.random() * banners.length);
+              } while (banners.length > 1 && nextIndex === currentIndex);
+              currentIndex = nextIndex;
+              bannerElement.src = banners[currentIndex];
+              bannerElement.style.opacity = 1;
+            }, fadeDuration);
+          }
+          setInterval(changeBanner, displayDuration);
         }
 
-        // Start the rotation after the first image has been displayed for the full duration
-        setInterval(changeBanner, displayDuration);
+        // --- Image Lightbox / Modal Script ---
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeBtn = document.querySelector(".modal-close");
+        const imageLinks = document.querySelectorAll('.track-image-link');
+
+        if (modal && modalImg && closeBtn) {
+            imageLinks.forEach(link => {
+              link.addEventListener('click', function(event) {
+                event.preventDefault();
+                modal.style.display = "block";
+                modalImg.src = this.href;
+              });
+            });
+
+            function closeModal() {
+              modal.style.display = "none";
+            }
+
+            closeBtn.onclick = closeModal;
+
+            modal.onclick = function(event) {
+              if (event.target === modal) {
+                closeModal();
+              }
+            }
+        }
       });
+      
+      // This function must remain outside the DOMContentLoaded listener to be globally accessible for the button's onclick attribute.
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
     </script>
 
 </body>
