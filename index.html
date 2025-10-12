@@ -34,7 +34,7 @@
         <nav>
             <div class="nav-container">
                 <div class="nav-dropdown">
-                    <a href="index.html" class="nav-dropbtn nav-active">🏠 Home</a>
+                    <a href="index.html" class="nav-button nav-active">🏠 Home</a>
                 </div>
                 <span class="separator">|</span>
                 <div class="nav-dropdown">
@@ -62,7 +62,7 @@
                     <button class="nav-dropbtn">🙂 About Me ▼</button>
                     <div class="nav-dropdown-content">
                         <a href="aboutme.html#about-melcom">🙂 About melcom</a>
-                        <a href="aboutme.html#my-tools">🛠️ My Tools I Use</a>
+                        <a href="aboutme.html#my-tools">🛠️ My Tools</a>
                         <a href="aboutme.html#vst-plugins">🎹 Favorite VSTs</a>
                     </div>
                 </div>
@@ -102,33 +102,17 @@
                 </div>
 				<!-- Widget: Disclaimer, GitHub Pages Button, W3C Validator, Statcounter -->
                 <div class="widget text-center-widget">
-                    <!-- Disclaimer Link -->
                     <a href="disclaimer.html"><img src="images/Disclaimer.png" alt="Disclaimer" title="Disclaimer"></a>
-
-                    <!-- GitHub Pages Button -->
                     <a href="https://github.com/melcom-creations/melcom-music" target="_blank" rel="noopener noreferrer"><img src="images/GitHub‑Pages‑Button88x31.png" alt="Hosted by GitHub Pages" title="Hosted by GitHub Pages" width="88" height="31"></a>
-
-                    <!-- W3C Validator Button -->
                     <a href="https://validator.w3.org/nu/?doc=https://www.melcom-music.de" target="_blank" rel="noopener noreferrer"><img src="images/W3C‑Button88x31.png" alt="melcom-valid HTML5" title="melcom-valid HTML5" width="88" height="31"></a>
-                    
-                    <!-- Default Statcounter code for melcom @ Github Pages
-                    https://www.melcom-music.de -->
                     <script>
                     var sc_project=13174008; 
                     var sc_invisible=1; 
                     var sc_security="b2c21c8e"; 
                     var sc_project_config = {"cookie": "disabled"}; 
                     </script>
-                    <script
-                    src="https://www.statcounter.com/counter/counter.js"
-                    async></script>
-                    <noscript><div class="statcounter"><a title="Web Analytics"
-                    href="https://statcounter.com/" target="_blank"><img
-                    class="statcounter"
-                    src="https://c.statcounter.com/13174008/0/b2c21c8e/1/"
-                    alt="Web Analytics"
-                    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-                    <!-- End of Statcounter Code -->
+                    <script src="https://www.statcounter.com/counter/counter.js" async></script>
+                    <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13174008/0/b2c21c8e/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                 </div>
             </aside>
 
@@ -269,37 +253,37 @@
         </footer>
 	</div>
 
-    <!-- START: Lightbox / Modal Code -->
     <!-- The Modal / Lightbox HTML -->
     <div id="imageModal" class="image-modal">
       <span class="modal-close">&times;</span>
-      <img class="modal-content" id="modalImage">
+      <img class="modal-content" id="modalImage" src="" alt="">
     </div>
 
-    <!-- "Back to top" Button -->
+    <!-- "Back to top" Button & Script -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">
         <img src="images/melcom-puzzle-icon.png" alt="Back to top" width="48" height="48">
     </button>
 
-    <!-- START: Combined Page Scripts -->
     <script>
-      // --- Execute scripts after DOM content is loaded ---
+      var mybutton = document.getElementById("myBtn");
+      window.onscroll = function() { scrollFunction() };
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    
+    <script>
+      // --- Smooth Header Banner Fader Script (Randomized) ---
       document.addEventListener('DOMContentLoaded', function() {
         
-        // --- Back to Top Button Script ---
-        var mybutton = document.getElementById("myBtn");
-        if (mybutton) {
-          window.onscroll = function() { scrollFunction() };
-          function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-              mybutton.style.display = "block";
-            } else {
-              mybutton.style.display = "none";
-            }
-          }
-        }
-
-        // --- Smooth Header Banner Fader Script (Randomized) ---
         const banners = [
           'images/header/header-image03.png',
           'images/header/header-image04.png',
@@ -331,8 +315,12 @@
           }
           setInterval(changeBanner, displayDuration);
         }
+      });
+    </script>
 
-        // --- Image Lightbox / Modal Script ---
+    <script>
+      // --- Image Lightbox / Modal Script ---
+      document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImage");
         const closeBtn = document.querySelector(".modal-close");
@@ -360,12 +348,6 @@
             }
         }
       });
-      
-      // This function must remain outside the DOMContentLoaded listener to be globally accessible for the button's onclick attribute.
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
     </script>
 
 </body>
