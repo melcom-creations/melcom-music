@@ -17,6 +17,7 @@
    9. UTILITY STYLES (Highlights, Buttons etc.)
    10. RESPONSIVE STYLES (Mobile Devices)
    11. HEADER BANNER FADER
+   12. IMAGE LIGHTBOX / MODAL
    ========================================================================== */
 
 
@@ -930,4 +931,58 @@ nav {
    ========================================================================== */
 #header-banner {
     transition: opacity 1s ease-in-out; /* Animates the opacity change over 1 second */
+}
+
+/* ==========================================================================
+   12. IMAGE LIGHTBOX / MODAL
+   ========================================================================== */
+.image-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top of everything */
+  padding-top: 60px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.85); /* Black w/ opacity */
+}
+
+/* Modal Content (the image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 85vh; /* Max height relative to viewport height */
+  border-radius: 4px;
+}
+
+/* Add Animation */
+.modal-content {
+  animation-name: zoom;
+  animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
