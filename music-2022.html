@@ -7,15 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4HCR49RRY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <!-- Analytics scripts are loaded dynamically via the consent banner script at the end of the body -->
 
-      gtag('config', 'G-R4HCR49RRY');
-    </script>
 </head>
 <body>
 
@@ -87,35 +80,12 @@
                         <a href="https://soundcloud.com/melcom" rel="noopener noreferrer" target="_blank"><img src="images/soundcloud.jpg" alt="Soundcloud"></a>
                     </div>
                 </div>
-            <!-- Widget: Disclaimer, GitHub Pages Button, W3C Validator, Statcounter -->
+                <!-- Widget: Imprint, GitHub Pages Button, W3C Validator -->
                 <div class="widget text-center-widget">
-                    <!-- Disclaimer Link -->
-                    <a href="disclaimer.html"><img src="images/Disclaimer.png" alt="Disclaimer" title="Disclaimer"></a>
-
-                    <!-- GitHub Pages Button -->
+                    <a href="imprint.html"><img src="images/Disclaimer.png" alt="Imprint & Disclaimer" title="Imprint & Disclaimer"></a>
                     <a href="https://github.com/melcom-creations/melcom-music" target="_blank" rel="noopener noreferrer"><img src="images/GitHub‑Pages‑Button88x31.png" alt="Hosted by GitHub Pages" title="Hosted by GitHub Pages" width="88" height="31"></a>
-
-                    <!-- W3C Validator Button -->
                     <a href="https://validator.w3.org/nu/?doc=https://www.melcom-music.de" target="_blank" rel="noopener noreferrer"><img src="images/W3C‑Button88x31.png" alt="melcom-valid HTML5" title="melcom-valid HTML5" width="88" height="31"></a>
-                    
-                    <!-- Default Statcounter code for melcom @ Github Pages
-                    https://www.melcom-music.de -->
-                    <script>
-                    var sc_project=13174008; 
-                    var sc_invisible=1; 
-                    var sc_security="b2c21c8e"; 
-                    var sc_project_config = {"cookie": "disabled"}; 
-                    </script>
-                    <script
-                    src="https://www.statcounter.com/counter/counter.js"
-                    async></script>
-                    <noscript><div class="statcounter"><a title="Web Analytics"
-                    href="https://statcounter.com/" target="_blank"><img
-                    class="statcounter"
-                    src="https://c.statcounter.com/13174008/0/b2c21c8e/1/"
-                    alt="Web Analytics"
-                    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-                    <!-- End of Statcounter Code -->
+                    <!-- Statcounter is now loaded via the cookie consent script -->
                 </div>
             </aside>
 
@@ -270,8 +240,6 @@
                 </div>
 
             </main>
-            <!-- ###################################################### -->
-
         </div>
 
         <footer>
@@ -296,6 +264,17 @@
             </div>
         </footer>
 	</div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner">
+        <div class="cookie-consent-content">
+            <p id="cookie-consent-text" class="cookie-consent-text"></p>
+            <div class="cookie-consent-buttons">
+                <button id="btn-accept-cookies" class="cookie-consent-button">Accept</button>
+                <button id="btn-decline-cookies" class="cookie-consent-button">Decline</button>
+            </div>
+        </div>
+    </div>
 
     <!-- The Modal / Lightbox HTML -->
     <div id="imageModal" class="image-modal">
@@ -392,6 +371,122 @@
             }
         }
       });
+    </script>
+    
+    <!-- Imprint Reveal Script (harmless on pages without the button) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const requestDiv = document.getElementById('imprint-request');
+        const detailsDiv = document.getElementById('imprint-details');
+        const requestBtn = document.getElementById('imprint-request-btn');
+
+        if(requestBtn) {
+            requestBtn.addEventListener('click', function() {
+                if(requestDiv) { requestDiv.style.display = 'none'; }
+                if(detailsDiv) { detailsDiv.style.display = 'block'; }
+            });
+        }
+    });
+    </script>
+
+    <!-- Cookie Consent Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const COOKIE_NAME = 'melcom_cookie_consent';
+        const banner = document.getElementById('cookie-consent-banner');
+        const acceptBtn = document.getElementById('btn-accept-cookies');
+        const declineBtn = document.getElementById('btn-decline-cookies');
+        const consentText = document.getElementById('cookie-consent-text');
+
+        // Language translations for the banner text
+        const translations = {
+            en: {
+                text: 'This website uses Google Analytics and Statcounter to analyze traffic and improve the user experience. Your IP address and user agent are shared with these services for performance and security metrics. By clicking "Accept", you consent to the use of these services. For more information, please see the <a href="imprint.html">Imprint & Disclaimer</a>.',
+                accept: 'Accept',
+                decline: 'Decline'
+            },
+            de: {
+                text: 'Diese Website verwendet Google Analytics und Statcounter, um Zugriffe zu analysieren und die Nutzererfahrung zu verbessern. Deine IP-Adresse und dein User-Agent werden zu Leistungs- und Sicherheitszwecken an diese Dienste weitergegeben. Mit einem Klick auf "Akzeptieren" stimmst du der Verwendung dieser Dienste zu. Weitere Informationen findest du im <a href="imprint.html">Impressum / Disclaimer</a>.',
+                accept: 'Akzeptieren',
+                decline: 'Ablehnen'
+            }
+        };
+
+        // Function to load the analytics tracking scripts
+        function loadTrackingScripts() {
+            // Google Analytics
+            const gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-R4HCR49RRY';
+            document.head.appendChild(gaScript);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R4HCR49RRY');
+
+            // Statcounter
+            const sc_project=13174008; 
+            const sc_invisible=1; 
+            const sc_security="b2c21c8e"; 
+            const sc_project_config = {"cookie": "disabled"};
+            const scScript = document.createElement('script');
+            scScript.src = 'https://www.statcounter.com/counter/counter.js';
+            scScript.async = true;
+            document.body.appendChild(scScript);
+        }
+
+        // Helper function to set a cookie
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
+        }
+
+        // Helper function to get a cookie
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i=0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        // Main logic to check for consent and display the banner
+        const consent = getCookie(COOKIE_NAME);
+
+        if (consent === 'true') {
+            loadTrackingScripts();
+        } else if (consent === null) {
+            // Detect user's browser language to set the banner language
+            const userLang = navigator.language || navigator.userLanguage; 
+            const lang = userLang.startsWith('de') ? 'de' : 'en';
+
+            consentText.innerHTML = translations[lang].text;
+            acceptBtn.textContent = translations[lang].accept;
+            declineBtn.textContent = translations[lang].decline;
+
+            banner.style.display = 'block';
+        }
+        
+        acceptBtn.addEventListener('click', function() {
+            setCookie(COOKIE_NAME, 'true', 365);
+            banner.style.display = 'none';
+            loadTrackingScripts();
+        });
+
+        declineBtn.addEventListener('click', function() {
+            setCookie(COOKIE_NAME, 'false', 365);
+            banner.style.display = 'none';
+        });
+    });
     </script>
 
 </body>

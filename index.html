@@ -93,9 +93,9 @@
                         <a href="https://soundcloud.com/melcom" rel="noopener noreferrer" target="_blank"><img src="images/soundcloud.jpg" alt="Soundcloud"></a>
                     </div>
                 </div>
-				<!-- Widget: Disclaimer, GitHub Pages Button, W3C Validator -->
+				<!-- Widget: Imprint, GitHub Pages Button, W3C Validator -->
                 <div class="widget text-center-widget">
-                    <a href="disclaimer.html"><img src="images/Disclaimer.png" alt="Disclaimer" title="Disclaimer"></a>
+                    <a href="imprint.html"><img src="images/Disclaimer.png" alt="Imprint & Disclaimer" title="Imprint & Disclaimer"></a>
                     <a href="https://github.com/melcom-creations/melcom-music" target="_blank" rel="noopener noreferrer"><img src="images/GitHub‑Pages‑Button88x31.png" alt="Hosted by GitHub Pages" title="Hosted by GitHub Pages" width="88" height="31"></a>
                     <a href="https://validator.w3.org/nu/?doc=https://www.melcom-music.de" target="_blank" rel="noopener noreferrer"><img src="images/W3C‑Button88x31.png" alt="melcom-valid HTML5" title="melcom-valid HTML5" width="88" height="31"></a>
                     <!-- Statcounter is now loaded via the cookie consent script -->
@@ -220,7 +220,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <a href="index.html">
-                        <img src="images/melcom88x31.gif" alt="melcom Logo">
+                        <img src="images/melcom8ebx31.gif" alt="melcom Logo">
                     </a>
                     <p>© 2014 - 2025 melcom (Andreas Thomas Urban)</p>
                 </div>
@@ -346,6 +346,22 @@
         }
       });
     </script>
+    
+    <!-- Imprint Reveal Script (harmless on pages without the button) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const requestDiv = document.getElementById('imprint-request');
+        const detailsDiv = document.getElementById('imprint-details');
+        const requestBtn = document.getElementById('imprint-request-btn');
+
+        if(requestBtn) {
+            requestBtn.addEventListener('click', function() {
+                if(requestDiv) { requestDiv.style.display = 'none'; }
+                if(detailsDiv) { detailsDiv.style.display = 'block'; }
+            });
+        }
+    });
+    </script>
 
     <!-- Cookie Consent Script -->
     <script>
@@ -359,12 +375,12 @@
         // Language translations for the banner text
         const translations = {
             en: {
-                text: 'This website uses Google Analytics and Statcounter to analyze traffic and improve the user experience. Your IP address and user agent are shared with these services for performance and security metrics. By clicking "Accept", you consent to the use of these services. For more information, please see the <a href="disclaimer.html">Disclaimer</a>.',
+                text: 'This website uses Google Analytics and Statcounter to analyze traffic and improve the user experience. Your IP address and user agent are shared with these services for performance and security metrics. By clicking "Accept", you consent to the use of these services. For more information, please see the <a href="imprint.html">Imprint & Disclaimer</a>.',
                 accept: 'Accept',
                 decline: 'Decline'
             },
             de: {
-                text: 'Diese Website verwendet Google Analytics und Statcounter, um Zugriffe zu analysieren und die Nutzererfahrung zu verbessern. Deine IP-Adresse und dein User-Agent werden zu Leistungs- und Sicherheitszwecken an diese Dienste weitergegeben. Mit einem Klick auf "Akzeptieren" stimmst du der Verwendung dieser Dienste zu. Weitere Informationen findest du im <a href="disclaimer.html">Impressum/Disclaimer</a>.',
+                text: 'Diese Website verwendet Google Analytics und Statcounter, um Zugriffe zu analysieren und die Nutzererfahrung zu verbessern. Deine IP-Adresse und dein User-Agent werden zu Leistungs- und Sicherheitszwecken an diese Dienste weitergegeben. Mit einem Klick auf "Akzeptieren" stimmst du der Verwendung dieser Dienste zu. Weitere Informationen findest du im <a href="imprint.html">Impressum / Disclaimer</a>.',
                 accept: 'Akzeptieren',
                 decline: 'Ablehnen'
             }
