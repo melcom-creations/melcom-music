@@ -256,7 +256,7 @@
     <!-- The Modal / Lightbox HTML -->
     <div id="imageModal" class="image-modal">
       <span class="modal-close">&times;</span>
-      <img class="modal-content" id="modalImage" src="" alt="">
+      <img class="modal-content" id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Enlarged image">
     </div>
 
     <!-- "Back to top" Button & Script -->
@@ -283,7 +283,6 @@
     <script>
       // --- Smooth Header Banner Fader Script (Randomized) ---
       document.addEventListener('DOMContentLoaded', function() {
-        
         const banners = [
           'images/header/header-image03.png',
           'images/header/header-image04.png',
@@ -332,6 +331,7 @@
                 event.preventDefault();
                 modal.style.display = "block";
                 modalImg.src = this.href;
+                modalImg.alt = this.querySelector('img').alt; // Dynamically set the alt text
               });
             });
 
