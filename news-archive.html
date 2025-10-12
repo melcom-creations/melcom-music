@@ -246,7 +246,7 @@
     <!-- The Modal / Lightbox HTML -->
     <div id="imageModal" class="image-modal">
       <span class="modal-close">&times;</span>
-      <img class="modal-content" id="modalImage">
+      <img class="modal-content" id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Enlarged image">
     </div>
 
     <!-- "Back to top" Button & Script -->
@@ -273,8 +273,6 @@
     <script>
       // --- Smooth Header Banner Fader Script (Randomized) ---
       document.addEventListener('DOMContentLoaded', function() {
-        
-        // 1. Defines an array of all banner image paths.
         const banners = [
           'images/header/header-image03.png',
           'images/header/header-image04.png',
@@ -282,53 +280,30 @@
           'images/header/header-image12.png',
           'images/header/header-image14.png',
         ];
-
-        // --- Configuration ---
-        const displayDuration = 10000; // How long each image is visible (10 seconds)
-        const fadeDuration = 1000;    // How long the fade transition takes (1 second)
-        
+        const displayDuration = 10000;
+        const fadeDuration = 1000;
         const bannerElement = document.getElementById('header-banner');
-        if (!bannerElement) return; // Exit if the banner element doesn't exist
+        
+        if (bannerElement) {
+          let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
+          if (currentIndex === -1) currentIndex = 0;
 
-        // Find the starting index based on the initial src, with a fallback to 0
-        let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
-        if (currentIndex === -1) currentIndex = 0;
+          banners.forEach(src => { (new Image()).src = src; });
 
-        // Preload all images to ensure smooth transitions
-        banners.forEach(src => {
-          const img = new Image();
-          img.src = src;
-        });
-
-        function changeBanner() {
-          // Fade out the current image
-          bannerElement.style.opacity = 0;
-
-          // Wait for the fade-out to complete
-          setTimeout(() => {
-            // --- RANDOM LOGIC ---
-            // Create a variable for the next index.
-            let nextIndex;
-            
-            // Keep picking a new random index until it's different from the current one.
-            do {
-              nextIndex = Math.floor(Math.random() * banners.length);
-            } while (banners.length > 1 && nextIndex === currentIndex); // Ensure it runs only if there is more than one banner
-            
-            // Update the current index for the next cycle.
-            currentIndex = nextIndex;
-            // --- END OF RANDOM LOGIC ---
-            
-            // Change the image source
-            bannerElement.src = banners[currentIndex];
-            
-            // Fade the new image in
-            bannerElement.style.opacity = 1;
-          }, fadeDuration);
+          function changeBanner() {
+            bannerElement.style.opacity = 0;
+            setTimeout(() => {
+              let nextIndex;
+              do {
+                nextIndex = Math.floor(Math.random() * banners.length);
+              } while (banners.length > 1 && nextIndex === currentIndex);
+              currentIndex = nextIndex;
+              bannerElement.src = banners[currentIndex];
+              bannerElement.style.opacity = 1;
+            }, fadeDuration);
+          }
+          setInterval(changeBanner, displayDuration);
         }
-
-        // Start the rotation after the first image has been displayed for the full duration
-        setInterval(changeBanner, displayDuration);
       });
     </script>
 
@@ -346,6 +321,7 @@
                 event.preventDefault();
                 modal.style.display = "block";
                 modalImg.src = this.href;
+                modalImg.alt = this.querySelector('img').alt; // Dynamically set the alt text
               });
             });
 

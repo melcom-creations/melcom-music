@@ -347,37 +347,36 @@
         </footer>
 	</div>
 
-    <!-- START: Lightbox / Modal Code -->
     <!-- The Modal / Lightbox HTML -->
     <div id="imageModal" class="image-modal">
       <span class="modal-close">&times;</span>
-      <img class="modal-content" id="modalImage">
+      <img class="modal-content" id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Enlarged image">
     </div>
 
-    <!-- "Back to top" Button -->
+    <!-- "Back to top" Button & Script -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">
         <img src="images/melcom-puzzle-icon.png" alt="Back to top" width="48" height="48">
     </button>
 
-    <!-- START: Combined Page Scripts -->
     <script>
-      // --- Execute scripts after DOM content is loaded ---
-      document.addEventListener('DOMContentLoaded', function() {
-        
-        // --- Back to Top Button Script ---
-        var mybutton = document.getElementById("myBtn");
-        if (mybutton) {
-          window.onscroll = function() { scrollFunction() };
-          function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-              mybutton.style.display = "block";
-            } else {
-              mybutton.style.display = "none";
-            }
-          }
+      var mybutton = document.getElementById("myBtn");
+      window.onscroll = function() { scrollFunction() };
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
         }
-
-        // --- Smooth Header Banner Fader Script (Randomized) ---
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    
+    <script>
+      // --- Smooth Header Banner Fader Script (Randomized) ---
+      document.addEventListener('DOMContentLoaded', function() {
         const banners = [
           'images/header/header-image03.png',
           'images/header/header-image04.png',
@@ -409,8 +408,12 @@
           }
           setInterval(changeBanner, displayDuration);
         }
+      });
+    </script>
 
-        // --- Image Lightbox / Modal Script ---
+    <script>
+      // --- Image Lightbox / Modal Script ---
+      document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImage");
         const closeBtn = document.querySelector(".modal-close");
@@ -422,6 +425,7 @@
                 event.preventDefault();
                 modal.style.display = "block";
                 modalImg.src = this.href;
+                modalImg.alt = this.querySelector('img').alt; // Dynamically set the alt text
               });
             });
 
@@ -438,12 +442,6 @@
             }
         }
       });
-      
-      // This function must remain outside the DOMContentLoaded listener to be globally accessible for the button's onclick attribute.
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
     </script>
 
 </body>
