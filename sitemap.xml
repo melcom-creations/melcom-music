@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Main Pages -->
   <url>
     <loc>https://www.melcom-music.de/index.html</loc>
     <lastmod>2025-10-13</lastmod>
@@ -41,11 +42,8 @@
     <lastmod>2025-10-13</lastmod>
     <priority>0.80</priority>
   </url>
-  <url>
-    <loc>https://www.melcom-music.de/imprint.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <priority>0.50</priority>
-  </url>
+
+  <!-- Album Subpages -->
   <url>
     <loc>https://www.melcom-music.de/albums-1997.html</loc>
     <lastmod>2025-10-13</lastmod>
@@ -76,6 +74,8 @@
     <lastmod>2025-10-13</lastmod>
     <priority>0.50</priority>
   </url>
+
+  <!-- Music Subpages -->
   <url>
     <loc>https://www.melcom-music.de/music-2014.html</loc>
     <lastmod>2025-10-13</lastmod>
@@ -142,4 +142,11 @@
     <priority>0.50</priority>
   </url>
 
+  <!-- Other Pages -->
+  <url>
+    <loc>https://www.melcom-music.de/imprint.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
 </urlset>
