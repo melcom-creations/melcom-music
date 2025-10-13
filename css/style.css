@@ -211,7 +211,7 @@ nav {
 .intro-text p {
     margin: 0;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--color-text-subtle);
 }
 
@@ -267,7 +267,7 @@ nav {
 }
 
 .content p {
-    line-height: 1.6;
+    line-height: 1.5;
     margin-top: 0;
     margin-bottom: 1em;
 }
@@ -361,7 +361,7 @@ nav {
 
 .page-intro {
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.95;
     margin: 0 20px;
 }
 
@@ -462,7 +462,7 @@ nav {
     list-style-type: none;
     margin: 0;
     padding: 15px 20px;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .link-list li {
@@ -751,6 +751,7 @@ nav {
 .info-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed; 
 }
 .info-table th {
     color: var(--color-accent-primary);
@@ -762,6 +763,9 @@ nav {
 .info-table td {
     padding: 2px 5px;
     width: 50%;
+    word-break: break-all;
+    vertical-align: top;
+    line-height: 1.5; 
 }
 .info-table.single-col th { display: none; }
 .info-table.single-col td { width: 100%; }
@@ -774,7 +778,7 @@ nav {
 }
 .tracklist li {
     margin-bottom: 5px;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 
