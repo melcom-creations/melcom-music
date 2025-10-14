@@ -125,12 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (banner && acceptBtn && declineBtn && consentText) {
         const translations = {
             en: {
-                text: 'This website uses Statcounter to count visits and see which content is popular. This helps to improve my site. By clicking "Accept", you agree to this anonymous analysis. Thank you so much! - melcom',
+                text: 'This website uses Statcounter to count visits and see which content is popular. This helps to improve my site. By clicking "Accept", you agree to this analysis. Thank you so much! - melcom',
                 accept: 'Accept',
                 decline: 'Decline'
             },
             de: {
-                text: 'Diese Webseite nutzt Statcounter, um Besuche zu zählen und zu sehen, welche Inhalte beliebt sind. Das hilft dabei, meine Seite zu verbessern. Mit einem Klick auf "Akzeptieren" stimmst du dieser anonymen Analyse zu. Lieben Dank! - melcom',
+                text: 'Diese Webseite nutzt Statcounter, um Besuche zu zählen und zu sehen, welche Inhalte beliebt sind. Das hilft dabei, meine Seite zu verbessern. Mit einem Klick auf "Akzeptieren" stimmst du dieser Analyse zu. Lieben Dank! - melcom',
                 accept: 'Akzeptieren',
                 decline: 'Ablehnen'
             }
