@@ -125,29 +125,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (banner && acceptBtn && declineBtn && consentText) {
         const translations = {
             en: {
-                text: 'This website uses Google Analytics and Statcounter to analyze traffic and improve the user experience. Your IP address and user agent are shared with these services for performance and security metrics. By clicking "Accept", you consent to the use of these services. For more information, please see the <a href="imprint.html">Imprint & Disclaimer</a>.',
+                text: 'This website uses Statcounter to count visits and see which content is popular. This helps to improve my site. By clicking "Accept", you agree to this anonymous analysis. Thank you so much! - melcom',
                 accept: 'Accept',
                 decline: 'Decline'
             },
             de: {
-                text: 'Diese Website verwendet Google Analytics und Statcounter, um Zugriffe zu analysieren und die Nutzererfahrung zu verbessern. Deine IP-Adresse und dein User-Agent werden zu Leistungs- und Sicherheitszwecken an diese Dienste weitergegeben. Mit einem Klick auf "Akzeptieren" stimmst du der Verwendung dieser Dienste zu. Weitere Informationen findest du im <a href="imprint.html">Impressum / Disclaimer</a>.',
+                text: 'Diese Webseite nutzt Statcounter, um Besuche zu zählen und zu sehen, welche Inhalte beliebt sind. Das hilft dabei, meine Seite zu verbessern. Mit einem Klick auf "Akzeptieren" stimmst du dieser anonymen Analyse zu. Lieben Dank! - melcom',
                 accept: 'Akzeptieren',
                 decline: 'Ablehnen'
             }
         };
 
         function loadTrackingScripts() {
-            // Google Analytics
-            const gaScript = document.createElement('script');
-            gaScript.async = true;
-            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-R4HCR49RRY';
-            document.head.appendChild(gaScript);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-R4HCR49RRY');
-
             // Statcounter
             window.sc_project=13174008; 
             window.sc_invisible=1; 
