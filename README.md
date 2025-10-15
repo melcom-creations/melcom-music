@@ -19,7 +19,7 @@ If you have any questions, feedback, or just want to say hello, please feel free
 ## Connect:
 
 *   **Music:** [Modules & MP3s](https://melcom-creations.github.io/melcom-music/music.html) | [Albums](https://melcom-creations.github.io/melcom-music/albums.html)
-*   **Creations:** [FFmpeg Audio Normalizer](https://melcom-creations.github.io/melcom-music/creations.html#ffmpeg) | [My Samples](https://melcom-creations.github.io/melcom-music/creations.html#samples) | [Highlighter Script](https://melcom-creations.github.io/melcom-music/creations.html#highlighter) | [My Tools I Use](https://melcom-creations.github.io/melcom-music/creations.html#mytools) | [Favorite VSTs](https://melcom-creations.github.io/melcom-music/creations.html#myfavstplugins)
+*   **Creations:** [FFmpeg Audio Normalizer](https://melcom-creations.github.io/melcom-music/creations.html#ffmpeg) | [My Samples](https://melcom-creations.github.io/melcom-music/creations.html#samples) | [Highlighter Script](https://melcom-creations.github.io/melcom-music/creations.html#highlighter)
 *   **Social:** [YouTube](https://www.youtube.com/@melcom) | [SoundCloud](https://soundcloud.com/melcom) | [Bandcamp](https://melcom.bandcamp.com/) | [Bluesky](https://bsky.app/profile/melcom-music.bsky.social) | [Instagram](https://www.instagram.com/just.melcom/) | [Twitter](https://twitter.com/melcom_) | [Linktree](https://linktr.ee/melcom)
 
 ---
