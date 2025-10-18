@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if all banner elements exist before proceeding
     if (banner && overlay && acceptBtn && declineBtn && consentText) {
 
-        // **NEU:** Check for the URL parameter. If it exists, do nothing.
+        // Check for the URL parameter. If it exists, do nothing.
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('source') === 'cookie-banner') {
             return; // Stop the execution of the banner script
