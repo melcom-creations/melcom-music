@@ -117,22 +117,23 @@ document.addEventListener('DOMContentLoaded', function() {
     /* === 5. COOKIE CONSENT BANNER === */
     const COOKIE_NAME = 'melcom_cookie_consent';
     const banner = document.getElementById('cookie-consent-banner');
+    const overlay = document.getElementById('cookie-consent-overlay');
     const acceptBtn = document.getElementById('btn-accept-cookies');
     const declineBtn = document.getElementById('btn-decline-cookies');
     const consentText = document.getElementById('cookie-consent-text');
 
-    // Check if the banner elements exist before proceeding
-    if (banner && acceptBtn && declineBtn && consentText) {
+    // Check if all banner elements exist before proceeding
+    if (banner && overlay && acceptBtn && declineBtn && consentText) {
         const translations = {
             en: {
-                text: 'This website uses Statcounter to count visits and see which content is popular. This helps to improve my site. By clicking "Accept", you agree to this analysis. Thank you so much! - melcom',
-                accept: 'Accept',
-                decline: 'Decline'
+                text: 'This website uses Statcounter to count visits and see which content is popular. This helps to improve my site. By clicking "Accept all", you agree to this analysis. Thank you so much! - melcom',
+                accept: 'Accept all',
+                decline: 'Accept necessary'
             },
             de: {
-                text: 'Diese Webseite nutzt Statcounter, um Besuche zu zählen und zu sehen, welche Inhalte beliebt sind. Das hilft dabei, meine Seite zu verbessern. Mit einem Klick auf "Akzeptieren" stimmst du dieser Analyse zu. Lieben Dank! - melcom',
-                accept: 'Akzeptieren',
-                decline: 'Ablehnen'
+                text: 'Diese Webseite nutzt Statcounter, um Besuche zu zählen und zu sehen, welche Inhalte beliebt sind. Das hilft dabei, meine Seite zu verbessern. Mit einem Klick auf "Alle akzeptieren" stimmst du dieser Analyse zu. Lieben Dank! - melcom',
+                accept: 'Alle akzeptieren',
+                decline: 'Nur Notwendiges akzeptieren'
             }
         };
 
@@ -181,17 +182,20 @@ document.addEventListener('DOMContentLoaded', function() {
             declineBtn.textContent = translations[lang].decline;
 
             banner.style.display = 'block';
+            overlay.style.display = 'block';
         }
         
         acceptBtn.addEventListener('click', function() {
             setCookie(COOKIE_NAME, 'true', 365);
             banner.style.display = 'none';
+            overlay.style.display = 'none';
             loadTrackingScripts();
         });
 
         declineBtn.addEventListener('click', function() {
             setCookie(COOKIE_NAME, 'false', 365);
             banner.style.display = 'none';
+            overlay.style.display = 'none';
         });
     }
 });
