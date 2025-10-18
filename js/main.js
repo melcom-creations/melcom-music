@@ -124,14 +124,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if all banner elements exist before proceeding
     if (banner && overlay && acceptBtn && declineBtn && consentText) {
+
+        // **NEU:** Check for the URL parameter. If it exists, do nothing.
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('source') === 'cookie-banner') {
+            return; // Stop the execution of the banner script
+        }
+
         const translations = {
             en: {
-                text: 'This website uses Statcounter to count visits and see which content is popular. This helps to improve my site. By clicking "Accept all", you agree to this analysis. Thank you so much! - melcom',
+                text: 'This website uses Statcounter to see which content is popular. This helps to improve my site. By clicking "Accept all", you agree to this analysis. <a href="imprint.html?source=cookie-banner#cookies">Learn more</a>. Thank you so much! - melcom',
                 accept: 'Accept all',
                 decline: 'Accept necessary'
             },
             de: {
-                text: 'Diese Webseite nutzt Statcounter, um Besuche zu zählen und zu sehen, welche Inhalte beliebt sind. Das hilft dabei, meine Seite zu verbessern. Mit einem Klick auf "Alle akzeptieren" stimmst du dieser Analyse zu. Lieben Dank! - melcom',
+                text: 'Diese Webseite nutzt Statcounter, um zu sehen, welche Inhalte beliebt sind. Das hilft, meine Seite zu verbessern. Mit einem Klick auf "Alle akzeptieren" stimmst du dieser Analyse zu. <a href="imprint.html?source=cookie-banner#cookies">Mehr erfahren</a>. Lieben Dank! - melcom',
                 accept: 'Alle akzeptieren',
                 decline: 'Nur Notwendiges akzeptieren'
             }
