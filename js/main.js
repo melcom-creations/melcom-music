@@ -5,7 +5,7 @@
    2. HEADER BANNER FADER
    3. IMAGE LIGHTBOX / MODAL
    4. IMPRINT REVEAL
-   5. COOKIE CONSENT BANNER
+   5. COOKIE CONSENT BANNER (NOTIFICATION STYLE)
    ========================================================================== */
 
 
@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         closeBtn.onclick = closeModal;
 
-        // Close modal if user clicks on the background overlay
         modal.onclick = function(event) {
           if (event.target === modal) {
             closeModal();
@@ -114,36 +113,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* === 5. COOKIE CONSENT BANNER === */
-    const COOKIE_NAME = 'melcom_cookie_consent';
+    /* === 5. COOKIE CONSENT BANNER (NOTIFICATION STYLE) === */
+    // --- KEY CHANGE: This section is completely refactored. ---
+    
+    const COOKIE_NAME = 'melcom_cookie_consent_dismissed'; // Renamed for clarity
     const banner = document.getElementById('cookie-consent-banner');
     const overlay = document.getElementById('cookie-consent-overlay');
-    const acceptBtn = document.getElementById('btn-accept-cookies');
-    const declineBtn = document.getElementById('btn-decline-cookies');
+    const okBtn = document.getElementById('btn-ok-cookies');
+    const learnMoreLink = document.getElementById('cookie-learn-more');
     const consentText = document.getElementById('cookie-consent-text');
 
     // Check if all banner elements exist before proceeding
-    if (banner && overlay && acceptBtn && declineBtn && consentText) {
+    if (banner && overlay && okBtn && learnMoreLink && consentText) {
 
-        // Check for the URL parameter. If it exists, do nothing.
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('source') === 'cookie-banner') {
-            return; // Stop the execution of the banner script
-        }
-
-        const translations = {
-            en: {
-                text: 'This website uses Statcounter to see which content is popular. This helps to improve my site. By clicking "Accept all", you agree to this analysis. <a href="imprint.html?source=cookie-banner#cookies">Learn more</a>. Thank you so much! - melcom',
-                accept: 'Accept all',
-                decline: 'Accept necessary'
-            },
-            de: {
-                text: 'Diese Webseite nutzt Statcounter, um zu sehen, welche Inhalte beliebt sind. Das hilft, meine Seite zu verbessern. Mit einem Klick auf "Alle akzeptieren" stimmst du dieser Analyse zu. <a href="imprint.html?source=cookie-banner#cookies">Mehr erfahren</a>. Lieben Dank! - melcom',
-                accept: 'Alle akzeptieren',
-                decline: 'Nur Notwendiges akzeptieren'
-            }
-        };
-
+        // --- CHANGE 1: Tracking scripts are loaded immediately on every page visit. ---
         function loadTrackingScripts() {
             // Statcounter
             window.sc_project=13174008; 
@@ -154,6 +137,21 @@ document.addEventListener('DOMContentLoaded', function() {
             scScript.async = true;
             document.body.appendChild(scScript);
         }
+        loadTrackingScripts(); // Call it right away.
+
+        // --- CHANGE 2: Simplified translations for the new banner style. ---
+        const translations = {
+            en: {
+                text: 'This website uses Statcounter to analyze traffic and improve the site. By using this site, you consent to this tracking.',
+                learnMore: 'Learn More',
+                ok: 'OK'
+            },
+            de: {
+                text: 'Diese Webseite nutzt Statcounter, um Zugriffe zu analysieren und die Seite zu verbessern. Durch die Nutzung der Seite stimmst du diesem Tracking zu.',
+                learnMore: 'Weitere Informationen',
+                ok: 'OK'
+            }
+        };
 
         function setCookie(name, value, days) {
             let expires = "";
@@ -175,32 +173,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             return null;
         }
+        
+        // --- CHANGE 3: The logic now only checks if the banner was dismissed. ---
+        const isDismissed = getCookie(COOKIE_NAME);
 
-        const consent = getCookie(COOKIE_NAME);
-
-        if (consent === 'true') {
-            loadTrackingScripts();
-        } else if (consent === null) {
+        if (isDismissed === null) { // Only show the banner if the cookie is not set.
             const userLang = navigator.language || navigator.userLanguage; 
             const lang = userLang.startsWith('de') ? 'de' : 'en';
 
             consentText.innerHTML = translations[lang].text;
-            acceptBtn.textContent = translations[lang].accept;
-            declineBtn.textContent = translations[lang].decline;
+            learnMoreLink.textContent = translations[lang].learnMore;
+            okBtn.textContent = translations[lang].ok;
 
             banner.style.display = 'block';
             overlay.style.display = 'block';
         }
         
-        acceptBtn.addEventListener('click', function() {
+        // --- CHANGE 4: The OK button just sets a cookie and hides the banner. ---
+        okBtn.addEventListener('click', function() {
             setCookie(COOKIE_NAME, 'true', 365);
-            banner.style.display = 'none';
-            overlay.style.display = 'none';
-            loadTrackingScripts();
-        });
-
-        declineBtn.addEventListener('click', function() {
-            setCookie(COOKIE_NAME, 'false', 365);
             banner.style.display = 'none';
             overlay.style.display = 'none';
         });
