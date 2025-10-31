@@ -1,21 +1,21 @@
 /* ==========================================================================
-   INHALTSVERZEICHNIS
+   TABLE OF CONTENTS
    ==========================================================================
-   1. "NACH OBEN"-BUTTON
+   1. "BACK TO TOP" BUTTON
    2. HEADER BANNER FADER
-   3. BILD-LIGHTBOX / MODAL
-   4. IMPRESSUM ANZEIGEN
-   5. COOKIE-ZUSTIMMUNGSBANNER
+   3. IMAGE LIGHTBOX / MODAL
+   4. IMPRINT REVEAL
+   5. COOKIE CONSENT BANNER
    ========================================================================== */
 
 
-/* === 1. "NACH OBEN"-BUTTON === */
-// Globale Funktionen, die direkt im HTML via onclick="" aufgerufen werden.
+/* === 1. "BACK TO TOP" BUTTON === */
+// Global functions that can be called by the onclick="" attribute in the HTML.
 var mybutton = document.getElementById("myBtn");
 
-// Zeigt den Button an, wenn der Benutzer nach unten scrollt.
+// Shows the button when the user scrolls down.
 function scrollFunction() {
-  if (mybutton) { // Prüft, ob der Button auf der Seite existiert.
+  if (mybutton) { // Check if the button exists on the page.
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       mybutton.style.display = "block";
     } else {
@@ -24,19 +24,19 @@ function scrollFunction() {
   }
 }
 
-// Scrollt zum Anfang der Seite, wenn der Button geklickt wird.
+// Scrolls to the top of the page when the button is clicked.
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-// Event-Listener für das Scroll-Ereignis.
+// Assign the scroll event listener.
 window.onscroll = scrollFunction;
 
 
 /* 
-   Die folgenden Skripte werden erst ausgeführt, nachdem das gesamte HTML-Dokument geladen wurde.
-   Dies verhindert Fehler, falls Skripte auf Elemente zugreifen, die noch nicht existieren.
+   The following scripts are wrapped in a DOMContentLoaded event listener.
+   This ensures they only run after the entire HTML document has been loaded and parsed.
 */
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -48,67 +48,67 @@ document.addEventListener('DOMContentLoaded', function() {
       'images/header/header-image12.png',
       'images/header/header-image14.png',
     ];
-    const displayDuration = 10000; // Anzeigedauer in ms
-    const fadeDuration = 1000;    // Überblenddauer in ms
+    const displayDuration = 10000; // Time in ms
+    const fadeDuration = 1000;    // Time in ms
     const bannerElement = document.getElementById('header-banner');
     
     if (bannerElement) {
-      // Findet den Startindex des aktuellen Banners oder startet bei 0.
+      // Find the starting index of the current banner or default to 0.
       let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
       if (currentIndex === -1) currentIndex = 0;
 
-      // Lädt alle Banner-Bilder im Voraus, um ein Flackern zu vermeiden.
+      // Preload all banner images to prevent flickering.
       banners.forEach(src => { (new Image()).src = src; });
 
       function changeBanner() {
-        // Blendet das aktuelle Bild aus.
+        // Fade out the current image.
         bannerElement.style.opacity = 0;
         
-        // Wechselt das Bild nach der Überblendung.
+        // After the fade, change the image source.
         setTimeout(() => {
           let nextIndex;
           do {
-            // Wählt ein zufälliges neues Bild, das nicht das aktuelle ist.
+            // Select a new random image that is not the current one.
             nextIndex = Math.floor(Math.random() * banners.length);
           } while (banners.length > 1 && nextIndex === currentIndex);
           
           currentIndex = nextIndex;
           bannerElement.src = banners[currentIndex];
           
-          // Blendet das neue Bild ein.
+          // Fade in the new image.
           bannerElement.style.opacity = 1;
         }, fadeDuration);
       }
-      // Startet den Banner-Wechsel in einem regelmäßigen Intervall.
+      // Start the banner rotation at a regular interval.
       setInterval(changeBanner, displayDuration);
     }
 
-    /* === 3. BILD-LIGHTBOX / MODAL === */
+    /* === 3. IMAGE LIGHTBOX / MODAL === */
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".modal-close");
     const imageLinks = document.querySelectorAll('.track-image-link');
 
     if (modal && modalImg && closeBtn) {
-        // Fügt jedem Bild-Link einen Klick-Listener hinzu.
+        // Add a click listener to each image link.
         imageLinks.forEach(link => {
           link.addEventListener('click', function(event) {
-            event.preventDefault(); // Verhindert das Öffnen des Bildes in einem neuen Tab.
+            event.preventDefault(); // Prevent the default action of opening the image link.
             modal.style.display = "block";
             modalImg.src = this.href;
-            modalImg.alt = this.querySelector('img').alt; // Setzt den Alt-Text für Barrierefreiheit.
+            modalImg.alt = this.querySelector('img').alt; // Set alt text for accessibility.
           });
         });
 
-        // Funktion zum Schließen des Modals.
+        // Function to close the modal.
         function closeModal() {
           modal.style.display = "none";
         }
 
-        // Schließt das Modal beim Klick auf den Schließen-Button.
+        // Close the modal when the close button is clicked.
         closeBtn.onclick = closeModal;
 
-        // Schließt das Modal bei einem Klick neben das Bild.
+        // Close the modal when clicking outside the image.
         modal.onclick = function(event) {
           if (event.target === modal) {
             closeModal();
@@ -116,20 +116,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    /* === 4. IMPRESSUM ANZEIGEN === */
+    /* === 4. IMPRINT REVEAL === */
     const requestDiv = document.getElementById('imprint-request');
     const detailsDiv = document.getElementById('imprint-details');
     const requestBtn = document.getElementById('imprint-request-btn');
 
     if(requestBtn) {
-        // Bei Klick auf den Button wird der Anforderungstext ausgeblendet und das Impressum eingeblendet.
+        // On button click, hide the request text and show the imprint details.
         requestBtn.addEventListener('click', function() {
             if(requestDiv) { requestDiv.style.display = 'none'; }
             if(detailsDiv) { detailsDiv.style.display = 'block'; }
         });
     }
 
-    /* === 5. COOKIE-ZUSTIMMUNGSBANNER === */
+    /* === 5. COOKIE CONSENT BANNER === */
     const COOKIE_NAME = 'melcom_cookie_consent_dismissed';
     const banner = document.getElementById('cookie-consent-banner');
     const overlay = document.getElementById('cookie-consent-overlay');
@@ -137,10 +137,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const learnMoreLink = document.getElementById('cookie-learn-more');
     const consentText = document.getElementById('cookie-consent-text');
 
-    // Das Skript wird nur ausgeführt, wenn alle notwendigen Elemente vorhanden sind.
+    // Only run the script if all necessary banner elements exist.
     if (banner && overlay && okBtn && learnMoreLink && consentText) {
 
-        // Definiert die Funktion zum Laden der Tracking-Skripte.
+        // Defines the function to load the tracking scripts.
         function loadTrackingScripts() {
             // Statcounter
             window.sc_project=13174008; 
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.appendChild(scScript);
         }
 
-        // Deutsche und englische Texte für den Banner.
+        // English and German text for the banner.
         const translations = {
             en: {
                 text: 'This website uses Statcounter to analyze traffic and improve the site. By using this site, you consent to this tracking.',
@@ -166,18 +166,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        // Hilfsfunktion zum Setzen eines Cookies.
+        // Helper function to set a cookie.
         function setCookie(name, value, days) {
             let expires = "";
             if (days) {
-                const date = new Date();
+                const date = new new Date();
                 date.setTime(date.getTime() + (days*24*60*60*1000));
                 expires = "; expires=" + date.toUTCString();
             }
             document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
         }
 
-        // Hilfsfunktion zum Lesen eines Cookies.
+        // Helper function to get a cookie.
         function getCookie(name) {
             const nameEQ = name + "=";
             const ca = document.cookie.split(';');
@@ -189,16 +189,23 @@ document.addEventListener('DOMContentLoaded', function() {
             return null;
         }
         
-        // Prüft, ob der Zustimmungs-Cookie bereits existiert.
-        if (getCookie(COOKIE_NAME) === 'true') {
-            // Wenn ja, lade die Tracking-Skripte sofort.
+        // Main logic for controlling the banner and tracking.
+        const hasConsent = getCookie(COOKIE_NAME) === 'true';
+        const urlParams = new URLSearchParams(window.location.search);
+        const isViewingImprintFromBanner = urlParams.get('source') === 'cookie-banner';
+
+        if (hasConsent) {
+            // Case 1: User has already given consent -> load tracking immediately.
             loadTrackingScripts();
+        } else if (isViewingImprintFromBanner) {
+            // Case 2: User is on the imprint page via the "Learn More" link.
+            // Do not show the banner for this specific page view.
         } else {
-            // Wenn nein, zeige den Banner an.
+            // Case 3: No consent, no special case -> show the banner.
             const userLang = navigator.language || navigator.userLanguage; 
             const lang = userLang.startsWith('de') ? 'de' : 'en';
 
-            // Setzt die Texte basierend auf der Browsersprache.
+            // Set the texts based on browser language.
             consentText.innerHTML = translations[lang].text;
             learnMoreLink.textContent = translations[lang].learnMore;
             okBtn.textContent = translations[lang].ok;
@@ -207,13 +214,13 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.style.display = 'block';
         }
         
-        // Fügt dem OK-Button einen Event-Listener hinzu.
+        // Add an event listener to the OK button.
         okBtn.addEventListener('click', function() {
-            // Lade die Tracking-Skripte erst nach dem Klick.
+            // Load tracking scripts only after the click.
             loadTrackingScripts();
-            // Setze den Cookie, um die Zustimmung für 365 Tage zu speichern.
+            // Set a cookie to remember consent for 365 days.
             setCookie(COOKIE_NAME, 'true', 365);
-            // Blende den Banner und das Overlay aus.
+            // Hide the banner and overlay.
             banner.style.display = 'none';
             overlay.style.display = 'none';
         });
