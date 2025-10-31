@@ -1080,8 +1080,9 @@ nav {
 
 .cookie-consent-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: center; /* Geändert von flex-end auf center */
+    align-items: center;
+    gap: 15px;
     width: 100%;
 }
 
@@ -1096,7 +1097,9 @@ nav {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    width: 100%;
+    text-decoration: none; /* For the <a> tag */
+    text-align: center;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
 #btn-accept-cookies {
