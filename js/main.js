@@ -1,20 +1,21 @@
 /* ==========================================================================
-   TABLE OF CONTENTS
+   INHALTSVERZEICHNIS
    ==========================================================================
-   1. "BACK TO TOP" BUTTON
+   1. "NACH OBEN"-BUTTON
    2. HEADER BANNER FADER
-   3. IMAGE LIGHTBOX / MODAL
-   4. IMPRINT REVEAL
-   5. COOKIE CONSENT BANNER (NOTIFICATION STYLE)
+   3. BILD-LIGHTBOX / MODAL
+   4. IMPRESSUM ANZEIGEN
+   5. COOKIE-ZUSTIMMUNGSBANNER
    ========================================================================== */
 
 
-/* === 1. "BACK TO TOP" BUTTON === */
-// Note: These functions need to be global for the onclick="" attribute in the HTML to work.
+/* === 1. "NACH OBEN"-BUTTON === */
+// Globale Funktionen, die direkt im HTML via onclick="" aufgerufen werden.
 var mybutton = document.getElementById("myBtn");
 
+// Zeigt den Button an, wenn der Benutzer nach unten scrollt.
 function scrollFunction() {
-  if (mybutton) { // Check if the button exists on the page
+  if (mybutton) { // Prüft, ob der Button auf der Seite existiert.
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       mybutton.style.display = "block";
     } else {
@@ -23,18 +24,19 @@ function scrollFunction() {
   }
 }
 
+// Scrollt zum Anfang der Seite, wenn der Button geklickt wird.
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-// Assign the scroll event listener once the window loads
+// Event-Listener für das Scroll-Ereignis.
 window.onscroll = scrollFunction;
 
 
 /* 
-   The following scripts are wrapped in a DOMContentLoaded event listener.
-   This ensures they only run after the entire HTML document has been loaded and parsed.
+   Die folgenden Skripte werden erst ausgeführt, nachdem das gesamte HTML-Dokument geladen wurde.
+   Dies verhindert Fehler, falls Skripte auf Elemente zugreifen, die noch nicht existieren.
 */
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -46,54 +48,67 @@ document.addEventListener('DOMContentLoaded', function() {
       'images/header/header-image12.png',
       'images/header/header-image14.png',
     ];
-    const displayDuration = 10000;
-    const fadeDuration = 1000;
+    const displayDuration = 10000; // Anzeigedauer in ms
+    const fadeDuration = 1000;    // Überblenddauer in ms
     const bannerElement = document.getElementById('header-banner');
     
     if (bannerElement) {
+      // Findet den Startindex des aktuellen Banners oder startet bei 0.
       let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
       if (currentIndex === -1) currentIndex = 0;
 
-      // Preload images to prevent flickering
+      // Lädt alle Banner-Bilder im Voraus, um ein Flackern zu vermeiden.
       banners.forEach(src => { (new Image()).src = src; });
 
       function changeBanner() {
+        // Blendet das aktuelle Bild aus.
         bannerElement.style.opacity = 0;
+        
+        // Wechselt das Bild nach der Überblendung.
         setTimeout(() => {
           let nextIndex;
           do {
+            // Wählt ein zufälliges neues Bild, das nicht das aktuelle ist.
             nextIndex = Math.floor(Math.random() * banners.length);
           } while (banners.length > 1 && nextIndex === currentIndex);
+          
           currentIndex = nextIndex;
           bannerElement.src = banners[currentIndex];
+          
+          // Blendet das neue Bild ein.
           bannerElement.style.opacity = 1;
         }, fadeDuration);
       }
+      // Startet den Banner-Wechsel in einem regelmäßigen Intervall.
       setInterval(changeBanner, displayDuration);
     }
 
-    /* === 3. IMAGE LIGHTBOX / MODAL === */
+    /* === 3. BILD-LIGHTBOX / MODAL === */
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".modal-close");
     const imageLinks = document.querySelectorAll('.track-image-link');
 
     if (modal && modalImg && closeBtn) {
+        // Fügt jedem Bild-Link einen Klick-Listener hinzu.
         imageLinks.forEach(link => {
           link.addEventListener('click', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Verhindert das Öffnen des Bildes in einem neuen Tab.
             modal.style.display = "block";
             modalImg.src = this.href;
-            modalImg.alt = this.querySelector('img').alt; // Dynamically set the alt text
+            modalImg.alt = this.querySelector('img').alt; // Setzt den Alt-Text für Barrierefreiheit.
           });
         });
 
+        // Funktion zum Schließen des Modals.
         function closeModal() {
           modal.style.display = "none";
         }
 
+        // Schließt das Modal beim Klick auf den Schließen-Button.
         closeBtn.onclick = closeModal;
 
+        // Schließt das Modal bei einem Klick neben das Bild.
         modal.onclick = function(event) {
           if (event.target === modal) {
             closeModal();
@@ -101,32 +116,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    /* === 4. IMPRINT REVEAL === */
+    /* === 4. IMPRESSUM ANZEIGEN === */
     const requestDiv = document.getElementById('imprint-request');
     const detailsDiv = document.getElementById('imprint-details');
     const requestBtn = document.getElementById('imprint-request-btn');
 
     if(requestBtn) {
+        // Bei Klick auf den Button wird der Anforderungstext ausgeblendet und das Impressum eingeblendet.
         requestBtn.addEventListener('click', function() {
             if(requestDiv) { requestDiv.style.display = 'none'; }
             if(detailsDiv) { detailsDiv.style.display = 'block'; }
         });
     }
 
-    /* === 5. COOKIE CONSENT BANNER (NOTIFICATION STYLE) === */
-    // --- KEY CHANGE: This section is completely refactored. ---
-    
-    const COOKIE_NAME = 'melcom_cookie_consent_dismissed'; // Renamed for clarity
+    /* === 5. COOKIE-ZUSTIMMUNGSBANNER === */
+    const COOKIE_NAME = 'melcom_cookie_consent_dismissed';
     const banner = document.getElementById('cookie-consent-banner');
     const overlay = document.getElementById('cookie-consent-overlay');
     const okBtn = document.getElementById('btn-ok-cookies');
     const learnMoreLink = document.getElementById('cookie-learn-more');
     const consentText = document.getElementById('cookie-consent-text');
 
-    // Check if all banner elements exist before proceeding
+    // Das Skript wird nur ausgeführt, wenn alle notwendigen Elemente vorhanden sind.
     if (banner && overlay && okBtn && learnMoreLink && consentText) {
 
-        // --- CHANGE 1: Tracking scripts are loaded immediately on every page visit. ---
+        // Definiert die Funktion zum Laden der Tracking-Skripte.
         function loadTrackingScripts() {
             // Statcounter
             window.sc_project=13174008; 
@@ -137,9 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
             scScript.async = true;
             document.body.appendChild(scScript);
         }
-        loadTrackingScripts(); // Call it right away.
 
-        // --- CHANGE 2: Simplified translations for the new banner style. ---
+        // Deutsche und englische Texte für den Banner.
         const translations = {
             en: {
                 text: 'This website uses Statcounter to analyze traffic and improve the site. By using this site, you consent to this tracking.',
@@ -153,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
+        // Hilfsfunktion zum Setzen eines Cookies.
         function setCookie(name, value, days) {
             let expires = "";
             if (days) {
@@ -163,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
         }
 
+        // Hilfsfunktion zum Lesen eines Cookies.
         function getCookie(name) {
             const nameEQ = name + "=";
             const ca = document.cookie.split(';');
@@ -174,13 +189,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return null;
         }
         
-        // --- CHANGE 3: The logic now only checks if the banner was dismissed. ---
-        const isDismissed = getCookie(COOKIE_NAME);
-
-        if (isDismissed === null) { // Only show the banner if the cookie is not set.
+        // Prüft, ob der Zustimmungs-Cookie bereits existiert.
+        if (getCookie(COOKIE_NAME) === 'true') {
+            // Wenn ja, lade die Tracking-Skripte sofort.
+            loadTrackingScripts();
+        } else {
+            // Wenn nein, zeige den Banner an.
             const userLang = navigator.language || navigator.userLanguage; 
             const lang = userLang.startsWith('de') ? 'de' : 'en';
 
+            // Setzt die Texte basierend auf der Browsersprache.
             consentText.innerHTML = translations[lang].text;
             learnMoreLink.textContent = translations[lang].learnMore;
             okBtn.textContent = translations[lang].ok;
@@ -189,9 +207,13 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.style.display = 'block';
         }
         
-        // --- CHANGE 4: The OK button just sets a cookie and hides the banner. ---
+        // Fügt dem OK-Button einen Event-Listener hinzu.
         okBtn.addEventListener('click', function() {
+            // Lade die Tracking-Skripte erst nach dem Klick.
+            loadTrackingScripts();
+            // Setze den Cookie, um die Zustimmung für 365 Tage zu speichern.
             setCookie(COOKIE_NAME, 'true', 365);
+            // Blende den Banner und das Overlay aus.
             banner.style.display = 'none';
             overlay.style.display = 'none';
         });
