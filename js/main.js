@@ -5,16 +5,8 @@
    2. HEADER BANNER FADER
    3. IMAGE LIGHTBOX / MODAL
    4. IMPRINT REVEAL
-   5. COOKIELESS TRACKING & INFO BANNER
+   5. INFO BANNER
    ========================================================================== */
-
-/* === A. STATCOUNTER CONFIGURATION (GLOBAL) === */
-// By defining these variables globally, we ensure they are set
-// before the Statcounter script is loaded and executed.
-var sc_project = 13174008;
-var sc_invisible = 1;
-var sc_security = "b2c21c8e";
-var sc_statcounter_cookie_storage = 'disabled'; // Force cookieless mode
 
 
 /* === 1. "BACK TO TOP" BUTTON === */
@@ -115,20 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* === 5. COOKIELESS TRACKING & INFO BANNER === */
-    
-    // This function now only loads the script. The configuration is already set globally.
-    function loadTrackingScripts() {
-        const scScript = document.createElement('script');
-        scScript.src = 'https://www.statcounter.com/counter/counter.js';
-        scScript.async = true;
-        document.body.appendChild(scScript);
-    }
-
-    // Start tracking immediately on every page load.
-    loadTrackingScripts();
-
-    // The rest of the script manages the info banner's visibility.
+    /* === 5. INFO BANNER === */
+    // This script only manages the info banner's visibility. Tracking is handled separately.
     const BANNER_COOKIE_NAME = 'melcom_info_banner_dismissed';
     const infoBanner = document.getElementById('info-banner');
     const dismissBtn = document.getElementById('btn-dismiss-banner');
@@ -138,12 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (infoBanner && dismissBtn && bannerText && learnMoreLink) {
         const translations = {
             en: {
-                text: 'This website uses Statcounter for anonymous traffic analysis to improve the site. No cookies are used for this purpose.',
+                text: 'This website uses a privacy-friendly analytics tool to understand which content is popular. No cookies are used for this.',
                 learnMore: 'Learn More',
                 dismiss: 'Got it!'
             },
             de: {
-                text: 'Diese Webseite nutzt Statcounter zur anonymen Analyse der Zugriffe, um die Seite zu verbessern. Hierfür werden keine Cookies verwendet.',
+                text: 'Diese Webseite nutzt ein datenschutzfreundliches Analyse-Tool, um zu verstehen, welche Inhalte beliebt sind. Hierfür werden keine Cookies verwendet.',
                 learnMore: 'Weitere Informationen',
                 dismiss: 'Verstanden'
             }
