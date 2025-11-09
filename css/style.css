@@ -18,7 +18,7 @@
    10. RESPONSIVE STYLES (Mobile Devices)
    11. HEADER BANNER FADER
    12. IMAGE LIGHTBOX / MODAL
-   13. COOKIE CONSENT BANNER
+   13. INFO BANNER
    ========================================================================== */
 
 
@@ -1029,13 +1029,9 @@ nav {
 }
 
 /* ==========================================================================
-   13. COOKIE CONSENT BANNER
+   13. INFO BANNER
    ========================================================================== */
-.cookie-consent-overlay {
-    display: none !important; /* Always hide the overlay */
-}
-
-.cookie-consent-banner {
+.info-banner {
     display: none; /* Hidden by default */
     position: fixed;
     bottom: 0;
@@ -1049,7 +1045,7 @@ nav {
     line-height: 1.6;
 }
 
-.cookie-consent-content {
+.info-banner-content {
     display: flex;
     max-width: var(--layout-max-width); /* Constrain content to site width */
     margin: 0 auto; /* Center the content block */
@@ -1061,18 +1057,18 @@ nav {
     text-align: left;
 }
 
-.cookie-consent-text {
+.info-banner-text {
     margin: 0;
     color: var(--color-text-subtle);
     flex-grow: 1; /* Allow text to take up available space */
 }
 
-.cookie-consent-text a {
+.info-banner-text a {
     color: var(--color-accent-primary);
     text-decoration: underline;
 }
 
-.cookie-consent-buttons {
+.info-banner-buttons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -1081,7 +1077,7 @@ nav {
     flex-shrink: 0;
 }
 
-.cookie-consent-button {
+.info-banner-button {
     font-family: var(--font-primary);
     background-color: var(--color-bg-secondary);
     color: var(--color-text-primary);
@@ -1097,30 +1093,30 @@ nav {
     flex-shrink: 0;
 }
 
-#btn-accept-cookies {
+#btn-dismiss-banner {
     background-color: var(--color-bg-hover);
     color: var(--color-text-inverted);
     border-color: var(--color-bg-hover);
 }
 
-.cookie-consent-button:hover {
+.info-banner-button:hover {
     filter: brightness(1.2);
 }
 
 /* Responsive styles for the banner */
 @media (max-width: 800px) {
-    .cookie-consent-content {
+    .info-banner-content {
         flex-direction: column;
         text-align: center;
         padding: 15px;
     }
 
-    .cookie-consent-buttons {
+    .info-banner-buttons {
         flex-direction: column;
         width: 100%;
     }
 
-    .cookie-consent-button {
+    .info-banner-button {
         width: 100%;
         padding: 12px 18px;
     }
