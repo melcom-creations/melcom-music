@@ -129,44 +129,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* === 5. COOKIE CONSENT BANNER === */
-    const COOKIE_NAME = 'melcom_cookie_consent_dismissed';
-    const banner = document.getElementById('cookie-consent-banner');
-    // The overlay is no longer needed and thus not referenced here.
-    const okBtn = document.getElementById('btn-accept-cookies'); // Adjusted ID for clarity
-    const learnMoreLink = document.getElementById('cookie-learn-more');
-    const consentText = document.getElementById('cookie-consent-text');
+    /* === 5. COOKIELESS TRACKING & INFO BANNER === */
+    
+    // Defines the function to load the tracking scripts in cookieless mode.
+    function loadTrackingScripts() {
+        // Statcounter
+        window.sc_project=13174008; 
+        window.sc_invisible=1; 
+        window.sc_security="b2c21c8e";
+        window.sc_statcounter_cookie_storage = 'disabled'; // This enables cookieless mode
+        const scScript = document.createElement('script');
+        scScript.src = 'https://www.statcounter.com/counter/counter.js';
+        scScript.async = true;
+        document.body.appendChild(scScript);
+    }
 
-    // Only run the script if all necessary banner elements exist.
-    if (banner && okBtn && learnMoreLink && consentText) {
+    // Start tracking immediately on every page load.
+    loadTrackingScripts();
 
-        // Defines the function to load the tracking scripts.
-        function loadTrackingScripts() {
-            // Statcounter
-            window.sc_project=13174008; 
-            window.sc_invisible=1; 
-            window.sc_security="b2c21c8e"; 
-            const scScript = document.createElement('script');
-            scScript.src = 'https://www.statcounter.com/counter/counter.js';
-            scScript.async = true;
-            document.body.appendChild(scScript);
-        }
 
-        // English and German text for the banner.
+    // The rest of the script now only manages the info banner's visibility.
+    const BANNER_COOKIE_NAME = 'melcom_info_banner_dismissed';
+    const banner = document.getElementById('info-banner');
+    const dismissBtn = document.getElementById('btn-dismiss-banner');
+    const bannerText = document.getElementById('info-banner-text');
+    const learnMoreLink = document.getElementById('info-banner-learn-more');
+
+    if (banner && dismissBtn && bannerText && learnMoreLink) {
+
         const translations = {
             en: {
-                text: 'This website uses Statcounter to analyze traffic and improve the site. By using this site, you consent to this tracking.',
+                text: 'This website uses Statcounter for anonymous traffic analysis to improve the site. No cookies are used for this purpose.',
                 learnMore: 'Learn More',
-                ok: 'OK'
+                dismiss: 'Got it!'
             },
             de: {
-                text: 'Diese Webseite nutzt Statcounter, um Zugriffe zu analysieren und die Seite zu verbessern. Durch die Nutzung der Seite stimmst du diesem Tracking zu.',
+                text: 'Diese Webseite nutzt Statcounter zur anonymen Analyse der Zugriffe, um die Seite zu verbessern. Hierfür werden keine Cookies verwendet.',
                 learnMore: 'Weitere Informationen',
-                ok: 'OK'
+                dismiss: 'Verstanden'
             }
         };
 
-        // Helper function to set a cookie.
         function setCookie(name, value, days) {
             let expires = "";
             if (days) {
@@ -177,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
         }
 
-        // Helper function to get a cookie.
         function getCookie(name) {
             const nameEQ = name + "=";
             const ca = document.cookie.split(';');
@@ -189,38 +191,21 @@ document.addEventListener('DOMContentLoaded', function() {
             return null;
         }
         
-        // Main logic for controlling the banner and tracking.
-        const hasConsent = getCookie(COOKIE_NAME) === 'true';
-        const urlParams = new URLSearchParams(window.location.search);
-        const isViewingImprintFromBanner = urlParams.get('source') === 'cookie-banner';
+        const isDismissed = getCookie(BANNER_COOKIE_NAME) === 'true';
 
-        if (hasConsent) {
-            // Case 1: User has already given consent -> load tracking immediately.
-            loadTrackingScripts();
-        } else if (isViewingImprintFromBanner) {
-            // Case 2: User is on the imprint page via the "Learn More" link.
-            // Do not show the banner for this specific page view.
-        } else {
-            // Case 3: No consent, no special case -> show the banner.
+        if (!isDismissed) {
             const userLang = navigator.language || navigator.userLanguage; 
             const lang = userLang.startsWith('de') ? 'de' : 'en';
 
-            // Set the texts based on browser language.
-            consentText.innerHTML = translations[lang].text;
+            bannerText.innerHTML = translations[lang].text;
             learnMoreLink.textContent = translations[lang].learnMore;
-            okBtn.textContent = translations[lang].ok;
+            dismissBtn.textContent = translations[lang].dismiss;
 
             banner.style.display = 'block';
-            // The overlay is removed, so no 'overlay.style.display = 'block';' here.
         }
         
-        // Add an event listener to the OK button.
-        okBtn.addEventListener('click', function() {
-            // Load tracking scripts only after the click.
-            loadTrackingScripts();
-            // Set a cookie to remember consent for 365 days.
-            setCookie(COOKIE_NAME, 'true', 365);
-            // Hide the banner.
+        dismissBtn.addEventListener('click', function() {
+            setCookie(BANNER_COOKIE_NAME, 'true', 365);
             banner.style.display = 'none';
         });
     }
