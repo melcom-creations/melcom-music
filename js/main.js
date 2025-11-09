@@ -5,7 +5,7 @@
    2. HEADER BANNER FADER
    3. IMAGE LIGHTBOX / MODAL
    4. IMPRINT REVEAL
-   5. INFO BANNER
+   5. STATCOUNTER TRACKING & INFO BANNER
    ========================================================================== */
 
 
@@ -107,8 +107,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* === 5. INFO BANNER === */
-    // This script only manages the info banner's visibility. Tracking is handled separately.
+    /* === 5. STATCOUNTER TRACKING & INFO BANNER === */
+    
+    // Function to load the standard Statcounter script.
+    function loadStatcounter() {
+        window.sc_project = 13174008;
+        window.sc_invisible = 1;
+        window.sc_security = "b2c21c8e";
+        const scScript = document.createElement('script');
+        scScript.src = 'https://www.statcounter.com/counter/counter.js';
+        scScript.async = true;
+        document.body.appendChild(scScript);
+    }
+
+    // Start tracking immediately on page load.
+    loadStatcounter();
+
+    // The rest of the script manages the info banner's visibility.
     const BANNER_COOKIE_NAME = 'melcom_info_banner_dismissed';
     const infoBanner = document.getElementById('info-banner');
     const dismissBtn = document.getElementById('btn-dismiss-banner');
@@ -118,14 +133,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (infoBanner && dismissBtn && bannerText && learnMoreLink) {
         const translations = {
             en: {
-                text: 'This website uses a privacy-friendly analytics tool to understand which content is popular. No cookies are used for this.',
+                text: 'This website uses an analytics service to understand which content is popular. By continuing to use this site, you agree to this.',
                 learnMore: 'Learn More',
-                dismiss: 'Got it!'
+                dismiss: 'OK'
             },
             de: {
-                text: 'Diese Webseite nutzt ein datenschutzfreundliches Analyse-Tool, um zu verstehen, welche Inhalte beliebt sind. Hierfür werden keine Cookies verwendet.',
+                text: 'Diese Webseite nutzt einen Analysedienst, um zu verstehen, welche Inhalte beliebt sind. Durch die weitere Nutzung der Webseite stimmst du dem zu.',
                 learnMore: 'Weitere Informationen',
-                dismiss: 'Verstanden'
+                dismiss: 'OK'
             }
         };
 
