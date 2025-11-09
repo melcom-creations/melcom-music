@@ -132,13 +132,13 @@ document.addEventListener('DOMContentLoaded', function() {
     /* === 5. COOKIE CONSENT BANNER === */
     const COOKIE_NAME = 'melcom_cookie_consent_dismissed';
     const banner = document.getElementById('cookie-consent-banner');
-    const overlay = document.getElementById('cookie-consent-overlay');
-    const okBtn = document.getElementById('btn-ok-cookies');
+    // The overlay is no longer needed and thus not referenced here.
+    const okBtn = document.getElementById('btn-accept-cookies'); // Adjusted ID for clarity
     const learnMoreLink = document.getElementById('cookie-learn-more');
     const consentText = document.getElementById('cookie-consent-text');
 
     // Only run the script if all necessary banner elements exist.
-    if (banner && overlay && okBtn && learnMoreLink && consentText) {
+    if (banner && okBtn && learnMoreLink && consentText) {
 
         // Defines the function to load the tracking scripts.
         function loadTrackingScripts() {
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
             okBtn.textContent = translations[lang].ok;
 
             banner.style.display = 'block';
-            overlay.style.display = 'block';
+            // The overlay is removed, so no 'overlay.style.display = 'block';' here.
         }
         
         // Add an event listener to the OK button.
@@ -220,9 +220,8 @@ document.addEventListener('DOMContentLoaded', function() {
             loadTrackingScripts();
             // Set a cookie to remember consent for 365 days.
             setCookie(COOKIE_NAME, 'true', 365);
-            // Hide the banner and overlay.
+            // Hide the banner.
             banner.style.display = 'none';
-            overlay.style.display = 'none';
         });
     }
 });
