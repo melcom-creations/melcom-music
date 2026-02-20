@@ -102,9 +102,9 @@
 
                 <!-- Section: FFmpeg Audio Normalizer -->
                 <div id="ffmpeg" class="content-box">
-                    <h3 class="content-box-title"><a href="#ffmpeg">🔗</a> melcom's FFmpeg Audio Normalizer v3.0.1 (Halloween Edition)</h3>
+                    <h3 class="content-box-title"><a href="#ffmpeg">🔗</a> melcom's FFmpeg Audio Normalizer v3.1.0 (Feierabend Edition)</h3>
                     <div class="box-content">
-                        <p><b>melcom's FFmpeg Audio Normalizer</b> is a free Windows GUI for automatic loudness normalization using the <i>EBU R128</i> standard, powered by the versatile <i>FFmpeg</i> engine. It supports MP3, WAV, FLAC, AAC, OGG, and more, with batch processing and drag-and-drop convenience. Normalized files are saved alongside the originals with the suffix <code>-Normalized</code>.</p>
+                        <p><b>melcom's FFmpeg Audio Normalizer</b> is a free Windows GUI for automatic loudness normalization using the <i>EBU R128</i> standard, powered by the versatile <i>FFmpeg</i> engine. It supports MP3, WAV, FLAC, AAC, OGG, and more. Version 3.1.0 (Feierabend Edition) introduces professional-grade features like Linear Two-Pass normalization and high-resolution quality preservation.</p>
                         <p>I built this tool to make audio normalization simple and accessible — no command line required. Written in Python, it’s available in <b>English</b>, <b>German</b>, and <b>Polish</b>, each with a dedicated help file. Questions or issues? <a href="contact.html">Contact me</a>.</p>
                         <p>📌 <b>Note:</b> Requires <b>FFmpeg</b>. Download it from <a href="https://github.com/BtbN/FFmpeg-Builds/releases/tag/latest" rel="noopener noreferrer" target="_blank">this page</a>. An included help file explains how to set the <code>ffmpeg.exe</code> path in the program’s options.</p>
                         
@@ -140,37 +140,28 @@
                             </div>
                         </div>
                         
-                        <h4>What's new in v3.0.1 (Halloween Edition)?</h4>
-                        <p>This is the official release of the v3.0.1 Halloween Edition! 🎃 (Fix)</p>
+                        <h4>What's new in v3.1.0 (Feierabend Edition)?</h4>
+                        <p>This version marks a significant milestone, moving the tool towards professional-grade audio utility.</p>
                         <ul>
-                            <li><b>Bug Fix: Improved Application Path Handling for Robustness</b>
-                                <ul>
-                                    <li>Fixed a critical issue where language files and other resources (e.g., options.ini, logs) would fail to load when the application was launched from the Windows Start Menu search.</li>
-                                    <li>The program now correctly determines its own location, ensuring that all necessary files are found regardless of how or from where it is started.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p>Version 3 is a complete rewrite from the ground up, focusing on a powerful batch-processing workflow, an integrated audio player, and a modern, intuitive user interface.</p>
-                        
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li><b>Batch Processing:</b> Add multiple files or entire folders and normalize them all in one go.</li>
-                            <li><b>Integrated Audio Player:</b> Preview tracks with full playlist controls before processing.</li>
-                            <li><b>Modern, Redesigned UI:</b> A completely redesigned interface for a more intuitive workflow.</li>
-                            <li><b>Increased Stability:</b> The new threading model makes the application more robust and responsive.</li>
+                            <li><b>Linear Two-Pass Normalization:</b> Achieves professional results by preserving the full dynamic range (LRA) of the audio. Highly recommended for music mastering.</li>
+                            <li><b>Quality Preservation (WAV & FLAC):</b> Automatically detects and preserves the original sample rate and bit depth (e.g., 24-bit/96kHz) of the source file.</li>
+                            <li><b>Metadata Handling:</b> All ID3 tags and metadata (Artist, Title, Album) are now preserved across all formats.</li>
+                            <li><b>MP3 Compatibility:</b> Forced ID3v2.3 standard for better compatibility with Windows and external players.</li>
+                            <li><b>Automatic Cleanup:</b> Temporary work files are now automatically removed, even if a process is cancelled.</li>
                         </ul>
                         <p>For a full list of changes, see the included <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">CHANGELOG.md</a>.</p>
 
-                        <h4>📥 Download v3.0.1 (Halloween Edition)</h4>
+                        <h4>📥 Download v3.1.0 (Feierabend Edition)</h4>
                         <div class="button-group">
-                            <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v3_0_1.zip" class="download-button" rel="noopener noreferrer" target="_blank">scene.org</a>
-                            <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.0.1" class="download-button" rel="noopener noreferrer" target="_blank">GitHub</a>
-                            <a href="https://www.dropbox.com/scl/fi/f9u0rzx6it6ghohjb08wg/melcoms_ffmpeg_audio_normalizer_v3_0_1.zip?rlkey=7j5xumfruh8hub9gq1wz88mf8&dl=1" class="download-button">dropbox.com</a>
+                            <a href="#" class="download-button" rel="noopener noreferrer" target="_blank">scene.org (coming soon)</a>
+                            <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.1.0" class="download-button" rel="noopener noreferrer" target="_blank">GitHub</a>
+                            <a href="https://www.dropbox.com/scl/fi/u6tppe417mzhz6jb9zzl5/melcoms_ffmpeg_audio_normalizer_v3_1_0.zip?rlkey=mcjp540ns902nr19ahzl6wi2o&dl=1" class="download-button">dropbox.com</a>
                         </div>
                         
                         <details class="accordion">
                             <summary>💾 Older Versions</summary>
                             <div class="accordion-content">
+                                <p>Download v3.0.1: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v3_0_1.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.0.1" rel="noopener noreferrer" target="_blank">GitHub</a> / <a href="https://www.dropbox.com/scl/fi/f9u0rzx6it6ghohjb08wg/melcoms_ffmpeg_audio_normalizer_v3_0_1.zip?rlkey=7j5xumfruh8hub9gq1wz88mf8&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
                                 <p>Download v3.0.0: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v3_0_0.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.0.0" rel="noopener noreferrer" target="_blank">GitHub</a> / <a href="https://www.dropbox.com/scl/fi/yr1wcuzgc9h3e8nqi5k11/melcoms_ffmpeg_audio_normalizer_v3_0_0.zip?rlkey=dbsddtam4t58xbnrs6l8hmhg6&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
                                 <p>Download v2.2.2: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v2_2_2.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/2.2.2" rel="noopener noreferrer" target="_blank">GitHub</a> / <a href="https://www.dropbox.com/scl/fi/gcar8efyorngcx3qtjr3h/melcoms_ffmpeg_audio_normalizer_v2_2_2.zip?rlkey=h65ajgc84xnfih93u5y03bh2g&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
                                 <p>Download v2.2.1: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v2_2_1.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://www.dropbox.com/scl/fi/94covit6jspfjcohli5yd/melcoms_ffmpeg_audio_normalizer_v2_2_1.zip?rlkey=z4cx4w5xtdjczuippdkzsibgs&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
@@ -178,7 +169,6 @@
                                 <p>Download v2.1.0: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v2_1_0.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://www.dropbox.com/scl/fi/3i2p1nagrv91n7sjwmiw3/melcoms_ffmpeg_audio_normalizer_v2_1_0.zip?rlkey=6i7dosi3rl2g7houeywvklvrg&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
                                 <p>Download v2.0.1: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v2_0_1.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://www.dropbox.com/scl/fi/95dw3bp4cok9fratsjdxd/melcoms_ffmpeg_audio_normalizer_v2_0_1.zip?rlkey=exgqwbcw5gooebt44fh14mqtn&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
                                 <p>Download v1.4: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v1_4.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://www.dropbox.com/scl/fi/nmtnsyhy85salr1pc5yve/melcoms_ffmpeg_audio_normalizer_v1_4.zip?rlkey=mcww1ikntj0c49i3eg7f69h57&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
-                                <p>Download v1.0: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v1_0.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://www.dropbox.com/scl/fi/ozpkp5qvbrqnf1qypfqw0/melcoms_ffmpeg_audio_normalizer_v1_0.zip?rlkey=prtkbc1amkkubkq3ua2m75aj6&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
                             </div>
                         </details>
                     </div>
