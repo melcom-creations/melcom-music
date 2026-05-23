@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
       'images/header/header-image07.png',
       'images/header/header-image12.png',
       'images/header/header-image14.png',
-	  'images/header/header-image15.png',
-	  'images/header/header-image16.png',
+      'images/header/header-image15.png',
+      'images/header/header-image16.png',
     ];
     const displayDuration = 10000;
     const fadeDuration = 1000;
@@ -53,21 +53,41 @@ document.addEventListener('DOMContentLoaded', function() {
     if (bannerElement) {
       let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
       if (currentIndex === -1) currentIndex = 0;
+      
+      // Bilder vorladen, damit sie beim Anzeigen sofort da sind
       banners.forEach(src => { (new Image()).src = src; });
 
-      function changeBanner() {
+      function cycleBanner() {
+        // 1. Banner unsichtbar machen (Fade-Out Start)
         bannerElement.style.opacity = 0;
+        
+        // 2. Warten, bis der CSS-Fade-Out (1 Sekunde) komplett fertig ist
         setTimeout(() => {
+          // Neues Bild per Zufall aussuchen (darf nicht das gleiche sein)
           let nextIndex;
           do {
             nextIndex = Math.floor(Math.random() * banners.length);
           } while (banners.length > 1 && nextIndex === currentIndex);
           currentIndex = nextIndex;
+          
+          // Bild-Quelle im Hintergrund tauschen
           bannerElement.src = banners[currentIndex];
-          bannerElement.style.opacity = 1;
+          
+          // 3. Einen winzigen Moment warten, damit der Browser das Bild sicher ins HTML geladen hat
+          setTimeout(() => {
+            // Banner wieder sichtbar machen (Fade-In Start)
+            bannerElement.style.opacity = 1;
+            
+            // 4. Den nächsten Wechsel erst in 10 Sekunden einplanen
+            setTimeout(cycleBanner, displayDuration);
+            
+          }, 50); // 50 Millisekunden Puffer gegen "Flackern"
+          
         }, fadeDuration);
       }
-      setInterval(changeBanner, displayDuration);
+      
+      // Den ersten Wechsel starten (nach 10 Sekunden)
+      setTimeout(cycleBanner, displayDuration);
     }
 
 /* === 3. IMAGE LIGHTBOX / MODAL === */
