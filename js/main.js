@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
       setInterval(changeBanner, displayDuration);
     }
 
-    /* === 3. IMAGE LIGHTBOX / MODAL === */
+/* === 3. IMAGE LIGHTBOX / MODAL === */
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".modal-close");
@@ -77,22 +77,37 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modal && modalImg && closeBtn) {
         imageLinks.forEach(link => {
           link.addEventListener('click', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Verhindert das Öffnen im neuen Tab
             modal.style.display = "block";
             modalImg.src = this.href;
             modalImg.alt = this.querySelector('img').alt;
+            
+            // Scrollen der Webseite im Hintergrund sperren
+            document.body.style.overflow = "hidden"; 
           });
         });
 
         function closeModal() {
           modal.style.display = "none";
+          
+          // Scrollen der Webseite wieder erlauben
+          document.body.style.overflow = "auto"; 
         }
+        
         closeBtn.onclick = closeModal;
+        
         modal.onclick = function(event) {
           if (event.target === modal) {
             closeModal();
           }
-        }
+        };
+
+        // Bild auch mit der ESC-Taste schließen lassen
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.style.display === "block") {
+                closeModal();
+            }
+        });
     }
     
     /* === 4. IMPRINT REVEAL === */
