@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'images/header/header-image12.png',
       'images/header/header-image14.png',
 	  'images/header/header-image15.png',
+	  'images/header/header-image16.png',
     ];
     const displayDuration = 10000;
     const fadeDuration = 1000;
