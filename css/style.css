@@ -1219,3 +1219,11 @@ body {
         padding-bottom: 160px;
     }
 }
+
+.info-banner {
+    min-height: 72px;
+}
+
+.info-banner-content {
+    min-height: 36px;
+}
