@@ -1,6 +1,29 @@
+/* ==========================================================================
+   melcom-music.de - Core Stylesheet
+   ==========================================================================
+   TABLE OF CONTENTS
+   ==========================================================================
+   1. GLOBAL STYLES & RESET
+   2. TYPOGRAPHY
+   3. LAYOUT STRUCTURE
+   4. HEADER & FOOTER
+   5. NAVIGATION
+   6. INTRO TEXT
+   7. SIDEBAR WIDGETS
+   8. MAIN CONTENT & POSTS
+   9. PAGE-SPECIFIC STYLES
+      - General Page Elements
+      - Links, Creations & Contact Pages
+      - Music & Albums Pages
+      - Track Details Layout
+   10. COMPONENTS & UTILITIES
+   11. IMAGE LIGHTBOX / MODAL
+   12. INFO BANNER
+   13. RESPONSIVE STYLES
+   ========================================================================== */
+
 /* =========================================================
-   melcom-music.de - Refactored Core Stylesheet
-   Final Compact Classic Edition v2
+   1. GLOBAL STYLES & RESET
    ========================================================= */
 
 :root {
@@ -14,10 +37,6 @@
 	--radius-default: 8px;
 	--transition-default: 0.3s ease;
 }
-
-/* =========================================================
-   RESET
-   ========================================================= */
 
 * {
 	box-sizing: border-box;
@@ -40,15 +59,10 @@ body {
 }
 
 /* =========================================================
-   TYPOGRAPHY
+   2. TYPOGRAPHY
    ========================================================= */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
 	color: var(--color-accent-primary);
 }
@@ -82,7 +96,7 @@ img {
 }
 
 /* =========================================================
-   MAIN LAYOUT
+   3. LAYOUT STRUCTURE
    ========================================================= */
 
 .container {
@@ -112,8 +126,15 @@ img {
 	flex-shrink: 0;
 }
 
+.two-column-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+	margin-top: 20px;
+}
+
 /* =========================================================
-   HEADER
+   4. HEADER & FOOTER
    ========================================================= */
 
 header {
@@ -126,21 +147,54 @@ header {
 	border-radius: var(--radius-default);
 }
 
+footer {
+	margin-top: 0;
+	padding: 20px;
+	background: transparent;
+	border-top: 1px solid #3a3a3a;
+	border-radius: 0;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 120px;
+	text-align: center;
+}
+
+.footer-left,
+.footer-right {
+	width: auto;
+}
+
+.footer-left img,
+.footer-right img {
+	display: block;
+	margin: 0 auto 12px auto;
+}
+
+.footer-left p,
+.footer-right p {
+	margin: 0;
+	line-height: 1.5;
+}
+
+.footer-right {
+	max-width: 600px;
+}
+
 /* =========================================================
-   NAVIGATION
+   5. NAVIGATION
    ========================================================= */
 
 nav {
 	margin-bottom: 0;
 	background: linear-gradient(to bottom, #323232, #2a2a2a);
 	padding: 12px 20px 0 20px;
-
     border-top: 1px solid rgba(255,255,255,0.03);
     border-bottom: 1px solid rgba(0,0,0,0.15);
-
-	box-shadow:
-		0 2px 8px rgba(0,0,0,0.35),
-		inset 0 1px 0 rgba(255,255,255,0.04);
+	box-shadow: 0 2px 8px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 .nav-container {
@@ -149,22 +203,11 @@ nav {
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-
 	padding: 14px 16px;
-
-	background:
-		linear-gradient(
-			to bottom,
-			rgba(58,58,58,0.95),
-			rgba(43,43,43,0.98)
-		);
-
+	background: linear-gradient(to bottom, rgba(58,58,58,0.95), rgba(43,43,43,0.98));
 	border: 1px solid #3d3d3d;
 	border-radius: var(--radius-default);
-
-	box-shadow:
-		0 4px 12px rgba(0,0,0,0.35),
-		inset 0 1px 0 rgba(255,255,255,0.03);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
 }
 
 .separator {
@@ -183,8 +226,7 @@ nav {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	line-height: 1;
-	transition: background-color var(--transition-default),
-        color var(--transition-default);
+	transition: background-color var(--transition-default), color var(--transition-default);
 }
 
 .nav-button:hover,
@@ -226,10 +268,6 @@ nav {
 .nav-dropdown:hover .nav-dropdown-content {
 	display: block;
 }
-
-/* =========================================================
-   PAGE DROPDOWN
-   ========================================================= */
 
 .page-dropdown-btn {
 	border: none;
@@ -283,7 +321,7 @@ nav {
 }
 
 /* =========================================================
-   INTRO TEXT
+   6. INTRO TEXT
    ========================================================= */
 
 .intro-text {
@@ -294,7 +332,7 @@ nav {
 }
 
 /* =========================================================
-   SIDEBAR
+   7. SIDEBAR WIDGETS
    ========================================================= */
 
 .widget {
@@ -323,10 +361,6 @@ nav {
 	margin: 0 auto 10px auto;
 }
 
-/* =========================================================
-   SOCIAL MEDIA
-   ========================================================= */
-
 .social-icons {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -341,8 +375,7 @@ nav {
 	padding: 5px;
 	background-color: var(--color-bg-secondary);
 	border-radius: 4px;
-	transition: transform var(--transition-default),
-        background-color var(--transition-default);
+	transition: transform var(--transition-default), background-color var(--transition-default);
 }
 
 .social-icons a:hover {
@@ -357,7 +390,7 @@ nav {
 }
 
 /* =========================================================
-   POSTS / NEWS
+   8. MAIN CONTENT & POSTS
    ========================================================= */
 
 .post {
@@ -437,9 +470,17 @@ nav {
 	margin: 30px 0;
 }
 
-/* =========================================================
-   ARCHIVE LINK
-   ========================================================= */
+.music-post {
+	margin-bottom: 55px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #2e2e2e;
+}
+
+.music-post:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
 
 .archive-link {
 	margin-top: 35px;
@@ -454,50 +495,10 @@ nav {
 }
 
 /* =========================================================
-   FOOTER
+   9. PAGE-SPECIFIC STYLES
    ========================================================= */
 
-footer {
-	margin-top: 0;
-	padding: 20px;
-	background: transparent;
-	border-top: 1px solid #3a3a3a;
-	border-radius: 0;
-}
-
-.footer-content {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	gap: 120px;
-	text-align: center;
-}
-
-.footer-left,
-.footer-right {
-	width: auto;
-}
-
-.footer-left img,
-.footer-right img {
-	display: block;
-	margin: 0 auto 12px auto;
-}
-
-.footer-left p,
-.footer-right p {
-	margin: 0;
-	line-height: 1.5;
-}
-
-.footer-right {
-	max-width: 600px;
-}
-
-/* =========================================================
-   MUSIC PAGE
-   ========================================================= */
-
+/* --- General Page Elements --- */
 .page-header {
 	display: flex;
 	justify-content: space-between;
@@ -527,14 +528,149 @@ footer {
 	line-height: 1.7;
 }
 
+/* --- Links, Creations & Contact Pages --- */
+.link-box,
+.contact-box,
+.special-note {
+	margin-bottom: 28px;
+	background: #262626;
+	border: 1px solid #343434;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+.link-box-title,
+.contact-box-title,
+.special-note h3 {
+	margin: 0;
+	padding: 12px 18px;
+	background: linear-gradient(to right, #2d2d2d, #343434);
+	color: #6ec6ff;
+	font-size: 1.12rem;
+	font-weight: bold;
+	text-transform: capitalize;
+	border-bottom: 1px solid #3a3a3a;
+	line-height: 1.15;
+}
+
+.link-list {
+	margin: 0;
+	padding: 18px 28px 18px 40px;
+	list-style-type: disc;
+}
+
+.link-list li {
+	margin-bottom: 2px;
+	line-height: 1.45;
+	color: #d6d6d6;
+}
+
+.link-list li:last-child {
+	margin-bottom: 0;
+}
+
+.link-list a {
+	color: #5ecbff;
+	text-decoration: none;
+}
+
+.link-list a:hover {
+	color: #9edcff;
+	text-decoration: underline;
+}
+
+.screenshot-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 18px;
+	margin-top: 18px;
+	margin-bottom: 30px;
+}
+
+.screenshot-grid.single {
+	grid-template-columns: 1fr;
+	max-width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.screenshot-card {
+	background: #2d2d2d;
+	border: 1px solid #3a3a3a;
+	border-radius: 10px;
+	padding: 14px;
+	text-align: center;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.screenshot-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.screenshot-card img {
+	width: 100%;
+	height: auto;
+	border-radius: 6px;
+	display: block;
+	margin-bottom: 14px;
+}
+
+.screenshot-card p {
+	margin: 0;
+	color: #e0e0e0;
+	font-size: 0.96rem;
+}
+
+.contact-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.contact-table td {
+	padding: 7px 10px;
+	border-bottom: 1px solid #343434;
+	vertical-align: top;
+	line-height: 1.35;
+}
+
+.contact-table tr:last-child td {
+	border-bottom: none;
+}
+
+.contact-table td:first-child {
+	width: 52px;
+	text-align: center;
+}
+
+.contact-table td:nth-child(2) {
+	width: 180px;
+	font-weight: bold;
+	color: #f0f0f0;
+}
+
+.icon-cell img {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+	margin: 0 auto;
+}
+
+.special-note p {
+	margin: 0;
+	padding: 18px;
+	line-height: 1.7;
+}
+
+/* --- Music & Albums Pages --- */
 .content-box {
 	background: linear-gradient(to bottom, #252525, #222222);
 	border-radius: 10px;
 	overflow: hidden;
 	border: 1px solid #343434;
-	box-shadow:
-		0 2px 12px rgba(0,0,0,0.22),
-		inset 0 1px 0 rgba(255,255,255,0.02);
+	box-shadow: 0 2px 12px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.02);
 	margin-bottom: 28px;
 }
 
@@ -588,9 +724,7 @@ footer {
 	line-height: 1.3;
 	color: #d8d8d8;
 	background: transparent;
-	transition:
-		background-color 0.2s ease,
-		color 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .album-table tr:hover td {
@@ -628,10 +762,7 @@ footer {
 	color: #d6d6d6;
 }
 
-/* =========================================================
-   TRACK LAYOUT
-   ========================================================= */
-
+/* --- Track Details Layout --- */
 .track-image-link {
 	display: block;
 	text-align: center;
@@ -645,22 +776,13 @@ footer {
 	margin: 0 auto;
 	border-radius: 6px;
 	display: inline-block;
-
 	box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-
-	transition:
-		transform 0.28s ease,
-		box-shadow 0.28s ease,
-		filter 0.28s ease;
+	transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
 }
 
 .track-image-link img:hover {
 	transform: translateY(-6px) scale(1.015);
-
-	box-shadow:
-		0 10px 24px rgba(0,0,0,0.45),
-		0 0 12px rgba(0,191,255,0.10);
-
+	box-shadow: 0 10px 24px rgba(0,0,0,0.45), 0 0 12px rgba(0,191,255,0.10);
 	filter: brightness(1.04);
 }
 
@@ -678,24 +800,14 @@ footer {
 	border-radius: 8px;
 	padding: 14px 18px;
 	line-height: 1.45;
-
-	box-shadow:
-		inset 0 1px 0 rgba(255,255,255,0.025),
-		0 1px 6px rgba(0,0,0,0.18);
-
-	transition:
-		transform 0.25s ease,
-		border-color 0.25s ease,
-		box-shadow 0.25s ease;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.025), 0 1px 6px rgba(0,0,0,0.18);
+	transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .info-card:hover {
 	transform: translateY(-2px);
 	border-color: #4b4b4b;
-
-	box-shadow:
-		inset 0 1px 0 rgba(255,255,255,0.03),
-		0 4px 14px rgba(0,0,0,0.22);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), 0 4px 14px rgba(0,0,0,0.22);
 }
 
 .info-card h3 {
@@ -737,7 +849,7 @@ footer {
 }
 
 /* =========================================================
-   TABLES
+   10. COMPONENTS & UTILITIES
    ========================================================= */
 
 table {
@@ -745,8 +857,7 @@ table {
 	border-collapse: collapse;
 }
 
-th,
-td {
+th, td {
 	padding: 10px;
 	border: 1px solid var(--color-border);
 }
@@ -754,229 +865,6 @@ td {
 th {
 	background-color: var(--color-bg-secondary);
 }
-
-/* =========================================================
-   MODAL
-   ========================================================= */
-
-.image-modal {
-	display: none;
-	position: fixed;
-	z-index: 99999;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.95);
-}
-
-.modal-content {
-	display: block;
-	max-width: 90%;
-	max-height: 90%;
-	margin: 5% auto;
-}
-
-.modal-close {
-	position: absolute;
-	top: 20px;
-	right: 40px;
-	font-size: 40px;
-	color: white;
-	cursor: pointer;
-}
-
-/* =========================================================
-   BACK TO TOP
-   ========================================================= */
-
-#myBtn {
-	display: none;
-	position: fixed;
-	bottom: 20px;
-	right: calc((100% - 1200px) / 2 - 40px);
-	z-index: 99;
-	border: none;
-	outline: none;
-	background-color: transparent;
-	cursor: pointer;
-	padding: 0;
-	border-radius: 4px;
-	transition: opacity 0.3s;
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1000px) {
-
-	.main-content {
-		flex-direction: column;
-	}
-
-	.sidebar {
-		width: 100%;
-	}
-
-	.post-image {
-		float: none;
-		width: 100%;
-		margin-right: 0;
-	}
-}
-
-@media (max-width: 700px) {
-
-	.container {
-		padding: 10px;
-	}
-
-	.nav-container {
-		flex-direction: column;
-	}
-
-	.separator {
-		display: none;
-	}
-
-	.nav-button,
-    .nav-dropbtn,
-    .page-dropdown-btn {
-		width: 100%;
-	}
-
-	.nav-dropdown-content {
-		position: static;
-		width: 100%;
-	}
-
-	.year-dropdown-multi-column {
-		position: static;
-		width: 100%;
-		flex-direction: column;
-	}
-
-	.footer-content {
-		flex-direction: column;
-	}
-
-	.post {
-		padding: 18px;
-	}
-
-	.page-header {
-		flex-direction: column;
-	}
-
-	.info-grid {
-		flex-direction: column;
-	}
-}
-
-/* =========================================================
-   LINKS PAGE
-   ========================================================= */
-
-.link-box {
-	margin-bottom: 28px;
-	background: #262626;
-	border: 1px solid #343434;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-}
-
-.link-box-title {
-	margin: 0;
-	padding: 12px 18px;
-	background: linear-gradient(to right, #2d2d2d, #343434);
-	color: #6ec6ff;
-	font-size: 1.12rem;
-	font-weight: bold;
-	text-transform: capitalize;
-	border-bottom: 1px solid #3a3a3a;
-	line-height: 1.15;
-}
-
-.link-list {
-	margin: 0;
-	padding: 18px 28px 18px 40px;
-	list-style-type: disc;
-}
-
-.link-list li {
-	margin-bottom: 2px;
-	line-height: 1.45;
-	color: #d6d6d6;
-}
-
-.link-list li:last-child {
-	margin-bottom: 0;
-}
-
-.link-list a {
-	color: #5ecbff;
-	text-decoration: none;
-}
-
-.link-list a:hover {
-	color: #9edcff;
-	text-decoration: underline;
-}
-
-/* =========================================================
-   CREATIONS PAGE
-   ========================================================= */
-
-.screenshot-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	gap: 18px;
-	margin-top: 18px;
-	margin-bottom: 30px;
-}
-
-.screenshot-grid.single {
-	grid-template-columns: 1fr;
-	max-width: 420px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.screenshot-card {
-	background: #2d2d2d;
-	border: 1px solid #3a3a3a;
-	border-radius: 10px;
-	padding: 14px;
-	text-align: center;
-	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-	transition: transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.screenshot-card:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-}
-
-.screenshot-card img {
-	width: 100%;
-	height: auto;
-	border-radius: 6px;
-	display: block;
-	margin-bottom: 14px;
-}
-
-.screenshot-card p {
-	margin: 0;
-	color: #e0e0e0;
-	font-size: 0.96rem;
-}
-
-/* =========================================================
-   DOWNLOAD BUTTONS
-   ========================================================= */
 
 .button-group {
 	display: flex;
@@ -994,18 +882,13 @@ th {
 	border-radius: 8px;
 	color: #dfefff;
 	text-decoration: none;
-	transition: background 0.25s ease,
-        transform 0.25s ease;
+	transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .download-button:hover {
 	background: #3a3a3a;
 	transform: translateY(-2px);
 }
-
-/* =========================================================
-   ACCORDION
-   ========================================================= */
 
 .accordion {
 	margin-top: 16px;
@@ -1022,122 +905,90 @@ th {
 	padding-top: 10px;
 }
 
-/* =========================================================
-   TWO COLUMN LAYOUT
-   ========================================================= */
-
-.two-column-layout {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 30px;
-	margin-top: 20px;
-}
-
-@media (max-width: 900px) {
-
-	.two-column-layout {
-		grid-template-columns: 1fr;
-	}
-
-	.screenshot-grid {
-		grid-template-columns: 1fr;
-	}
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: calc((100% - 1200px) / 2 - 40px);
+	z-index: 99;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	border-radius: 4px;
+	transition: opacity 0.3s;
 }
 
 /* =========================================================
-   TRACK / ALBUM SEPARATORS
+   11. IMAGE LIGHTBOX / MODAL
    ========================================================= */
 
-.music-post {
-	margin-bottom: 55px;
-	padding-bottom: 40px;
-	border-bottom: 1px solid #2e2e2e;
-}
-
-.music-post:last-child {
-	border-bottom: none;
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
-
-/* =========================================================
-   CONTACT PAGE
-   ========================================================= */
-
-.contact-box,
-.special-note {
-	margin-bottom: 28px;
-	background: #262626;
-	border: 1px solid #343434;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-}
-
-.contact-box-title,
-.special-note h3 {
-	margin: 0;
-	padding: 12px 18px;
-	background: linear-gradient(to right, #2d2d2d, #343434);
-	color: #6ec6ff;
-	font-size: 1.12rem;
-	font-weight: bold;
-	border-bottom: 1px solid #3a3a3a;
-	line-height: 1.15;
-}
-
-.contact-table {
+.image-modal {
+	display: none; /* Versteckt, bis JS es aufruft */
+	position: fixed;
+	z-index: 9999999; /* Sitzt garantiert über allem (auch dem Cookie-Banner) */
+	padding-top: 60px; /* Abstand von oben wie im alten Original */
+	left: 0;
+	top: 0;
 	width: 100%;
-	border-collapse: collapse;
+	height: 100%;
+	overflow: auto; /* Erlaubt Scrollen, falls das Bild sehr groß ist */
+	background-color: rgba(0, 0, 0, 0.85); /* Dein originaler abgedunkelter Hintergrund */
 }
 
-.contact-table td {
-	padding: 7px 10px;
-	border-bottom: 1px solid #343434;
-	vertical-align: top;
-	line-height: 1.35;
+/* Modal Content (das eigentliche Bild) */
+.modal-content {
+	margin: auto;
+	display: block;
+	max-width: 90%;
+	max-height: 85vh; /* Passt sich perfekt der Bildschirmhöhe an */
+	border-radius: 4px;
+	animation-name: zoom;
+	animation-duration: 0.4s;
 }
 
-.contact-table tr:last-child td {
-	border-bottom: none;
+/* Die alte, schöne Zoom-Animation */
+@keyframes zoom {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
 }
 
-.contact-table td:first-child {
-	width: 52px;
-	text-align: center;
-}
-
-.contact-table td:nth-child(2) {
-	width: 180px;
+/* Das 'X' zum Schließen */
+.modal-close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
 	font-weight: bold;
-	color: #f0f0f0;
+	cursor: pointer;
+	transition: color 0.3s ease;
 }
 
-.icon-cell img {
-	width: 20px;
-	height: 20px;
-	object-fit: contain;
-	margin: 0 auto;
-}
-
-.special-note p {
-	margin: 0;
-	padding: 18px;
-	line-height: 1.7;
+.modal-close:hover,
+.modal-close:focus {
+	color: #bbb;
+	text-decoration: none;
 }
 
 /* =========================================================
-   INFO BANNER FIX
+   12. INFO BANNER
    ========================================================= */
 
 .info-banner {
-    display: none;
+    display: none; /* Fixed the visual glitch on reload */
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 999999;
     width: 100%;
+    min-height: 72px;
     padding: 18px 24px;
     background: rgba(28, 28, 28, 0.98);
     border-top: 1px solid #3a3a3a;
@@ -1151,6 +1002,7 @@ th {
     gap: 20px;
     flex-wrap: wrap;
     max-width: 1200px;
+    min-height: 36px;
     margin: 0 auto;
 }
 
@@ -1208,7 +1060,69 @@ body {
     padding-bottom: 90px;
 }
 
+/* =========================================================
+   13. RESPONSIVE STYLES
+   ========================================================= */
+
+@media (max-width: 1000px) {
+	.main-content {
+		flex-direction: column;
+	}
+	.sidebar {
+		width: 100%;
+	}
+	.post-image {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 900px) {
+	.two-column-layout {
+		grid-template-columns: 1fr;
+	}
+	.screenshot-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
 @media (max-width: 700px) {
+	.container {
+		padding: 10px;
+	}
+	.nav-container {
+		flex-direction: column;
+	}
+	.separator {
+		display: none;
+	}
+	.nav-button,
+    .nav-dropbtn,
+    .page-dropdown-btn {
+		width: 100%;
+	}
+	.nav-dropdown-content {
+		position: static;
+		width: 100%;
+	}
+	.year-dropdown-multi-column {
+		position: static;
+		width: 100%;
+		flex-direction: column;
+	}
+	.footer-content {
+		flex-direction: column;
+	}
+	.post {
+		padding: 18px;
+	}
+	.page-header {
+		flex-direction: column;
+	}
+	.info-grid {
+		flex-direction: column;
+	}
     .info-banner-content {
         flex-direction: column;
         align-items: flex-start;
@@ -1219,12 +1133,4 @@ body {
     body {
         padding-bottom: 160px;
     }
-}
-
-.info-banner {
-    min-height: 72px;
-}
-
-.info-banner-content {
-    min-height: 36px;
 }
