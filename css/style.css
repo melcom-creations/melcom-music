@@ -836,16 +836,40 @@ nav {
 	border-bottom: none;
 }
 
+/* --- Video Presentation Section --- */
+
+.video-section {
+	margin-top: 26px;
+	padding: 18px;
+	background: linear-gradient(to bottom, #262626, #202020);
+	border: 1px solid #343434;
+	border-radius: 10px;
+	box-shadow:
+		0 4px 14px rgba(0,0,0,0.28),
+		inset 0 1px 0 rgba(255,255,255,0.025);
+}
+
+.video-section-title {
+	margin: 0 0 16px 0;
+	color: #6ec6ff;
+	font-size: 1.08rem;
+	letter-spacing: 0.3px;
+	line-height: 1.2;
+}
+
 .video-wrapper {
-	padding: 20px;
-	padding-top: 0;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow:
+		0 8px 22px rgba(0,0,0,0.38),
+		0 0 14px rgba(0,191,255,0.08);
 }
 
 .video-wrapper iframe {
+	display: block;
 	width: 100%;
 	aspect-ratio: 16 / 9;
 	border: none;
-	border-radius: 8px;
 }
 
 /* =========================================================
