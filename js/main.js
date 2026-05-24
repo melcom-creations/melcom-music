@@ -1,19 +1,19 @@
 /* ==========================================================================
-   TABLE OF CONTENTS
+   MAIN JAVASCRIPT
    ==========================================================================
-   1. "BACK TO TOP" BUTTON
-   2. HEADER BANNER FADER
-   3. IMAGE LIGHTBOX / MODAL
-   4. IMPRINT REVEAL
-   5. STATCOUNTER TRACKING & INFO BANNER
+   1. Back to Top Button
+   2. Header Banner Fader
+   3. Image Lightbox & Thumbnail Gallery
+   4. Imprint Reveal
+   5. Analytics Tracking & Cookie Consent Banner
    ========================================================================== */
 
-
-/* === 1. "BACK TO TOP" BUTTON === */
+/* --- 1. Back to Top Button --- */
 var mybutton = document.getElementById("myBtn");
 
 function scrollFunction() {
     if (mybutton) {
+        // Display the button after scrolling down 20 pixels
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             mybutton.style.display = "block";
         } else {
@@ -22,6 +22,7 @@ function scrollFunction() {
     }
 }
 
+// Scroll smoothly to the top of the document
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -29,102 +30,136 @@ function topFunction() {
 
 window.onscroll = scrollFunction;
 
-
-/* 
-   The following scripts are wrapped in a DOMContentLoaded event listener.
-   This ensures they only run after the entire HTML document has been loaded and parsed.
-*/
+/* --- DOMContentLoaded Wrapper --- */
+// Ensure all scripts run only after the DOM is fully parsed and loaded
 document.addEventListener('DOMContentLoaded', function() {
 
-    /* === 2. HEADER BANNER FADER === */
+    /* --- 2. Header Banner Fader --- */
     const banners = [
-      'images/header/header-image03.png',
-      'images/header/header-image04.png',
-      'images/header/header-image07.png',
-      'images/header/header-image12.png',
-      'images/header/header-image14.png',
-      'images/header/header-image15.png',
-      'images/header/header-image16.png',
+        'images/header/header-image03.png',
+        'images/header/header-image04.png',
+        'images/header/header-image07.png',
+        'images/header/header-image12.png',
+        'images/header/header-image14.png',
+        'images/header/header-image15.png',
+        'images/header/header-image16.png',
     ];
     const displayDuration = 10000;
     const fadeDuration = 1000;
     const bannerElement = document.getElementById('header-banner');
     
     if (bannerElement) {
-      let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
-      if (currentIndex === -1) currentIndex = 0;
-      
-      // Bilder vorladen, damit sie beim Anzeigen sofort da sind
-      banners.forEach(src => { (new Image()).src = src; });
-
-      function cycleBanner() {
-        // 1. Banner unsichtbar machen (Fade-Out Start)
-        bannerElement.style.opacity = 0;
+        let currentIndex = banners.findIndex(path => bannerElement.src.includes(path));
+        if (currentIndex === -1) currentIndex = 0;
         
-        // 2. Warten, bis der CSS-Fade-Out (1 Sekunde) komplett fertig ist
-        setTimeout(() => {
-          // Neues Bild per Zufall aussuchen (darf nicht das gleiche sein)
-          let nextIndex;
-          do {
-            nextIndex = Math.floor(Math.random() * banners.length);
-          } while (banners.length > 1 && nextIndex === currentIndex);
-          currentIndex = nextIndex;
-          
-          // Bild-Quelle im Hintergrund tauschen
-          bannerElement.src = banners[currentIndex];
-          
-          // 3. Einen winzigen Moment warten, damit der Browser das Bild sicher ins HTML geladen hat
-          setTimeout(() => {
-            // Banner wieder sichtbar machen (Fade-In Start)
-            bannerElement.style.opacity = 1;
+        // Preload images to prevent flickering during transitions
+        banners.forEach(src => { (new Image()).src = src; });
+
+        function cycleBanner() {
+            // Initiate fade-out by setting opacity to 0
+            bannerElement.style.opacity = 0;
             
-            // 4. Den nächsten Wechsel erst in 10 Sekunden einplanen
-            setTimeout(cycleBanner, displayDuration);
-            
-          }, 50); // 50 Millisekunden Puffer gegen "Flackern"
-          
-        }, fadeDuration);
-      }
-      
-      // Den ersten Wechsel starten (nach 10 Sekunden)
-      setTimeout(cycleBanner, displayDuration);
+            // Wait for the CSS transition to complete before changing the source
+            setTimeout(() => {
+                let nextIndex;
+                // Select a random next banner that is different from the current one
+                do {
+                    nextIndex = Math.floor(Math.random() * banners.length);
+                } while (banners.length > 1 && nextIndex === currentIndex);
+                
+                currentIndex = nextIndex;
+                bannerElement.src = banners[currentIndex];
+                
+                // Allow a brief moment for the DOM to update before fading back in
+                setTimeout(() => {
+                    bannerElement.style.opacity = 1;
+                    setTimeout(cycleBanner, displayDuration);
+                }, 50);
+                
+            }, fadeDuration);
+        }
+        
+        // Start the cycle after the initial display duration
+        setTimeout(cycleBanner, displayDuration);
     }
 
-/* === 3. IMAGE LIGHTBOX / MODAL === */
+    /* --- 3. Image Lightbox & Thumbnail Gallery --- */
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".modal-close");
     const imageLinks = document.querySelectorAll('.track-image-link');
+    const modalThumbnails = document.getElementById("modalThumbnails");
 
     if (modal && modalImg && closeBtn) {
         imageLinks.forEach(link => {
-          link.addEventListener('click', function(event) {
-            event.preventDefault(); // Verhindert das Öffnen im neuen Tab
-            modal.style.display = "block";
-            modalImg.src = this.href;
-            modalImg.alt = this.querySelector('img').alt;
-            
-            // Scrollen der Webseite im Hintergrund sperren
-            document.body.style.overflow = "hidden"; 
-          });
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); 
+                
+                // Dynamically build the thumbnail navigation if applicable
+                if (modalThumbnails) {
+                    modalThumbnails.innerHTML = ''; 
+                    
+                    // Identify the parent container to group related images
+                    const parentGroup = this.closest('.screenshot-grid');
+                    
+                    if (parentGroup) {
+                        const galleryLinks = parentGroup.querySelectorAll('.track-image-link');
+                        
+                        // Only display the thumbnail strip if there are multiple images
+                        if (galleryLinks.length > 1) {
+                            galleryLinks.forEach(galLink => {
+                                const thumbImg = document.createElement('img');
+                                thumbImg.src = galLink.querySelector('img').src; 
+                                thumbImg.alt = galLink.querySelector('img').alt;
+                                
+                                // Highlight the currently selected thumbnail
+                                if (galLink === this) {
+                                    thumbImg.classList.add('active-thumb');
+                                }
+                                
+                                // Handle thumbnail clicks to swap the main modal image
+                                thumbImg.addEventListener('click', function(e) {
+                                    e.stopPropagation(); 
+                                    
+                                    modalImg.src = galLink.href; 
+                                    modalImg.alt = galLink.querySelector('img').alt;
+                                    
+                                    // Update active state styling
+                                    modalThumbnails.querySelectorAll('img').forEach(img => img.classList.remove('active-thumb'));
+                                    this.classList.add('active-thumb');
+                                });
+                                
+                                modalThumbnails.appendChild(thumbImg);
+                            });
+                        }
+                    }
+                }
+
+                // Open the modal and set the initial image
+                modal.style.display = "block";
+                modalImg.src = this.href;
+                modalImg.alt = this.querySelector('img').alt;
+                
+                // Prevent background scrolling while modal is open
+                document.body.style.overflow = "hidden"; 
+            });
         });
 
         function closeModal() {
-          modal.style.display = "none";
-          
-          // Scrollen der Webseite wieder erlauben
-          document.body.style.overflow = "auto"; 
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; 
         }
         
         closeBtn.onclick = closeModal;
         
+        // Close modal when clicking outside the main image (on the backdrop or thumbnail container)
         modal.onclick = function(event) {
-          if (event.target === modal) {
-            closeModal();
-          }
+            if (event.target === modal || event.target === modalThumbnails) {
+                closeModal();
+            }
         };
 
-        // Bild auch mit der ESC-Taste schließen lassen
+        // Allow closing the modal using the Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape" && modal.style.display === "block") {
                 closeModal();
@@ -132,21 +167,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    /* === 4. IMPRINT REVEAL === */
+    /* --- 4. Imprint Reveal --- */
     const requestDiv = document.getElementById('imprint-request');
     const detailsDiv = document.getElementById('imprint-details');
     const requestBtn = document.getElementById('imprint-request-btn');
 
-    if(requestBtn) {
+    if (requestBtn) {
+        // Swap visibility states to reveal detailed imprint information
         requestBtn.addEventListener('click', function() {
-            if(requestDiv) { requestDiv.style.display = 'none'; }
-            if(detailsDiv) { detailsDiv.style.display = 'block'; }
+            if (requestDiv) { requestDiv.style.display = 'none'; }
+            if (detailsDiv) { detailsDiv.style.display = 'block'; }
         });
     }
 
-    /* === 5. STATCOUNTER TRACKING & INFO BANNER === */
+    /* --- 5. Analytics Tracking & Cookie Consent Banner --- */
     
-    // Function to load the standard Statcounter script.
+    // Asynchronously load the Statcounter tracking script
     function loadStatcounter() {
         window.sc_project = 13174008;
         window.sc_invisible = 1;
@@ -157,10 +193,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(scScript);
     }
 
-    // Start tracking immediately on page load.
     loadStatcounter();
 
-    // The rest of the script manages the info banner's visibility.
     const BANNER_COOKIE_NAME = 'melcom_info_banner_dismissed';
     const infoBanner = document.getElementById('info-banner');
     const dismissBtn = document.getElementById('btn-dismiss-banner');
@@ -168,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const learnMoreLink = document.getElementById('info-banner-learn-more');
 
     if (infoBanner && dismissBtn && bannerText && learnMoreLink) {
+        // Define localized texts for the consent banner
         const translations = {
             en: {
                 text: 'This website uses an analytics service to understand which content is popular. By continuing to use this site, you agree to this.',
@@ -185,29 +220,31 @@ document.addEventListener('DOMContentLoaded', function() {
             let expires = "";
             if (days) {
                 const date = new Date();
-                date.setTime(date.getTime() + (days*24*60*60*1000));
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
                 expires = "; expires=" + date.toUTCString();
             }
-            document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
         }
 
         function getCookie(name) {
             const nameEQ = name + "=";
             const ca = document.cookie.split(';');
-            for(let i=0; i < ca.length; i++) {
+            for(let i = 0; i < ca.length; i++) {
                 let c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1,c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
             }
             return null;
         }
         
         const isDismissed = getCookie(BANNER_COOKIE_NAME) === 'true';
 
+        // Display banner if the user hasn't dismissed it previously
         if (!isDismissed) {
             const userLang = navigator.language || navigator.userLanguage; 
             const lang = userLang.startsWith('de') ? 'de' : 'en';
 
+            // Apply translations based on user's browser language
             bannerText.innerHTML = translations[lang].text;
             learnMoreLink.textContent = translations[lang].learnMore;
             dismissBtn.textContent = translations[lang].dismiss;
@@ -215,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
             infoBanner.style.display = 'block';
         }
         
+        // Handle banner dismissal and set the consent cookie for 1 year
         dismissBtn.addEventListener('click', function() {
             setCookie(BANNER_COOKIE_NAME, 'true', 365);
             infoBanner.style.display = 'none';
