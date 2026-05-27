@@ -51,9 +51,8 @@ body {
 	padding: 0;
 	background-color: var(--color-bg-primary);
 	background-image: url('../images/background-main.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center top;
+	background-repeat: repeat;
+	background-position: top center;
 	background-attachment: fixed;
 	color: var(--color-text-primary);
 	font-family: Arial, Helvetica, sans-serif;
