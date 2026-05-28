@@ -533,11 +533,19 @@ nav {
 }
 
 .page-intro {
-	margin-top: 0;
-	margin-bottom: 28px;
+	margin-top: 20px;               /* Collapses with .page-header to create a clean 20px top gap */
+	margin-bottom: 20px;            /* Symmetrical 20px bottom gap */
 	text-align: center;
 	font-size: 1.05rem;
 	line-height: 1.7;
+	max-width: 850px;               /* Limits line length for optimal, comfortable reading */
+	margin-left: auto;              /* Centers the text block container */
+	margin-right: auto;
+}
+
+/* Perfectly balances the spacing when the separator line follows the introduction */
+.page-intro + .post-separator {
+	margin-top: 0;                  /* Prevents margin stacking, keeping the bottom gap exactly 20px */
 }
 
 /* --- Links, Creations & Contact Pages --- */
