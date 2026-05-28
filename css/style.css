@@ -27,15 +27,15 @@
    ========================================================= */
 
 :root {
-	--color-bg-primary: #1b1b1b;
-	--color-bg-secondary: #2b2b2b;
-	--color-text-primary: #e0e0e0;
-	--color-accent-primary: #00bfff;
-	--color-accent-hover: #33ccff;
-	--color-border: #3a3a3a;
-	--shadow-default: 0 4px 8px rgba(0, 0, 0, 0.3);
+	--color-bg-primary: #1e1e1e;       /* Modern dark gray background (matching the guide) */
+	--color-bg-secondary: #222222;     /* Flat content boxes background */
+	--color-text-primary: #d0d0d0;     /* Muted white/gray text */
+	--color-accent-primary: #00b7ff;    /* Vibrant flat cyan/blue accent */
+	--color-accent-hover: #4bd1ca;      /* Aquamarine on hover */
+	--color-border: #3a3a3a;           /* Flat subtle border */
+	--shadow-default: 0 10px 20px rgba(0, 0, 0, 0.4);
 	--radius-default: 8px;
-	--transition-default: 0.3s ease;
+	--transition-default: 0.25s ease;
 }
 
 * {
@@ -56,6 +56,7 @@ body {
 	color: var(--color-text-primary);
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1.55;
+	padding-bottom: 30px;
 }
 
 /* =========================================================
@@ -104,8 +105,10 @@ img {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0;
-	background: #292929;
-	box-shadow: 0 0 0 1px #333;
+	background-color: #2b2b2b;        /* Lighter dark container */
+	box-shadow: 0 0 0 1px #3a3a3a, var(--shadow-default);
+	border-radius: var(--radius-default);
+	overflow: hidden;
 }
 
 .main-content {
@@ -139,12 +142,12 @@ img {
 
 header {
 	margin-bottom: 0;
-	background: #292929;
+	background: transparent;
 }
 
 #header-banner {
 	width: 100%;
-	border-radius: var(--radius-default);
+	border-radius: 0;
 	transition: opacity 1s ease-in-out;
 }
 
@@ -152,7 +155,7 @@ footer {
 	margin-top: 0;
 	padding: 20px;
 	background: transparent;
-	border-top: 1px solid #3a3a3a;
+	border-top: 1px solid var(--color-border);
 	border-radius: 0;
 }
 
@@ -186,16 +189,15 @@ footer {
 }
 
 /* =========================================================
-   5. NAVIGATION
+   5. NAVIGATION (Modern Flat Design)
    ========================================================= */
 
 nav {
 	margin-bottom: 0;
-	background: linear-gradient(to bottom, #323232, #2a2a2a);
-	padding: 12px 20px 0 20px;
-    border-top: 1px solid rgba(255,255,255,0.03);
-    border-bottom: 1px solid rgba(0,0,0,0.15);
-	box-shadow: 0 2px 8px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+	background: #1e1e1e;              /* Clean solid navigation background */
+	padding: 15px 20px;
+	border-top: 1px solid var(--color-border);
+	border-bottom: 1px solid var(--color-border);
 }
 
 .nav-container {
@@ -204,15 +206,15 @@ nav {
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-	padding: 14px 16px;
-	background: linear-gradient(to bottom, rgba(58,58,58,0.95), rgba(43,43,43,0.98));
-	border: 1px solid #3d3d3d;
+	padding: 10px 16px;
+	background-color: #161616;        /* Dark contrast background */
+	border: 1px solid var(--color-border);
 	border-radius: var(--radius-default);
-	box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+	box-shadow: var(--shadow-default);
 }
 
 .separator {
-	color: #777;
+	color: #555;
 }
 
 .nav-button,
@@ -234,7 +236,7 @@ nav {
 .nav-dropbtn:hover,
 .nav-active {
 	background-color: var(--color-accent-primary);
-	color: #000;
+	color: #121212;                   /* High contrast text on hover */
 }
 
 .nav-dropdown {
@@ -246,7 +248,8 @@ nav {
 	position: absolute;
 	z-index: 1000;
 	min-width: max-content;
-	background-color: var(--color-bg-secondary);
+	background-color: #161616;        /* Matches navigation container */
+	border: 1px solid var(--color-border);
 	border-radius: 6px;
 	overflow: hidden;
 	box-shadow: var(--shadow-default);
@@ -263,7 +266,8 @@ nav {
 }
 
 .nav-dropdown-content a:hover {
-	background-color: #333;
+	background-color: var(--color-accent-primary);
+	color: #121212;
 }
 
 .nav-dropdown:hover .nav-dropdown-content {
@@ -292,7 +296,8 @@ nav {
 	position: absolute;
 	right: 0;
 	z-index: 1000;
-	background-color: var(--color-bg-secondary);
+	background-color: #161616;
+	border: 1px solid var(--color-border);
 	border-radius: 6px;
 	box-shadow: var(--shadow-default);
 	padding: 10px;
@@ -318,7 +323,8 @@ nav {
 }
 
 .year-dropdown-multi-column a:hover {
-	background-color: #333;
+	background-color: var(--color-accent-primary);
+	color: #121212;
 }
 
 /* =========================================================
@@ -328,8 +334,8 @@ nav {
 .intro-text {
 	margin-bottom: 0;
 	padding: 20px 40px;
-	background: #292929;
-	border-bottom: 1px solid #3a3a3a;
+	background: transparent;
+	border-bottom: 1px solid var(--color-border);
 }
 
 /* =========================================================
@@ -338,7 +344,8 @@ nav {
 
 .widget {
 	margin-bottom: 18px;
-	background-color: #242424;
+	background-color: var(--color-bg-secondary);
+	border: 1px solid var(--color-border);
 	border-radius: var(--radius-default);
 	box-shadow: var(--shadow-default);
 	overflow: hidden;
@@ -347,10 +354,12 @@ nav {
 .widget-title {
 	margin: 0;
 	padding: 10px 12px;
-	background-color: var(--color-bg-secondary);
+	background-color: #161616;        /* Clean flat dark title background */
 	color: var(--color-accent-primary);
 	font-size: 14px;
 	text-align: center;
+	border-bottom: 1px solid var(--color-border);
+	font-weight: bold;
 }
 
 .text-center-widget {
@@ -374,14 +383,15 @@ nav {
 	align-items: center;
 	justify-content: center;
 	padding: 5px;
-	background-color: var(--color-bg-secondary);
+	background-color: #161616;
+	border: 1px solid var(--color-border);
 	border-radius: 4px;
 	transition: transform var(--transition-default), background-color var(--transition-default);
 }
 
 .social-icons a:hover {
 	transform: translateY(-2px);
-	background-color: #333;
+	background-color: var(--color-accent-primary);
 }
 
 .social-icons img {
@@ -436,15 +446,15 @@ nav {
 }
 
 .post-title a {
-	color: #00bfff;
+	color: var(--color-accent-primary);
 }
 
 .post-title a:hover {
-	color: #4dcfff;
+	color: var(--color-accent-hover);
 }
 
 .post h3 {
-	color: #00bfff;
+	color: var(--color-accent-primary);
 	margin-bottom: 14px;
 	line-height: 1.25;
 }
@@ -467,7 +477,7 @@ nav {
 .post-separator {
 	clear: both;
 	border: 0;
-	border-top: 1px solid #3a3a3a;
+	border-top: 1px solid var(--color-border);
 	margin: 30px 0;
 }
 
@@ -492,11 +502,17 @@ nav {
 	display: inline-block;
 	padding: 10px 18px;
 	background-color: var(--color-bg-secondary);
+	border: 1px solid var(--color-border);
 	border-radius: 6px;
 }
 
+.box-content div[style*="clear"] + p,
+.box-content div[style*="clear"] + ul {
+	margin-top: 2px;
+}
+
 /* =========================================================
-   9. PAGE-SPECIFIC STYLES
+   9. PAGE-SPECIFIC STYLES (Demoscene Modding Box Redesign)
    ========================================================= */
 
 /* --- General Page Elements --- */
@@ -534,24 +550,25 @@ nav {
 .contact-box,
 .special-note {
 	margin-bottom: 28px;
-	background: #262626;
-	border: 1px solid #343434;
-	border-radius: 10px;
+	background-color: var(--color-bg-secondary);
+	border: 1px solid var(--color-border);
+	border-left: 4px solid var(--color-accent-primary); /* Left accent bar from the guide */
+	border-radius: var(--radius-default);
 	overflow: hidden;
-	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25), var(--shadow-default);
 }
 
 .link-box-title,
 .contact-box-title,
 .special-note h3 {
 	margin: 0;
-	padding: 12px 18px;
-	background: linear-gradient(to right, #2d2d2d, #343434);
-	color: #6ec6ff;
-	font-size: 1.12rem;
+	padding: 20px 20px 0 20px;        /* Seamlessly integrated title spacing */
+	background: transparent;           /* Removed separate title background */
+	color: var(--color-accent-primary);
+	font-size: 1.22rem;
 	font-weight: bold;
 	text-transform: capitalize;
-	border-bottom: 1px solid #3a3a3a;
+	border-bottom: none;               /* Removed dividing title border */
 	line-height: 1.15;
 }
 
@@ -572,12 +589,12 @@ nav {
 }
 
 .link-list a {
-	color: #5ecbff;
+	color: var(--color-accent-primary);
 	text-decoration: none;
 }
 
 .link-list a:hover {
-	color: #9edcff;
+	color: var(--color-accent-hover);
 	text-decoration: underline;
 }
 
@@ -597,12 +614,12 @@ nav {
 }
 
 .screenshot-card {
-	background: #2d2d2d;
-	border: 1px solid #3a3a3a;
+	background: var(--color-bg-secondary);
+	border: 1px solid var(--color-border);
 	border-radius: 10px;
 	padding: 14px;
 	text-align: center;
-	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+	box-shadow: var(--shadow-default);
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -628,13 +645,22 @@ nav {
 .contact-table {
 	width: 100%;
 	border-collapse: collapse;
+	background: transparent;
+	font-size: 0.95rem;
 }
 
 .contact-table td {
-	padding: 7px 10px;
-	border-bottom: 1px solid #343434;
-	vertical-align: top;
-	line-height: 1.35;
+	padding: 10px 18px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+	vertical-align: middle;
+	line-height: 1.4;
+	color: #d8d8d8;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-table tr:hover td {
+	background: rgba(255, 255, 255, 0.03);
+	color: #ffffff;
 }
 
 .contact-table tr:last-child td {
@@ -661,32 +687,34 @@ nav {
 
 .special-note p {
 	margin: 0;
-	padding: 18px;
+	padding: 20px;
 	line-height: 1.7;
 }
 
-/* --- Music & Albums Pages --- */
+/* --- Music, Albums & News Redesign (Modding Style Box) --- */
 .content-box {
-	background: linear-gradient(to bottom, #252525, #222222);
-	border-radius: 10px;
+	background-color: var(--color-bg-secondary);
+	border-radius: var(--radius-default);
 	overflow: hidden;
-	border: 1px solid #343434;
-	box-shadow: 0 2px 12px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.02);
+	border: 1px solid var(--color-border);
+	border-left: 4px solid var(--color-accent-primary); /* Left accent bar from the guide */
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25), var(--shadow-default); /* Inset shadow */
 	margin-bottom: 28px;
 }
 
 .content-box-title {
 	margin: 0;
-	padding: 12px 18px;
-	background: linear-gradient(to right, #2d2d2d, #343434);
-	color: #6ec6ff;
+	padding: 20px 20px 0 20px;        /* Seamlessly integrated title spacing */
+	background: transparent;           /* Removed separate title background */
+	color: var(--color-accent-primary);
 	font-size: 1.22rem;
 	font-weight: bold;
 	line-height: 1.15;
+	border-bottom: none;               /* Removed dividing title border */
 }
 
 .content-box-title a {
-	color: #cfcfcf;
+	color: var(--color-accent-primary);
 	text-decoration: none;
 }
 
@@ -714,7 +742,7 @@ nav {
 	text-align: left;
 	color: #f2f2f2;
 	font-weight: bold;
-	border-bottom: 1px solid #3a3a3a;
+	border-bottom: 1px solid var(--color-border);
 	font-size: 0.92rem;
 	letter-spacing: 0.3px;
 }
@@ -734,12 +762,12 @@ nav {
 }
 
 .album-table a {
-	color: #6ec6ff;
+	color: var(--color-accent-primary);
 	text-decoration: none;
 }
 
 .album-table a:hover {
-	color: #9edcff;
+	color: var(--color-accent-hover);
 	text-decoration: underline;
 }
 
@@ -749,8 +777,8 @@ nav {
 	font-weight: bold;
 	padding-top: 12px;
 	padding-bottom: 12px;
-	border-top: 1px solid #3a3a3a;
-	border-bottom: 1px solid #3a3a3a;
+	border-top: 1px solid var(--color-border);
+	border-bottom: 1px solid var(--color-border);
 	font-size: 0.95rem;
 	letter-spacing: 0.3px;
 }
@@ -758,7 +786,7 @@ nav {
 .info-box {
 	padding: 18px 22px;
 	background: rgba(255,255,255,0.015);
-	border-top: 1px solid #343434;
+	border-top: 1px solid var(--color-border);
 	line-height: 1.7;
 	color: #d6d6d6;
 }
@@ -777,7 +805,7 @@ nav {
 	margin: 0 auto;
 	border-radius: 6px;
 	display: inline-block;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+	box-shadow: var(--shadow-default);
 	transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
 }
 
@@ -796,12 +824,12 @@ nav {
 
 .info-card {
 	flex: 1;
-	background: linear-gradient(to bottom, #2a2a2a, #252525);
-	border: 1px solid #3a3a3a;
+	background-color: var(--color-bg-secondary);
+	border: 1px solid var(--color-border);
 	border-radius: 8px;
 	padding: 14px 18px;
 	line-height: 1.45;
-	box-shadow: inset 0 1px 0 rgba(255,255,255,0.025), 0 1px 6px rgba(0,0,0,0.18);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.025), var(--shadow-default);
 	transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -847,8 +875,8 @@ nav {
 .video-section {
 	margin-top: 26px;
 	padding: 18px;
-	background: linear-gradient(to bottom, #262626, #202020);
-	border: 1px solid #343434;
+	background-color: var(--color-bg-secondary);
+	border: 1px solid var(--color-border);
 	border-radius: 10px;
 	box-shadow:
 		0 4px 14px rgba(0,0,0,0.28),
@@ -857,7 +885,7 @@ nav {
 
 .video-section-title {
 	margin: 0 0 16px 0;
-	color: #6ec6ff;
+	color: var(--color-accent-primary);
 	font-size: 1.08rem;
 	letter-spacing: 0.3px;
 	line-height: 1.2;
@@ -1053,7 +1081,7 @@ th {
     min-height: 72px;
     padding: 18px 24px;
     background: rgba(28, 28, 28, 0.98);
-    border-top: 1px solid #3a3a3a;
+    border-top: 1px solid var(--color-border);
     box-shadow: 0 -2px 12px rgba(0,0,0,0.35);
 }
 
