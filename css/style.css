@@ -328,15 +328,10 @@ nav {
 }
 
 /* =========================================================
-   6. INTRO TEXT
+   6. INTRO TEXT (Removed legacy wrapper styling)
    ========================================================= */
 
-.intro-text {
-	margin-bottom: 0;
-	padding: 20px 40px;
-	background: transparent;
-	border-bottom: 1px solid var(--color-border);
-}
+/* Intentionally left clean as page-intro in typography handles alignments */
 
 /* =========================================================
    7. SIDEBAR WIDGETS
@@ -523,7 +518,7 @@ nav {
 	gap: 20px;
 	margin-bottom: 18px;
 	padding-bottom: 16px;
-	border-bottom: 1px solid #343434;
+	border-bottom: 1px solid var(--color-border); /* Standardized flat border */
 }
 
 .page-title {
