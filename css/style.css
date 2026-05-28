@@ -1348,3 +1348,75 @@ body {
 		line-height: 1.65;
 	}
 }
+
+
+/* =========================================================
+   CYAN DOWNLOAD / STREAM PANELS
+   ========================================================= */
+
+.info-card {
+	position: relative;
+	background:
+		linear-gradient(
+			180deg,
+			rgba(28, 32, 38, 0.98) 0%,
+			rgba(18, 22, 28, 0.98) 100%
+		);
+	border: 1px solid rgba(0, 183, 255, 0.18);
+	border-top: 1px solid rgba(120, 220, 255, 0.22);
+	border-left: 3px solid rgba(0, 183, 255, 0.72);
+	border-radius: 10px;
+	box-shadow:
+		0 10px 24px rgba(0, 0, 0, 0.38),
+		inset 0 1px 0 rgba(255,255,255,0.03),
+		inset 0 0 18px rgba(0, 183, 255, 0.04);
+	backdrop-filter: blur(3px);
+	overflow: hidden;
+	transition:
+		transform 0.28s ease,
+		border-color 0.28s ease,
+		box-shadow 0.28s ease,
+		background 0.28s ease;
+}
+
+.info-card::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(
+			135deg,
+			rgba(0,183,255,0.05) 0%,
+			transparent 35%,
+			transparent 65%,
+			rgba(0,183,255,0.03) 100%
+		);
+	pointer-events: none;
+}
+
+.info-card:hover {
+	transform: translateY(-4px);
+	border-color: rgba(0, 183, 255, 0.35);
+	box-shadow:
+		0 14px 30px rgba(0, 0, 0, 0.48),
+		0 0 18px rgba(0, 183, 255, 0.08),
+		inset 0 1px 0 rgba(255,255,255,0.04),
+		inset 0 0 22px rgba(0, 183, 255, 0.06);
+}
+
+.info-card h3 {
+	color: #4fdcff;
+	text-shadow: 0 0 10px rgba(0, 183, 255, 0.15);
+}
+
+.info-card a {
+	color: #74e8ff;
+}
+
+.info-card a:hover {
+	color: #b4f5ff;
+}
+
+.info-card p {
+	color: #dfefff;
+}
