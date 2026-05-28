@@ -1420,34 +1420,3 @@ body {
 .info-card p {
 	color: #dfefff;
 }
-
-
-/* =========================================================
-   MOBILE CONTENT-FIRST LAYOUT
-   ========================================================= */
-
-@media (max-width: 1000px) {
-
-	.main-content {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.content {
-		order: 1;
-	}
-
-	.sidebar {
-		order: 2;
-		width: 100%;
-		margin-top: 28px;
-	}
-
-	.sidebar .widget:last-child {
-		margin-bottom: 0;
-	}
-
-	.footer-content {
-		margin-top: 10px;
-	}
-}
