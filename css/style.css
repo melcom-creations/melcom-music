@@ -1227,3 +1227,124 @@ body {
         padding-bottom: 30px;
     }
 }
+
+/* =========================================================
+   INTRO HIGHLIGHT BOX
+   ========================================================= */
+
+.intro-highlight-box {
+	margin: 20px 0;
+	padding: 28px 30px;
+	background:
+		linear-gradient(
+			180deg,
+			rgba(55, 38, 12, 0.96) 0%,
+			rgba(38, 28, 12, 0.98) 100%
+		);
+	border: 1px solid #4a3514;
+	border-left: 4px solid #f0a020;
+	border-radius: 8px;
+	box-shadow:
+		0 10px 28px rgba(0, 0, 0, 0.45),
+		inset 0 0 25px rgba(255, 170, 40, 0.05);
+}
+
+.intro-highlight-title {
+	margin: 0 0 18px 0;
+	color: #f0a020;
+	font-size: 1.35rem;
+	line-height: 1.2;
+}
+
+.intro-highlight-box p {
+	margin: 0 0 16px 0;
+	color: #f0f0f0;
+	font-size: 1.02rem;
+	line-height: 1.75;
+}
+
+.intro-highlight-box p:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+	.intro-highlight-box {
+		padding: 22px 20px;
+	}
+
+	.intro-highlight-title {
+		font-size: 1.15rem;
+	}
+
+	.intro-highlight-box p {
+		font-size: 0.98rem;
+		line-height: 1.65;
+	}
+}
+
+
+/* =========================================================
+   ORANGE INTRO / FEATURE BOX
+   ========================================================= */
+
+.intro-highlight-box {
+	margin: 20px 0 24px 0;
+	padding: 28px 30px;
+	background:
+		linear-gradient(
+			180deg,
+			rgba(55, 38, 12, 0.96) 0%,
+			rgba(38, 28, 12, 0.98) 100%
+		);
+	border: 1px solid #4a3514;
+	border-left: 4px solid #f0a020;
+	border-radius: 8px;
+	box-shadow:
+		0 10px 28px rgba(0, 0, 0, 0.45),
+		inset 0 0 25px rgba(255, 170, 40, 0.05);
+}
+
+.intro-highlight-title {
+	margin: 0 0 18px 0;
+	color: #f0a020;
+	font-size: 1.32rem;
+	line-height: 1.2;
+}
+
+.intro-highlight-box p {
+	margin: 0 0 16px 0;
+	color: #f0f0f0;
+	font-size: 1.02rem;
+	line-height: 1.75;
+}
+
+.intro-highlight-box p:last-child {
+	margin-bottom: 0;
+}
+
+.intro-highlight-box strong {
+	color: #ffd27a;
+}
+
+.intro-highlight-box a {
+	color: #6fe7ff;
+}
+
+.intro-highlight-box a:hover {
+	color: #a8f1ff;
+}
+
+@media (max-width: 700px) {
+	.intro-highlight-box {
+		padding: 22px 20px;
+	}
+
+	.intro-highlight-title {
+		font-size: 1.12rem;
+	}
+
+	.intro-highlight-box p {
+		font-size: 0.98rem;
+		line-height: 1.65;
+	}
+}
