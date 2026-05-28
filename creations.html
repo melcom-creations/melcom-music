@@ -63,15 +63,18 @@
 			</aside>
 			<!-- Main Content -->
 			<main class="content">
-				<h1 class="page-title">My Creations</h1>
+                <!-- Page Header (Creates the horizontal line below the title) -->
+                <div class="page-header">
+				    <h1 class="page-title no-border">🎨 My Creations</h1>
+                </div>
 				<p class="page-intro"> Dive into melcom's world of music production! Discover my exclusive self-created samples, essential production tools, and favorite VST plugins that enhance my music crafting process. </p>
 				<hr class="post-separator">
 				<!-- Section: FFmpeg Audio Normalizer -->
 				<div id="ffmpeg" class="content-box">
-					<h2 class="content-box-title"><a href="#ffmpeg">🔗</a> melcom's FFmpeg Audio Normalizer v3.2.0 (Nachtschicht Edition)</h2>
+					<h2 class="content-box-title"><a href="#ffmpeg">🔗</a> melcom's FFmpeg Audio Normalizer v4.0.2 (Läderlappen Edition)</h2>
 					<div class="box-content">
-						<p><b>melcom's FFmpeg Audio Normalizer</b> is a free Windows GUI for automatic loudness normalization using the <i>EBU R128</i> standard, powered by the versatile <i>FFmpeg</i> engine. It supports MP3, WAV, FLAC, AAC, OGG, and more. Version 3.2.0 (Nachtschicht Edition) now includes a dedicated mastering character selector, a clearer preset system, and a cleaner default workflow built around <code>Transparent</code>.</p>
-						<p>I built this tool to make audio normalization simple and accessible - no command line required. Written in Python, it’s available in <b>English</b>, <b>German</b>, and <b>Polish</b>, each with a dedicated help file. Questions or issues? <a href="contact.html">Contact me</a>.</p>
+						<p><b>melcom's FFmpeg Audio Normalizer</b> is a free Windows GUI for automatic loudness normalization using the <i>EBU R128</i> standard, powered by the versatile <i>FFmpeg</i> engine. It supports MP3, WAV, FLAC, AAC, OGG, and more. Version 4.0.2 (Läderlappen Edition) features multiple dynamic flat-style themes (such as Midnight, Melcom, and the classic tracker-inspired Aquamarine & Blue), Swedish localization, a single-instance dialog window tracking system, and precise Mastering Character presets built over a modular, thread-safe background engine.</p>
+						<p>I built this tool to make audio normalization simple and accessible - no command line required. Written in Python, it’s available in <b>English</b>, <b>German</b>, <b>Polish</b>, and <b>Swedish</b>, each with a dedicated help file. Questions or issues? <a href="contact.html">Contact me</a>.</p>
 						<p>📌 <b>Note:</b> Requires <b>FFmpeg</b>. Download it from <a href="https://github.com/BtbN/FFmpeg-Builds/releases/tag/latest" rel="noopener noreferrer" target="_blank">this page</a>. An included help file explains how to set the <code>ffmpeg.exe</code> path in the program’s options.</p>
 						<h3>Before and after processing</h3>
 						<div class="screenshot-grid single">
@@ -107,29 +110,30 @@
 								<p>Options</p>
 							</div>
 						</div>
-						<h3>What's new in v3.2.0 (Nachtschicht Edition)?</h3>
-						<p>This release focuses on more musical and production-focused normalization workflows while keeping the default behavior transparent and easy to understand.</p>
+						<h3>What's new in v4.0.2 (Läderlappen Edition)?</h3>
+						<p>This major release introduces a completely redesigned flat appearance, powerful single-instance dialog protections, custom trackers-focused skinning, and an optimized, modular processing engine.</p>
 						<ul>
-							<li><b>Mastering Character Selector:</b> Added a dedicated <code>Mastering Character</code> dropdown with dynamic help text for each preset.</li>
-							<li><b>Cleaner Default Preset:</b> The default UI preset is now <code>Transparent</code> and adds no extra character processing.</li>
-							<li><b>Preset-Driven Filter Chain:</b> The mastering chain is now generated from the preset definitions, making the processing path easier to extend and maintain.</li>
-							<li><b>Professional Labels:</b> The preset names now use clearer UI labels such as <code>Transparent</code>, <code>Cohesive</code>, <code>Punchy</code>, and <code>Aggressive</code> in the supported languages.</li>
-							<li><b>Expanded Loudness & True Peak Presets:</b> Clearer presets for streaming, podcast, gaming/dynamic music, broadcast, and custom target workflows.</li>
-							<li><b>Improved Progress Display:</b> Single-file normalization now uses an animated activity indicator for better visual feedback during processing.</li>
-							<li><b>Refined User Interface:</b> Improved preset dropdown sizing and layout compatibility for English, German, and Polish translations.</li>
+							<li><b>Modern Flat UI Redesign:</b> Completely flattens the user interface across both Light and Dark modes, replacing 3D bevels with highly crisp Tailwind-inspired colors.</li>
+							<li><b>New Dynamic Theming Engine:</b> Switch themes on the fly. Includes multiple custom palettes: <i>Läderlappen</i> (BAT-carbon dark), <i>Melcom</i> (ocean slate), <i>Midnight</i>, <i>Modernlight</i>, and the highly anticipated <i>Aquamarine & Blue</i> (FT2/MilkyTracker-inspired).</li>
+							<li><b>Combobox Cache-Clearing:</b> Eliminates native Tkinter theme bleed-over, ensuring listbox dropdown colors dynamically update without inverted text artifacts.</li>
+							<li><b>Single-Instance Dialog Window Tracking:</b> Solves multi-creation crashes (`TclError`) by tracking Open/About windows and redirecting focus to currently running dialogs.</li>
+							<li><b>Swedish Localization:</b> Added full native Swedish (<code>sv_SE</code>) language support alongside English, German, and Polish.</li>
+							<li><b>Thread-Safe Logging Engine:</b> Replaced RAM-heavy log slicing with stream-based, rotating file handlers.</li>
+							<li><b>Robust Subprocess Cancellation:</b> Cleanly terminates running active FFmpeg process trees on Windows, preventing memory leaks and locked target files.</li>
 						</ul>
 						<p>For a full list of changes, see the included <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">CHANGELOG.md</a>.</p>
-						<h3>📥 Download v3.2.0 (Nachtschicht Edition)</h3>
+						<h3>📥 Download v4.0.2 (Läderlappen Edition)</h3>
 						<div class="button-group">
-    <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v3_2_0.zip" class="download-button" rel="noopener noreferrer" target="_blank">scene.org</a>
+    <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v4_0_2.zip" class="download-button" rel="noopener noreferrer" target="_blank">scene.org</a>
     
-    <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.2.0" class="download-button" rel="noopener noreferrer" target="_blank">GitHub</a>
+    <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/4.0.2" class="download-button" rel="noopener noreferrer" target="_blank">GitHub</a>
     
-    <a href="https://www.dropbox.com/scl/fi/4sy1s9sq41n5i9yxhg1dp/melcoms_ffmpeg_audio_normalizer_v3_2_0.zip?rlkey=k3b35jichfrojhswytnmp2wpi&dl=1" class="download-button" rel="noopener noreferrer" target="_blank">dropbox.com</a>
+    <a href="https://www.dropbox.com/scl/fi/yr1wcuzgc9h3e8nqi5k11/melcoms_ffmpeg_audio_normalizer_v4_0_2.zip?rlkey=dbsddtam4t58xbnrs6l8hmhg6&dl=1" class="download-button" rel="noopener noreferrer" target="_blank">dropbox.com</a>
 </div>
 						<details class="accordion">
 							<summary>💾 Older Versions</summary>
 							<div class="accordion-content">
+								<p>Download v3.2.0: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v3_2_0.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.2.0" rel="noopener noreferrer" target="_blank">GitHub</a> / <a href="https://www.dropbox.com/scl/fi/4sy1s9sq41n5i9yxhg1dp/melcoms_ffmpeg_audio_normalizer_v3_2_0.zip?rlkey=k3b35jichfrojhswytnmp2wpi&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
 								<p>Download v3.1.0: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v3_1_0.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.1.0" rel="noopener noreferrer" target="_blank">GitHub</a> / <a href="https://www.dropbox.com/scl/fi/u6tppe417mzhz6jb9zzl5/melcoms_ffmpeg_audio_normalizer_v3_1_0.zip?rlkey=mcjp540ns902nr19ahzl6wi2o&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
 								<p>Download v3.0.1: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v3_0_1.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.0.1" rel="noopener noreferrer" target="_blank">GitHub</a> / <a href="https://www.dropbox.com/scl/fi/f9u0rzx6it6ghohjb08wg/melcoms_ffmpeg_audio_normalizer_v3_0_1.zip?rlkey=7j5xumfruh8hub9gq1wz88mf8&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
 								<p>Download v3.0.0: <a href="https://files.scene.org/view/resources/music/utils/melcoms_ffmpeg_audio_normalizer_v3_0_0.zip" rel="noopener noreferrer" target="_blank">scene.org</a> / <a href="https://github.com/melcom-creations/melcoms-ffmpeg-audio-normalizer/releases/tag/3.0.0" rel="noopener noreferrer" target="_blank">GitHub</a> / <a href="https://www.dropbox.com/scl/fi/yr1wcuzgc9h3e8nqi5k11/melcoms_ffmpeg_audio_normalizer_v3_0_0.zip?rlkey=dbsddtam4t58xbnrs6l8hmhg6&dl=1" rel="noopener noreferrer">dropbox.com</a></p>
@@ -216,7 +220,7 @@
 						</ul>
 						<p><i>⚙️ Requires the free <a href="https://www.tampermonkey.net/" rel="noopener noreferrer" target="_blank">Tampermonkey</a> browser extension to run.</i></p>
 						<h3>📥 Download (v1.3.0)</h3>
-						<div class="button-group"> <a href="https://github.com/melcom-creations/melcoms_highlighter_with_x/releases/tag/1.3.0" class="download-button" rel="noopener noreferrer" target="_blank">Download from GitHub</a> <a href="https://www.dropbox.com/scl/fi/2ubehbswxzv7nuji3f9fl/melcoms_highlighter_with_x_v1.3.0.zip?rlkey=kgr9gsuokjk0y9rj3y034neoe&dl=1" class="download-button" rel="noopener noreferrer">Download from Dropbox</a> </div>
+						<div class="button-group"> <a href="https://github.com/melcom-creations/melcoms_highlighter_with_x/releases/tag/1.3.0" class="download-button" rel="noopener noreferrer" target="_blank">Download from GitHub</a> <a href="https://www.dropbox.com/scl/fi/2ubehbswxzv7nuji3f9fl/melcoms_highlighter_with_x_v1.3.0.zip?rlkey=kgr9gsuokjk0y9rj3y034neoe&dl=1" class="download-button" rel="noopener">Download from Dropbox</a> </div>
 						<details class="accordion">
 							<summary>💾 Show previous download links</summary>
 							<div class="accordion-content">
