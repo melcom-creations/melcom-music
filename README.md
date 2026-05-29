@@ -1,26 +1,53 @@
 # melcom - Music & Creations
 
-Welcome to my page. Here you can find my tracker modules, MP3s, tools, and other creations.
+Welcome to my personal website and creative playground.
 
-## What You'll Find Here:
+I'm melcom, a demoscene musician and hobby developer from Germany. Here you'll find tracker music, MP3 releases, music collections, self-created samples, software tools, and various projects I've created over the years.
 
-*   **Music:** Explore tracker modules (.it, .s3m) and MP3 tracks, some with YouTube videos.
-*   **Tools:** Discover utilities I've developed, like the FFmpeg Audio Normalizer.
-*   **Samples:** Self-created samples and instruments in .flac format.
-*   **Creations:** Other projects, including the Highlighter with X Tampermonkey script.
-*   **Links:** A collection of useful resources and sites I admire.
+## Featured Content
+
+### 🎵 Music
+
+Explore my collection of tracker modules and MP3 releases created with tools such as OpenMPT and FL Studio. Many tracks include streaming options, downloads, and YouTube videos.
+
+### 💾 Albums & Music Collections
+
+Browse complete music disks, soundtrack projects, and album releases available in both tracker and MP3 formats.
+
+### 🔧 Tools & Software
+
+Discover software projects developed for musicians and creators, including:
+
+* FFmpeg Audio Normalizer
+* GhostKey Sentinel
+* Highlighter with X (Tampermonkey Script)
+
+### 🎹 Samples & Instruments
+
+Download original samples and instruments created for tracker musicians and music producers.
 
 ## About Me
 
-I've been involved with electronic music and creative coding since the 80s. After a break, I returned to my passion, focusing on demoscene-inspired electronic music and developing tools that aid my creative process. I primarily use OpenMPT and FL Studio for music production, and I experiment with VST plugins to refine my sound.
+My journey with electronic music began in the late 1980s. Inspired by the demoscene, trackers, and computer music, I started creating my own tracks and experimenting with software development.
 
-If you have any questions, feedback, or just want to say hello, please feel free to reach out via the contact page. Constructive feedback is always welcome and really helps me grow as an artist.
+Today I continue to compose electronic music, release tracker modules, build creative tools, and share my work with the community.
 
-## Connect:
+Constructive feedback is always welcome and helps me improve both as a musician and as a developer.
 
-*   **Music:** [Modules & MP3s](https://melcom-creations.github.io/melcom-music/music.html) | [Albums](https://melcom-creations.github.io/melcom-music/albums.html)
-*   **Creations:** [FFmpeg Audio Normalizer](https://melcom-creations.github.io/melcom-music/creations.html#ffmpeg) | [My Samples](https://melcom-creations.github.io/melcom-music/creations.html#samples) | [Highlighter Script](https://melcom-creations.github.io/melcom-music/creations.html#highlighter)
-*   **Social:** [YouTube](https://www.youtube.com/@melcom) | [SoundCloud](https://soundcloud.com/melcom) | [Bandcamp](https://melcom.bandcamp.com/) | [Bluesky](https://bsky.app/profile/melcom-music.bsky.social) | [Instagram](https://www.instagram.com/just.melcom/) | [Twitter](https://twitter.com/melcom_) | [Linktree](https://linktr.ee/melcom)
+## Website
 
----
-*All music and content on this website is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.*
+Visit the website:
+
+https://www.melcom-music.de
+
+## Quick Links
+
+* Music: Modules, MP3s, and releases
+* Albums: Music disks and soundtrack collections
+* Tools: Utilities and software projects
+* Samples: Original instruments and sound collections
+* Contact: Feedback, questions, and collaboration
+
+## License
+
+All music and content on this website is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
