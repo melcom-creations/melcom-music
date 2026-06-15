@@ -1,40 +1,69 @@
-import os
+from __future__ import annotations
+
 import re
+from pathlib import Path
 
-SRC_DIR = "src"
+ROOT_DIR = Path(".")
+SRC_DIR = ROOT_DIR / "src"
 
-print("Starte den automatischen Hausputz im src/ Ordner...")
+HEADER_RE = re.compile(r"<header>.*?</header>\s*", re.S)
+NAV_RE = re.compile(r"<nav>.*?</nav>\s*", re.S)
+SIDEBAR_RE = re.compile(r"<aside class=\"sidebar\">.*?</aside>\s*", re.S)
+FOOTER_RE = re.compile(r"<footer>.*?</footer>\s*<script src=\"js/main\.js\" defer></script>\s*", re.S)
 
-for filename in os.listdir(SRC_DIR):
-    if not filename.endswith(".html"):
-        continue
-        
-    filepath = os.path.join(SRC_DIR, filename)
-    with open(filepath, "r", encoding="utf-8") as f:
-        content = f.read()
+EXCLUDE = {
+    "404.html",
+}
 
-    # 1. Header ersetzen
-    content = re.sub(r"<header>.*?</header>", "<!-- INCLUDE_HEADER -->", content, flags=re.DOTALL)
-    
-    # 2. Sidebar ersetzen
-    content = re.sub(r'<aside class="sidebar">.*?</aside>', "<!-- INCLUDE_SIDEBAR -->", content, flags=re.DOTALL)
-    
-    # 3. Footer und Modals ersetzen
-    content = re.sub(r"<footer>.*?<script src=\"js/main\.js\" defer></script>", "<!-- INCLUDE_FOOTER -->", content, flags=re.DOTALL)
+def nav_target_for(page_name: str) -> str:
+    page_name = page_name.lower()
 
-    # 4. Navigation ersetzen und anhand des Dateinamens erkennen, welcher Menüpunkt aktiv sein soll
-    nav_type = "none"
-    if filename == "index.html": nav_type = "home"
-    elif filename.startswith("music") or filename.startswith("album"): nav_type = "music"
-    elif filename.startswith("creation"): nav_type = "creations"
-    elif filename == "links.html": nav_type = "links"
-    elif filename == "aboutme.html": nav_type = "about"
-    elif filename == "contact.html": nav_type = "contact"
+    if page_name == "index.html":
+        return "home"
+    if page_name.startswith("music") or page_name.startswith("albums"):
+        return "music"
+    if page_name.startswith("creation"):
+        return "creations"
+    if page_name == "links.html":
+        return "links"
+    if page_name == "aboutme.html":
+        return "about"
+    if page_name == "contact.html":
+        return "contact"
 
-    content = re.sub(r"<nav>.*?</nav>", f"<!-- INCLUDE_NAV: {nav_type} -->", content, flags=re.DOTALL)
+    return "none"
 
-    # Datei bereinigt wieder speichern
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(content)
+def cleanup_content(content: str, page_name: str) -> str:
+    content = HEADER_RE.sub("<!-- INCLUDE_HEADER -->\n", content, count=1)
+    content = NAV_RE.sub(
+        f"<!-- INCLUDE_NAV: {nav_target_for(page_name)} -->\n",
+        content,
+        count=1,
+    )
+    content = SIDEBAR_RE.sub("<!-- INCLUDE_SIDEBAR -->\n", content, count=1)
+    content = FOOTER_RE.sub("<!-- INCLUDE_FOOTER -->\n", content, count=1)
+    return content
 
-print("Fertig! Alle Dateien im src/ Ordner wurden entschlackt.")
+def iter_root_html():
+    for path in ROOT_DIR.glob("*.html"):
+        if path.name in EXCLUDE:
+            continue
+        yield path
+
+def main():
+    SRC_DIR.mkdir(exist_ok=True)
+
+    for html_file in iter_root_html():
+        content = html_file.read_text(encoding="utf-8")
+
+        cleaned = cleanup_content(content, html_file.name)
+
+        target = SRC_DIR / html_file.name
+        target.write_text(cleaned, encoding="utf-8")
+
+        print(f"Created: {target}")
+
+    print("Finished. Source files recreated in /src")
+
+if __name__ == "__main__":
+    main()
