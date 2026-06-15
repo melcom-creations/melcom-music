@@ -1091,22 +1091,6 @@ th {
    ========================================================= */
 
 /* Responsive Breakpoints */
-@media (max-width: 1000px) {
-    .main-content {
-        flex-direction: column;
-}
-
-.sidebar {
-        width: var(--mobile-full-width);
-}
-
-.post-image {
-        float: none;
-        width: var(--mobile-full-width);
-        margin-right: 0;
-}
-}
-
 @media (max-width: 900px) {
     .two-column-layout {
         grid-template-columns: 1fr;
@@ -1311,22 +1295,28 @@ inset 0 0 22px rgba(0, 183, 255, 0.06);
     .main-content {
         display: flex !important;
         flex-direction: column !important;
-}
+    }
 
-.content {
+    .content {
         order: 1 !important;
         width: 100% !important;
-}
+    }
 
-.sidebar {
+    .sidebar {
         order: 2 !important;
         width: 100% !important;
         margin-top: 24px !important;
-}
+    }
 
-.sidebar .widget:last-child {
+    .sidebar .widget:last-child {
         margin-bottom: 0 !important;
-}
+    }
+
+    .post-image {
+        float: none;
+        width: var(--mobile-full-width);
+        margin-right: 0;
+    }
 }
 
 
@@ -1340,7 +1330,7 @@ inset 0 0 22px rgba(0, 183, 255, 0.06);
 }
 
 
-/* Fix year selector dropdown positioning on music pages */
+/* Align the page-header year dropdown with the content panel edge */
 .page-header .nav-dropdown {
     position: relative;
 }
