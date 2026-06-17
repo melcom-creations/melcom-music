@@ -8,15 +8,17 @@ SRC_DIR = ROOT_DIR / "src"
 COMPONENTS_DIR = ROOT_DIR / "components"
 
 PLACEHOLDER_RE = re.compile(r"<!--\s*INCLUDE_([A-Z0-9_-]+)(?::\s*([A-Za-z0-9_-]+))?\s*-->")
+NAV_ACTIVE_RE = re.compile(r"\[ACTIVE_([A-Z0-9_-]+)\]")
 
 MUSIC_YEAR_GROUPS = (
     ("2025", "2024", "2023", "2022", "2021"),
     ("2020", "2019", "2018", "2017", "2016", "2015", "2014"),
 )
-MUSIC_YEAR_SEQUENCE = [year for group in MUSIC_YEAR_GROUPS for year in group]
+MUSIC_YEAR_SEQUENCE = tuple(year for group in MUSIC_YEAR_GROUPS for year in group)
 MUSIC_YEAR_SET = set(MUSIC_YEAR_SEQUENCE)
 
 ALBUM_YEAR_SEQUENCE = ("2025", "2020", "2016", "1999", "1998", "1997")
+ALBUM_YEAR_SET = set(ALBUM_YEAR_SEQUENCE)
 
 
 def load_component(name: str) -> str:
@@ -25,95 +27,6 @@ def load_component(name: str) -> str:
         raise FileNotFoundError(f"Missing component: {component_path}")
     return component_path.read_text(encoding="utf-8")
 
-
-def render_music_year_links(page_name: str) -> str:
-    page_name = page_name.lower()
-
-    if page_name == "music.html":
-        top_years = "\n".join(
-            f'            <a href="#{year}">{year}</a>'
-            for year in MUSIC_YEAR_GROUPS[0]
-        )
-        middle_years = "\n".join(
-            f'            <a href="#{year}">{year}</a>'
-            for year in MUSIC_YEAR_GROUPS[1]
-        )
-        return (
-            "        <div class=\"column\">\n"
-            f"{top_years}\n"
-            "        </div>\n"
-            "        <div class=\"column\">\n"
-            f"{middle_years}\n"
-            "        </div>\n"
-            "        <div class=\"column\">\n"
-            '            <a href="#OlderTracks">Older Tracks</a>\n'
-            "        </div>"
-        )
-
-    if page_name == "music-old.html":
-        top_years = "\n".join(
-            f'            <a href="music-{year}.html">{year}</a>'
-            for year in MUSIC_YEAR_GROUPS[0]
-        )
-        middle_years = "\n".join(
-            f'            <a href="music-{year}.html">{year}</a>'
-            for year in MUSIC_YEAR_GROUPS[1]
-        )
-        return (
-            "        <div class=\"column\">\n"
-            f"{top_years}\n"
-            "        </div>\n"
-            "        <div class=\"column\">\n"
-            f"{middle_years}\n"
-            "        </div>\n"
-            "        <div class=\"column\">\n"
-            '            <a href="music-old.html" class="nav-active">Older Tracks</a>\n'
-            "        </div>"
-        )
-
-    active_match = re.fullmatch(r"music-(\d{4})\.html", page_name)
-    active_year = active_match.group(1) if active_match and active_match.group(1) in MUSIC_YEAR_SET else "2025"
-
-    def render_music_link(year: str) -> str:
-        href = f"music.html#{year}" if year == active_year else f"music-{year}.html"
-        active_class = ' class="nav-active"' if year == active_year else ""
-        return f'            <a href="{href}"{active_class}>{year}</a>'
-
-    top_years = "\n".join(render_music_link(year) for year in MUSIC_YEAR_GROUPS[0])
-    middle_years = "\n".join(render_music_link(year) for year in MUSIC_YEAR_GROUPS[1])
-    return (
-        "        <div class=\"column\">\n"
-        f"{top_years}\n"
-        "        </div>\n"
-        "        <div class=\"column\">\n"
-        f"{middle_years}\n"
-        "        </div>\n"
-        "        <div class=\"column\">\n"
-        '            <a href="music-old.html">Older Tracks</a>\n'
-        "        </div>"
-    )
-
-
-def render_album_year_links(page_name: str) -> str:
-    page_name = page_name.lower()
-
-    if page_name == "albums.html":
-        links = [f'        <a href="#{year}">{year}</a>' for year in ALBUM_YEAR_SEQUENCE]
-        return "\n".join(links)
-
-    active_match = re.fullmatch(r"albums-(\d{4})\.html", page_name)
-    active_year = active_match.group(1) if active_match and active_match.group(1) in ALBUM_YEAR_SEQUENCE else None
-
-    links = []
-    for year in ALBUM_YEAR_SEQUENCE:
-        href = f"albums.html#{year}" if year == active_year else f"albums-{year}.html"
-        active_class = ' class="nav-active"' if year == active_year else ""
-        links.append(f'        <a href="{href}"{active_class}>{year}</a>')
-    return "\n".join(links)
-
-
-
-NAV_ACTIVE_RE = re.compile(r"\[ACTIVE_([A-Z0-9_-]+)\]")
 
 def nav_active_page(page_name: str) -> str:
     page_name = page_name.lower()
@@ -140,18 +53,58 @@ def render_navigation(page_name: str) -> str:
         section = match.group(1)
         return "nav-active" if section == active_page else ""
 
-    nav = NAV_ACTIVE_RE.sub(substitute, nav)
-    return nav
+    return NAV_ACTIVE_RE.sub(substitute, nav)
+
+
+def render_album_years(page_name: str) -> str:
+    base = load_component("albums-years")
+    page_name = page_name.lower()
+
+    if page_name == "albums.html":
+        return base
+
+    active_match = re.fullmatch(r"albums-(\d{4})\.html", page_name)
+    active_year = active_match.group(1) if active_match and active_match.group(1) in ALBUM_YEAR_SET else None
+
+    def substitute(match: re.Match[str]) -> str:
+        year = match.group(1)
+        if year == active_year:
+            return f'href="albums.html#{year}" class="nav-active"'
+        return f'href="albums-{year}.html"'
+
+    return re.sub(r'href="#(\d{4})"', substitute, base)
+
+
+def render_music_years(page_name: str) -> str:
+    base = load_component("music-years")
+    page_name = page_name.lower()
+
+    if page_name == "music.html":
+        return base
+
+    if page_name == "music-old.html":
+        rendered = re.sub(r'href="#(\d{4})"', lambda match: f'href="music-{match.group(1)}.html"', base)
+        return rendered.replace('href="#OlderTracks"', 'href="music-old.html" class="nav-active"')
+
+    active_match = re.fullmatch(r"music-(\d{4})\.html", page_name)
+    active_year = active_match.group(1) if active_match and active_match.group(1) in MUSIC_YEAR_SET else "2025"
+
+    def substitute(match: re.Match[str]) -> str:
+        year = match.group(1)
+        if year == active_year:
+            return f'href="music.html#{year}" class="nav-active"'
+        return f'href="music-{year}.html"'
+
+    rendered = re.sub(r'href="#(\d{4})"', substitute, base)
+    return rendered.replace('href="#OlderTracks"', 'href="music-old.html"')
 
 
 def render_named_component(name: str, page_name: str) -> str:
     if name == "MUSIC_YEARS":
-        component = load_component("music-years")
-        return component.replace("{{YEAR_LINKS}}", render_music_year_links(page_name))
+        return render_music_years(page_name)
 
     if name == "ALBUMS_YEARS":
-        component = load_component("albums-years")
-        return component.replace("{{YEAR_LINKS}}", render_album_year_links(page_name))
+        return render_album_years(page_name)
 
     if name == "NAV":
         return render_navigation(page_name)
@@ -182,10 +135,7 @@ def expand_includes(content: str, page_name: str) -> str:
 
 
 def iter_source_files() -> list[Path]:
-    return sorted(
-        path for path in SRC_DIR.rglob("*.html")
-        if path.is_file()
-    )
+    return sorted(path for path in SRC_DIR.rglob("*.html") if path.is_file())
 
 
 def build_file(src_path: Path) -> None:
