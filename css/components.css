@@ -331,16 +331,60 @@ th {
     color: #b8a4d9;
 }
 
+.action-listen .action-link {
+    border-color: #6f6384;
+    color: #b8a4d9;
+}
+
+.action-listen .action-link:hover {
+    background: #302b39;
+    border-color: #b8a4d9;
+    color: #d8c9ed;
+}
+
 .action-download .action-group-label {
     color: #75cce8;
+}
+
+.action-download .action-link {
+    border-color: #477c8d;
+    color: #75cce8;
+}
+
+.action-download .action-link:hover {
+    background: #21353c;
+    border-color: #75cce8;
+    color: #b5e8f8;
 }
 
 .action-watch .action-group-label {
     color: #df9b9b;
 }
 
+.action-watch .action-link {
+    border-color: #875e5e;
+    color: #df9b9b;
+}
+
+.action-watch .action-link:hover {
+    background: #3b2929;
+    border-color: #df9b9b;
+    color: #f2c7c7;
+}
+
 .action-open .action-group-label {
     color: #9bc9a7;
+}
+
+.action-open .action-link {
+    border-color: #5e7a65;
+    color: #9bc9a7;
+}
+
+.action-open .action-link:hover {
+    background: #29352c;
+    border-color: #9bc9a7;
+    color: #c7e2cd;
 }
 
 @media (max-width: 700px) {
