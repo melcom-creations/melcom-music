@@ -9,9 +9,9 @@ ROOT_DIR = Path(".")
 SRC_DIR = ROOT_DIR / "src"
 COMPONENTS_DIR = ROOT_DIR / "components"
 
-HEADER_RE = re.compile(r"<header>.*?</header>\s*", re.S)
-NAV_RE = re.compile(r"<nav>.*?</nav>\s*", re.S)
-SIDEBAR_RE = re.compile(r"<aside class=\"sidebar\">.*?</aside>\s*", re.S)
+HEADER_RE = re.compile(r"<header>.*?</header>(?:[ \t]*\r?\n)+([ \t]*)(?=\S)", re.S)
+NAV_RE = re.compile(r"<nav>.*?</nav>(?:[ \t]*\r?\n)+([ \t]*)(?=\S)", re.S)
+SIDEBAR_RE = re.compile(r"<aside class=\"sidebar\">.*?</aside>(?:[ \t]*\r?\n)+([ \t]*)(?=\S)", re.S)
 FOOTER_RE = re.compile(r"<footer>.*?</footer>\s*<script src=\"js/main\.js\" defer></script>\s*", re.S)
 
 EXCLUDE = {
@@ -62,13 +62,13 @@ def cleanup_content(content: str, page_name: str) -> str:
             count=1,
         )
 
-    content = HEADER_RE.sub("<!-- INCLUDE_HEADER -->\n", content, count=1)
+    content = HEADER_RE.sub(r"<!-- INCLUDE_HEADER -->\n\1", content, count=1)
     content = NAV_RE.sub(
-        f"<!-- INCLUDE_NAV: {nav_target_for(page_name)} -->\n",
+        f"<!-- INCLUDE_NAV: {nav_target_for(page_name)} -->\n\\1",
         content,
         count=1,
     )
-    content = SIDEBAR_RE.sub("<!-- INCLUDE_SIDEBAR -->\n", content, count=1)
+    content = SIDEBAR_RE.sub(r"<!-- INCLUDE_SIDEBAR -->\n\1", content, count=1)
     content = FOOTER_RE.sub("<!-- INCLUDE_FOOTER -->\n", content, count=1)
     return content
 
