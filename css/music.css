@@ -1,0 +1,136 @@
+/* --- Music, Albums & News Redesign (Modding Style Box) --- */
+
+.content-box-title a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+}
+
+.box-content {
+    padding: 20px;
+}
+
+.box-content p:first-child {
+    margin-top: 0;
+}
+
+.album-table {
+    width: var(--mobile-full-width);
+    border-collapse: collapse;
+    background: transparent;
+    font-size: 0.95rem;
+}
+
+.album-table thead {
+    background: rgba(255,255,255,0.03);
+}
+
+.album-table th {
+    padding: 10px 18px;
+    text-align: left;
+    color: #f2f2f2;
+    font-weight: bold;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.92rem;
+    letter-spacing: 0.3px;
+}
+
+.album-table td {
+    padding: 8px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    line-height: 1.3;
+    color: #d8d8d8;
+    background: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.album-table tr:hover td {
+    background: rgba(255,255,255,0.035);
+    color: #ffffff;
+}
+
+.album-table a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+}
+
+.album-table a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
+.year-separator td {
+    background: rgba(255,255,255,0.025);
+    color: #ffffff;
+    font-weight: bold;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+.info-box {
+    padding: 18px 22px;
+    background: rgba(255,255,255,0.015);
+    border-top: 1px solid var(--color-border);
+    line-height: 1.7;
+    color: #d6d6d6;
+}
+
+.info-box + .info-box {
+    border-top: 0;
+}
+
+.info-box + .info-box::before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin: -18px 0 18px;
+    background: var(--color-border);
+}
+
+/* --- Track Details Layout --- */
+.track-image-link {
+    display: block;
+    text-align: center;
+    padding: 24px 20px 10px 20px;
+}
+
+.track-image-link img {
+    width: 320px;
+    max-width: var(--mobile-full-width);
+    height: auto;
+    margin: 0 auto;
+    border-radius: var(--radius-medium);
+    display: inline-block;
+    box-shadow: var(--shadow-default);
+    transition: transform var(--transition-default), box-shadow var(--transition-default), filter var(--transition-default);
+}
+
+.track-image-link img:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.45), 0 0 12px rgba(0,191,255,0.10);
+    filter: brightness(1.04);
+}
+
+.info-table {
+    width: var(--mobile-full-width);
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 7px 0;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    line-height: 1.2;
+}
+
+.info-table th {
+    padding: 8px 0;
+    line-height: 1.2;
+}
+
+.info-table tr:last-child td {
+    border-bottom: none;
+}

@@ -1,0 +1,88 @@
+/* =========================================================
+   3. LAYOUT STRUCTURE
+   ========================================================= */
+
+.container {
+    width: var(--mobile-full-width);
+    max-width: 1200px;
+    margin: 24px auto 0 auto;
+    padding: 0;
+    background-color: #2b2b2b;
+    box-shadow: 0 0 0 1px #3a3a3a, var(--shadow-default);
+    border-radius: var(--radius-default);
+    overflow: hidden;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: transparent;
+    align-items: flex-start;
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+}
+
+.sidebar {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* =========================================================
+   4. HEADER & FOOTER
+   ========================================================= */
+
+header {
+    margin-bottom: 0;
+}
+
+#header-banner {
+    width: var(--mobile-full-width);
+    transition: opacity 1s ease-in-out;
+}
+
+footer {
+    margin-top: 0;
+    padding: 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 120px;
+    text-align: center;
+}
+
+.footer-left,
+.footer-right {
+    width: auto;
+}
+
+.footer-left img,
+.footer-right img {
+    display: block;
+    margin: 0 auto 12px auto;
+}
+
+.footer-left p,
+.footer-right p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-right {
+    max-width: 600px;
+}
+
