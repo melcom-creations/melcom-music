@@ -138,7 +138,11 @@
     clear: both;
     border: 0;
     border-top: 1px solid var(--color-border);
-    margin: 30px 0;
+    margin: 18px 0;
+}
+
+.content-box:has(+ .post-separator) {
+    margin-bottom: 18px;
 }
 
 .archive-link {
