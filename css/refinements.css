@@ -3,31 +3,27 @@
    ========================================================= */
 
 .intro-highlight-box {
-    margin: 20px 0 24px 0;
-    padding: 14px 24px;
-    background: linear-gradient(
-            180deg,
-rgba(55, 38, 12, 0.96) 0%,
-rgba(38, 28, 12, 0.98) 100%);
-    border: 1px solid #4a3514;
+    margin: 16px 0 20px;
+    padding: 11px 18px;
+    background: rgba(240, 160, 32, 0.025);
+    border: 1px solid #57431f;
     border-left: 4px solid #f0a020;
     border-radius: var(--radius-default);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45),
-inset 0 0 25px rgba(255, 170, 40, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
 .intro-highlight-title {
-    margin: 0 0 10px 0;
+    margin: 0 0 7px;
     color: #f0a020;
-    font-size: 1.32rem;
+    font-size: 1.18rem;
     line-height: 1.2;
 }
 
 .intro-highlight-box p {
-    margin: 0 0 16px 0;
+    margin: 0 0 10px;
     color: #f0f0f0;
-    font-size: 1.02rem;
-    line-height: 1.75;
+    font-size: 0.96rem;
+    line-height: 1.55;
 }
 
 .intro-highlight-box p:last-child {
@@ -48,19 +44,19 @@ inset 0 0 25px rgba(255, 170, 40, 0.05);
 
 @media (max-width: 700px) {
     .intro-highlight-box {
-        padding: 14px 20px;
-}
+        margin: 14px 0 18px;
+        padding: 10px 14px;
+    }
 
-.intro-highlight-title {
-        font-size: 1.12rem;
-}
+    .intro-highlight-title {
+        font-size: 1.08rem;
+    }
 
-.intro-highlight-box p {
-        font-size: 0.98rem;
-        line-height: 1.65;
+    .intro-highlight-box p {
+        font-size: 0.94rem;
+        line-height: 1.5;
+    }
 }
-}
-
 /* =========================================================
    MOBILE CONTENT FIRST FIX
    ========================================================= */
