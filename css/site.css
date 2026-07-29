@@ -1138,8 +1138,9 @@ footer {
     padding-bottom: 22px;
 }
 
-.info-story {
+.info-box.info-story {
     position: relative;
+    padding-top: 10px;
     background: var(--color-bg-secondary);
     border-top: 0;
 }
@@ -1629,7 +1630,7 @@ th {
 
 /* Action links integrated into information areas */
 .info-actions {
-    margin: 0 0 16px;
+    margin: 0 0 10px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--color-border);
 }

@@ -248,7 +248,7 @@ th {
 
 /* Action links integrated into information areas */
 .info-actions {
-    margin: 0 0 16px;
+    margin: 0 0 10px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--color-border);
 }
