@@ -15,6 +15,30 @@
         'images/header/header-image16.png'
     ];
 
+    const RANDOM_TRACK_LINKS = [
+        'music-2019.html#amartiansong',
+        'music-2019.html#desolaterunner3',
+        'music-2019.html#oblivion',
+        'music-2019.html#remainsoftheday',
+        'music-2020.html#mechlovesong',
+        'music-2020.html#methmad',
+        'music-2020.html#thespaceweare',
+        'music-2021.html#haunted',
+        'music-2021.html#headlock',
+        'music-2021.html#nightair',
+        'music-2022.html#fernweh2',
+        'music-2022.html#stroke',
+        'music-2023.html#pyramidsong',
+        'music-2023.html#rotten',
+        'music-2024.html#crumble',
+        'music-2024.html#pixelmoves',
+        'music-2025.html#fernweh_3_echofall',
+        'music-2025.html#monsters',
+        'music-2025.html#pixelvielfalt',
+        'music-2025.html#silk_and_sax',
+        'music-2025.html#splintered_mindscape'
+    ];
+
     const COOKIE_NAME = 'melcom_info_banner_dismissed';
     const COOKIE_MAX_AGE_DAYS = 365;
     const BANNER_DISPLAY_DURATION = 10000;
@@ -39,16 +63,119 @@
         document.documentElement.scrollTop = 0;
     }
 
-    function preloadBannerImages() {
-        BANNER_IMAGES.forEach(function (src) {
-            const image = new Image();
-            image.src = src;
+    function setupNavigation() {
+        const dropdowns = document.querySelectorAll('.nav-dropdown');
+        const siteNavigation = document.querySelector('.site-navigation');
+        const navToggle = siteNavigation ? siteNavigation.querySelector('.nav-toggle') : null;
+        const navMenu = siteNavigation ? siteNavigation.querySelector('.nav-container') : null;
+        const activeItem = siteNavigation ? siteNavigation.querySelector('.nav-active') : null;
+
+        if (activeItem) {
+            activeItem.setAttribute('aria-current', 'page');
+        }
+
+        function setNavigationExpanded(willExpand) {
+            if (!siteNavigation || !navToggle) {
+                return;
+            }
+
+            siteNavigation.classList.toggle('is-expanded', willExpand);
+            navToggle.setAttribute('aria-expanded', String(willExpand));
+        }
+
+        if (siteNavigation && navToggle && navMenu) {
+            siteNavigation.classList.add('is-enhanced');
+
+            navToggle.addEventListener('click', function () {
+                const willExpand = navToggle.getAttribute('aria-expanded') !== 'true';
+                setNavigationExpanded(willExpand);
+            });
+
+            navMenu.addEventListener('click', function (event) {
+                if (event.target.closest('a') && window.matchMedia('(max-width: 700px)').matches) {
+                    setNavigationExpanded(false);
+                }
+            });
+
+            siteNavigation.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && window.matchMedia('(max-width: 700px)').matches) {
+                    setNavigationExpanded(false);
+                    navToggle.focus();
+                }
+            });
+        }
+
+        function closeDropdown(dropdown, returnFocus) {
+            const button = dropdown.querySelector('.nav-dropbtn, .page-dropdown-btn');
+
+            if (!button) {
+                return;
+            }
+
+            dropdown.classList.remove('is-open');
+            button.setAttribute('aria-expanded', 'false');
+
+            if (returnFocus) {
+                button.focus();
+            }
+        }
+
+        function closeOtherDropdowns(currentDropdown) {
+            dropdowns.forEach(function (dropdown) {
+                if (dropdown !== currentDropdown) {
+                    closeDropdown(dropdown, false);
+                }
+            });
+        }
+
+        dropdowns.forEach(function (dropdown) {
+            const button = dropdown.querySelector('.nav-dropbtn, .page-dropdown-btn');
+            const menu = dropdown.querySelector('.nav-dropdown-content, .page-year-menu');
+
+            if (!button || !menu) {
+                return;
+            }
+
+            button.addEventListener('click', function () {
+                const willOpen = button.getAttribute('aria-expanded') !== 'true';
+                closeOtherDropdowns(dropdown);
+                dropdown.classList.toggle('is-open', willOpen);
+                button.setAttribute('aria-expanded', String(willOpen));
+
+                if (willOpen) {
+                    const firstLink = menu.querySelector('a');
+                    if (firstLink) {
+                        firstLink.focus();
+                    }
+                }
+            });
+
+            dropdown.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    closeDropdown(dropdown, true);
+                }
+            });
+
+            dropdown.addEventListener('focusout', function (event) {
+                if (!dropdown.contains(event.relatedTarget)) {
+                    closeDropdown(dropdown, false);
+                }
+            });
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.nav-dropdown')) {
+                dropdowns.forEach(function (dropdown) {
+                    closeDropdown(dropdown, false);
+                });
+            }
         });
     }
-
     function startBannerRotation() {
         const bannerElement = document.getElementById('header-banner');
-        if (!bannerElement || BANNER_IMAGES.length === 0) {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!bannerElement || BANNER_IMAGES.length < 2 || reduceMotion) {
             return;
         }
 
@@ -60,34 +187,37 @@
             currentIndex = 0;
         }
 
-        preloadBannerImages();
-
         function cycleBanner() {
-            bannerElement.style.opacity = '0';
+            let nextIndex = currentIndex;
 
-            setTimeout(function () {
-                let nextIndex = currentIndex;
+            do {
+                nextIndex = Math.floor(Math.random() * BANNER_IMAGES.length);
+            } while (nextIndex === currentIndex);
 
-                if (BANNER_IMAGES.length > 1) {
-                    do {
-                        nextIndex = Math.floor(Math.random() * BANNER_IMAGES.length);
-                    } while (nextIndex === currentIndex);
-                }
+            const nextImage = new Image();
 
-                currentIndex = nextIndex;
-                bannerElement.src = BANNER_IMAGES[currentIndex];
+            nextImage.addEventListener('load', function () {
+                bannerElement.style.opacity = '0';
 
                 setTimeout(function () {
+                    currentIndex = nextIndex;
+                    bannerElement.src = BANNER_IMAGES[currentIndex];
                     bannerElement.style.opacity = '1';
                     setTimeout(cycleBanner, BANNER_DISPLAY_DURATION);
-                }, 50);
-            }, BANNER_FADE_DURATION);
+                }, BANNER_FADE_DURATION);
+            }, { once: true });
+
+            nextImage.addEventListener('error', function () {
+                setTimeout(cycleBanner, BANNER_DISPLAY_DURATION);
+            }, { once: true });
+
+            nextImage.src = BANNER_IMAGES[nextIndex];
         }
 
         setTimeout(cycleBanner, BANNER_DISPLAY_DURATION);
     }
 
-    function openLightbox(modal, modalImage, thumbnails, triggerLink) {
+    function openLightbox(modal, modalImage, thumbnails, closeButton, triggerLink) {
         const image = triggerLink.querySelector('img');
         const parentGroup = triggerLink.closest('.screenshot-grid');
 
@@ -100,6 +230,7 @@
 
             if (galleryLinks.length > 1) {
                 galleryLinks.forEach(function (galleryLink) {
+                    const thumbButton = document.createElement('button');
                     const thumbImage = document.createElement('img');
                     const sourceImage = galleryLink.querySelector('img');
 
@@ -107,39 +238,52 @@
                         return;
                     }
 
+                    thumbButton.type = 'button';
+                    thumbButton.className = 'modal-thumbnail-button';
+                    thumbButton.setAttribute('aria-label', 'View ' + sourceImage.alt);
                     thumbImage.src = sourceImage.src;
-                    thumbImage.alt = sourceImage.alt;
+                    thumbImage.alt = '';
 
                     if (galleryLink === triggerLink) {
-                        thumbImage.classList.add('active-thumb');
+                        thumbButton.classList.add('active-thumb');
+                        thumbButton.setAttribute('aria-current', 'true');
                     }
 
-                    thumbImage.addEventListener('click', function (event) {
-                        event.stopPropagation();
-
+                    thumbButton.addEventListener('click', function () {
                         modalImage.src = galleryLink.href;
                         modalImage.alt = sourceImage.alt;
 
-                        thumbnails.querySelectorAll('img').forEach(function (thumb) {
-                            thumb.classList.remove('active-thumb');
+                        thumbnails.querySelectorAll('.modal-thumbnail-button').forEach(function (button) {
+                            button.classList.remove('active-thumb');
+                            button.removeAttribute('aria-current');
                         });
-                        thumbImage.classList.add('active-thumb');
+
+                        thumbButton.classList.add('active-thumb');
+                        thumbButton.setAttribute('aria-current', 'true');
                     });
 
-                    thumbnails.appendChild(thumbImage);
+                    thumbButton.appendChild(thumbImage);
+                    thumbnails.appendChild(thumbButton);
                 });
             }
         }
 
         modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
         modalImage.src = triggerLink.href;
         modalImage.alt = image ? image.alt : 'Enlarged image';
         document.body.style.overflow = 'hidden';
+        closeButton.focus();
     }
 
-    function closeLightbox(modal) {
+    function closeLightbox(modal, restoreTarget) {
         modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = 'auto';
+
+        if (restoreTarget && document.contains(restoreTarget)) {
+            restoreTarget.focus();
+        }
     }
 
     function setupLightboxGallery() {
@@ -148,6 +292,7 @@
         const closeButton = document.querySelector('.modal-close');
         const thumbnails = document.getElementById('modalThumbnails');
         const imageLinks = document.querySelectorAll('.track-image-link');
+        let restoreTarget = null;
 
         if (!modal || !modalImage || !closeButton) {
             return;
@@ -156,23 +301,45 @@
         imageLinks.forEach(function (link) {
             link.addEventListener('click', function (event) {
                 event.preventDefault();
-                openLightbox(modal, modalImage, thumbnails, link);
+                restoreTarget = link;
+                openLightbox(modal, modalImage, thumbnails, closeButton, link);
             });
         });
 
         closeButton.addEventListener('click', function () {
-            closeLightbox(modal);
+            closeLightbox(modal, restoreTarget);
         });
 
         modal.addEventListener('click', function (event) {
-            if (event.target === modal || event.target === thumbnails) {
-                closeLightbox(modal);
+            if (event.target === modal) {
+                closeLightbox(modal, restoreTarget);
             }
         });
 
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                closeLightbox(modal);
+        modal.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeLightbox(modal, restoreTarget);
+                return;
+            }
+
+            if (event.key === 'Tab') {
+                const focusable = Array.from(modal.querySelectorAll('button:not([disabled])'));
+
+                if (focusable.length === 0) {
+                    event.preventDefault();
+                    return;
+                }
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
             }
         });
     }
@@ -199,6 +366,7 @@
 
     function setupArchiveYears() {
         const toggles = document.querySelectorAll('[data-archive-year-toggle]');
+        const yearLinks = document.querySelectorAll('.page-year-menu a[href^="#"]');
 
         function setArchiveYearState(toggle, willExpand) {
             const targetId = toggle.getAttribute('aria-controls');
@@ -231,6 +399,64 @@
             });
         });
 
+        function openArchiveYear(hash, shouldScroll) {
+            if (!hash || hash.charAt(0) !== '#') {
+                return false;
+            }
+
+            const yearCell = document.getElementById(decodeURIComponent(hash.slice(1)));
+            const toggle = yearCell
+                ? yearCell.querySelector('[data-archive-year-toggle]')
+                : null;
+
+            if (!toggle) {
+                return false;
+            }
+
+            setArchiveYearState(toggle, true);
+
+            if (shouldScroll) {
+                yearCell.scrollIntoView({ block: 'start' });
+            }
+
+            return true;
+        }
+
+        yearLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                const hash = link.getAttribute('href');
+
+                if (!openArchiveYear(hash, true)) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                const dropdown = link.closest('.page-year-dropdown');
+                const dropdownButton = dropdown
+                    ? dropdown.querySelector('.page-dropdown-btn')
+                    : null;
+
+                if (dropdown) {
+                    dropdown.classList.remove('is-open');
+                }
+
+                if (dropdownButton) {
+                    dropdownButton.setAttribute('aria-expanded', 'false');
+                }
+
+                if (window.location.hash !== hash) {
+                    window.history.pushState(null, '', hash);
+                }
+            });
+        });
+
+        openArchiveYear(window.location.hash, false);
+
+        window.addEventListener('hashchange', function () {
+            openArchiveYear(window.location.hash, true);
+        });
+
         document.querySelectorAll('[data-archive-expand-all]').forEach(function (button) {
             button.addEventListener('click', function () {
                 const archive = button.closest('.content-box');
@@ -259,6 +485,89 @@
             });
         });
     }
+    function setupLinkExplorer() {
+        const input = document.getElementById('link-search-input');
+        const clearButton = document.querySelector('[data-clear-link-search]');
+        const status = document.getElementById('link-search-status');
+        const categories = Array.from(document.querySelectorAll('.link-category'));
+        const items = Array.from(document.querySelectorAll('.link-category .link-list li'));
+
+        if (!input || !clearButton || !status || categories.length === 0) {
+            return;
+        }
+
+        function applyFilter() {
+            const query = input.value.trim().toLocaleLowerCase();
+            let visibleItems = 0;
+
+            categories.forEach(function (category) {
+                const categoryItems = Array.from(category.querySelectorAll('.link-list li'));
+                let visibleInCategory = 0;
+
+                categoryItems.forEach(function (item) {
+                    const isVisible = query === '' || item.textContent.toLocaleLowerCase().includes(query);
+                    item.hidden = !isVisible;
+
+                    if (isVisible) {
+                        visibleItems += 1;
+                        visibleInCategory += 1;
+                    }
+                });
+
+                category.hidden = query !== '' && visibleInCategory === 0;
+            });
+
+            clearButton.hidden = query === '';
+
+            if (query === '') {
+                status.textContent = items.length + ' curated links across ' + categories.length + ' categories.';
+            } else if (visibleItems === 1) {
+                status.textContent = '1 matching link.';
+            } else {
+                status.textContent = visibleItems + ' matching links.';
+            }
+        }
+
+        function clearFilter() {
+            input.value = '';
+            applyFilter();
+        }
+
+        input.addEventListener('input', applyFilter);
+        input.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && input.value !== '') {
+                clearFilter();
+            }
+        });
+
+        clearButton.addEventListener('click', function () {
+            clearFilter();
+            input.focus();
+        });
+
+        document.querySelectorAll('.link-category-nav a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                if (input.value !== '') {
+                    clearFilter();
+                }
+            });
+        });
+
+        applyFilter();
+    }
+    function setupRandomTrack() {
+        const button = document.querySelector('[data-random-track]');
+
+        if (!button || RANDOM_TRACK_LINKS.length === 0) {
+            return;
+        }
+
+        button.addEventListener('click', function () {
+            const targetIndex = Math.floor(Math.random() * RANDOM_TRACK_LINKS.length);
+            window.location.href = RANDOM_TRACK_LINKS[targetIndex];
+        });
+    }
+
     function setCookie(name, value, days) {
         let expires = '';
 
@@ -346,10 +655,13 @@
         backToTopButton = document.getElementById('myBtn');
 
         toggleBackToTopButton();
+        setupNavigation();
         startBannerRotation();
         setupLightboxGallery();
         setupImprintReveal();
         setupArchiveYears();
+        setupLinkExplorer();
+        setupRandomTrack();
         loadStatcounter();
         setupInfoBanner();
     }
