@@ -566,7 +566,7 @@ footer {
 .widget-title {
     margin: 0;
     padding: 10px 12px;
-    background-color: #161616;
+    background-color: #1C1C1C;
     color: var(--color-accent-primary);
     font-size: 14px;
     text-align: center;
@@ -588,6 +588,7 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
     padding: 10px;
+    background-color: #333333;
 }
 
 .social-link {
@@ -600,7 +601,7 @@ footer {
     justify-content: center;
     overflow: hidden;
     padding: 5px;
-    background-color: #161616;
+    background-color: #333333;
     border: 1px solid color-mix(in srgb, var(--social-accent) 42%, var(--color-border));
     border-radius: var(--radius-small);
     transition: transform var(--transition-default), background-color var(--transition-default), border-color var(--transition-default), box-shadow var(--transition-default);
@@ -609,7 +610,7 @@ footer {
 .social-link:hover,
 .social-link:focus-visible {
     transform: translateY(-2px);
-    background-color: color-mix(in srgb, var(--social-accent) 11%, #161616);
+    background-color: color-mix(in srgb, var(--social-accent) 11%, #333333);
     border-color: var(--social-accent);
     box-shadow: 0 3px 10px color-mix(in srgb, var(--social-accent) 22%, transparent);
     outline: none;
@@ -664,6 +665,7 @@ footer {
 
 .site-info-content {
     padding: 10px;
+    background-color: #333333;
 }
 
 .site-info-link {
@@ -673,7 +675,7 @@ footer {
     gap: 6px;
     margin-bottom: 10px;
     padding: 7px 8px;
-    background-color: #161616;
+    background-color: #333333;
     border: 1px solid #8dcde0;
     border-radius: var(--radius-small);
     color: #b8ecf8;
@@ -687,7 +689,7 @@ footer {
 .site-info-link:hover,
 .site-info-link:focus-visible {
     transform: translateY(-1px);
-    background-color: rgba(117, 204, 232, 0.1);
+    background-color: color-mix(in srgb, #75cce8 10%, #333333);
     border-color: #b8ecf8;
     color: #e1f8ff;
     outline: none;
@@ -703,16 +705,15 @@ footer {
 .site-badges a {
     display: block;
     padding: 3px 5px;
-    background-color: #161616;
-    border: 1px solid var(--color-border);
+    background-color: #333333;
+    border: 0;
     border-radius: 3px;
-    transition: border-color var(--transition-default), transform var(--transition-default);
+    transition: transform var(--transition-default);
 }
 
 .site-badges a:hover,
 .site-badges a:focus-visible {
     transform: translateY(-1px);
-    border-color: #f0a020;
     outline: none;
 }
 
