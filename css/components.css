@@ -55,12 +55,16 @@ th {
     right: calc((100% - 1200px) / 2 - 40px);
     z-index: 99;
     border: none;
-    outline: none;
     background-color: transparent;
     cursor: pointer;
     padding: 0;
     border-radius: var(--radius-small);
     transition: opacity var(--transition-default);
+}
+
+#myBtn:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 4px;
 }
 
 /* =========================================================
@@ -255,7 +259,7 @@ th {
     gap: 0;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-small);
-    background: #1E1E1E;
+    background: var(--color-bg-inset);
 }
 
 .info-actions .action-group {
@@ -319,7 +323,7 @@ th {
 .action-group-label {
     padding-top: 7px;
     color: #8f9aa2;
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     font-weight: bold;
     letter-spacing: 0.04em;
     line-height: 1;

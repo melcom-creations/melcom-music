@@ -60,7 +60,7 @@
 .release-pending {
     margin: 10px 0 0;
     padding: 11px 12px;
-    background: #1E1E1E;
+    background: var(--color-bg-inset);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-small);
     color: #cbd8de;
@@ -1208,7 +1208,7 @@
     padding: 6px 11px;
     border: 1px solid #4b585f;
     border-radius: var(--radius-small);
-    outline: none;
+
     background: #191c1e;
     color: #eef2f3;
     font: inherit;
@@ -1216,9 +1216,9 @@
     transition: border-color var(--transition-default), box-shadow var(--transition-default);
 }
 
-.link-search-control input:focus {
-    border-color: #75cce8;
-    box-shadow: 0 0 0 2px rgba(117, 204, 232, 0.14);
+.link-search-control input:focus-visible {
+    border-color: var(--color-focus);
+    box-shadow: 0 0 0 2px rgba(117, 204, 232, 0.22);
 }
 
 .link-search-control input::placeholder {
@@ -1300,9 +1300,9 @@
 .link-nav-card small {
     margin-top: 1px;
     overflow: hidden;
-    color: #8f9da4;
-    font-size: 0.65rem;
-    line-height: 1.25;
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    line-height: 1.35;
     text-overflow: ellipsis;
     white-space: nowrap;
 }

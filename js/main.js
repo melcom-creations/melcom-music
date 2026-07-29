@@ -367,6 +367,28 @@
     function setupArchiveYears() {
         const toggles = document.querySelectorAll('[data-archive-year-toggle]');
         const yearLinks = document.querySelectorAll('.page-year-menu a[href^="#"]');
+        const allYearLinks = document.querySelectorAll('.page-year-menu a');
+
+        function updateYearIndicator(link, currentValue) {
+            if (!link) {
+                return;
+            }
+
+            const dropdown = link.closest('.page-year-dropdown');
+            const label = dropdown ? dropdown.querySelector('.page-dropdown-label') : null;
+
+            if (label) {
+                label.textContent = 'Year: ' + link.textContent.trim();
+            }
+
+            link.setAttribute('aria-current', currentValue);
+        }
+
+        const presetActiveYear = document.querySelector('.page-year-menu a.nav-active');
+
+        if (presetActiveYear) {
+            updateYearIndicator(presetActiveYear, 'true');
+        }
 
         function setArchiveYearState(toggle, willExpand) {
             const targetId = toggle.getAttribute('aria-controls');
@@ -414,6 +436,19 @@
             }
 
             setArchiveYearState(toggle, true);
+
+            const selectedLink = Array.from(yearLinks).find(function (link) {
+                return link.getAttribute('href') === hash;
+            });
+
+            if (selectedLink) {
+                allYearLinks.forEach(function (link) {
+                    link.classList.remove('nav-active');
+                    link.removeAttribute('aria-current');
+                });
+                selectedLink.classList.add('nav-active');
+                updateYearIndicator(selectedLink, 'location');
+            }
 
             if (shouldScroll) {
                 yearCell.scrollIntoView({ block: 'start' });

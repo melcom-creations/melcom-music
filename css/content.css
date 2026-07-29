@@ -61,7 +61,6 @@
     background-color: color-mix(in srgb, var(--social-accent) 11%, #333333);
     border-color: var(--social-accent);
     box-shadow: 0 3px 10px color-mix(in srgb, var(--social-accent) 22%, transparent);
-    outline: none;
 }
 
 .social-link img {
@@ -140,7 +139,6 @@
     background-color: color-mix(in srgb, #75cce8 10%, #333333);
     border-color: #b8ecf8;
     color: #e1f8ff;
-    outline: none;
 }
 
 .site-badges {
@@ -162,7 +160,6 @@
 .site-badges a:hover,
 .site-badges a:focus-visible {
     transform: translateY(-1px);
-    outline: none;
 }
 
 .site-badges img {
@@ -205,7 +202,7 @@
 
 .post-date {
     font-size: 0.8rem;
-    color: #a0a0a0;
+    color: var(--color-text-muted);
     margin-bottom: 14px;
 }
 

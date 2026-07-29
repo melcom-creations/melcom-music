@@ -38,7 +38,7 @@
 }
 
 .nav-item {
-    --nav-accent: #666666;
+    --nav-accent: var(--color-border-interactive);
     --nav-tint: #252525;
 }
 
@@ -88,6 +88,7 @@
 
 .site-navigation .nav-active {
     font-weight: bold;
+    box-shadow: inset 0 -2px 0 var(--nav-accent);
 }
 
 .nav-chevron {
@@ -166,14 +167,14 @@
 
 .site-navigation .nav-dropdown-content small {
     margin-top: 2px;
-    color: #888888;
-    font-size: 0.68rem;
-    line-height: 1.3;
+    color: var(--color-text-muted);
+    font-size: 0.74rem;
+    line-height: 1.35;
 }
 
 .site-navigation .nav-dropdown-content a:hover,
 .site-navigation .nav-dropdown-content a:focus-visible {
-    border-color: #555555;
+    border-color: var(--color-border-interactive);
     background: #252525;
     color: var(--color-text-primary);
     transform: translateX(2px);
@@ -201,7 +202,7 @@
     gap: 7px;
     min-height: 36px;
     padding: 6px 11px;
-    border: 1px solid #555555;
+    border: 1px solid var(--color-border-interactive);
     border-radius: var(--radius-small);
     background: var(--color-bg-secondary);
     color: var(--color-text-primary);
@@ -216,7 +217,7 @@
 .page-dropdown-btn:hover,
 .page-dropdown-btn:focus-visible,
 .page-dropdown-btn[aria-expanded="true"] {
-    border-color: #666666;
+    border-color: var(--color-focus);
     background: #282828;
     color: var(--color-text-primary);
 }
@@ -248,7 +249,7 @@
     min-width: 280px;
     padding: 8px;
     border: 1px solid var(--color-border);
-    border-top: 2px solid #666666;
+    border-top: 2px solid var(--color-border-interactive);
     border-radius: var(--radius-medium);
     background: var(--color-bg-primary);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
@@ -282,8 +283,8 @@
 
 .year-group-label {
     padding: 3px 8px 5px;
-    color: #888888;
-    font-size: 0.64rem;
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
     font-weight: bold;
     letter-spacing: 0.06em;
     line-height: 1.2;
@@ -308,15 +309,16 @@
 
 .page-year-menu a:hover,
 .page-year-menu a:focus-visible {
-    border-color: #555555;
+    border-color: var(--color-border-interactive);
     background: #292929;
     color: var(--color-text-primary);
     transform: translateY(-1px);
 }
 
 .page-year-menu a.nav-active {
-    border-color: #666666;
+    border-color: var(--color-border-interactive);
     background: #282828;
     color: var(--color-text-primary);
     font-weight: bold;
+    box-shadow: inset 3px 0 0 var(--color-focus);
 }

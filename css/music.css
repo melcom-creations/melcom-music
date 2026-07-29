@@ -95,8 +95,8 @@
     background: rgba(255,255,255,0.025);
     color: #ffffff;
     font-weight: bold;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
     font-size: 0.95rem;
@@ -107,7 +107,8 @@
     width: 100%;
     align-items: center;
     gap: 8px;
-    padding: 0;
+    min-height: 40px;
+    padding: 8px 0;
     background: transparent;
     border: 0;
     color: inherit;
@@ -137,7 +138,7 @@
 }
 
 .archive-year-toggle:focus-visible {
-    outline: 1px solid var(--color-accent-primary);
+    outline: 2px solid var(--color-focus);
     outline-offset: 4px;
 }
 
@@ -220,7 +221,7 @@
     border-collapse: separate;
     border-spacing: 0;
     border-radius: var(--radius-medium);
-    background: #1E1E1E;
+    background: var(--color-bg-inset);
     overflow: hidden;
 }
 
