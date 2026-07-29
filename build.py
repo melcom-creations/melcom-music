@@ -11,7 +11,7 @@ PLACEHOLDER_RE = re.compile(r"<!--\s*INCLUDE_([A-Z0-9_-]+)(?::\s*([A-Za-z0-9_-]+
 NAV_ACTIVE_RE = re.compile(r"\[ACTIVE_([A-Z0-9_-]+)\]")
 
 MUSIC_YEAR_GROUPS = (
-    ("2025", "2024", "2023", "2022", "2021"),
+    ("2026", "2025", "2024", "2023", "2022", "2021"),
     ("2020", "2019", "2018", "2017", "2016", "2015", "2014"),
 )
 MUSIC_YEAR_SEQUENCE = tuple(year for group in MUSIC_YEAR_GROUPS for year in group)
