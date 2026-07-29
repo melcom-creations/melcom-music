@@ -42,6 +42,30 @@
     color: #a8f1ff;
 }
 
+.new-tag {
+    display: inline-block;
+    margin-left: 0.35em;
+    padding: 1px 5px;
+    background: rgba(255, 179, 71, 0.05);
+    border: 1px solid #765529;
+    border-radius: 3px;
+    color: #ffb347;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+    vertical-align: 0.08em;
+    white-space: nowrap;
+}
+.release-pending {
+    margin: 10px 0 0;
+    padding: 9px 11px;
+    background: rgba(117, 204, 232, 0.04);
+    border-left: 3px solid #75cce8;
+    color: #cbd8de;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
 @media (max-width: 700px) {
     .intro-highlight-box {
         margin: 14px 0 18px;

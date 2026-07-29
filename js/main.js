@@ -197,6 +197,68 @@
         });
     }
 
+    function setupArchiveYears() {
+        const toggles = document.querySelectorAll('[data-archive-year-toggle]');
+
+        function setArchiveYearState(toggle, willExpand) {
+            const targetId = toggle.getAttribute('aria-controls');
+            const target = document.getElementById(targetId);
+            const icon = toggle.querySelector('.archive-year-icon');
+            const note = toggle.querySelector('.archive-year-note');
+            const collapsedNote = toggle.dataset.collapsedNote || '';
+            const expandedNote = toggle.dataset.expandedNote || collapsedNote;
+
+            if (!target) {
+                return;
+            }
+
+            toggle.setAttribute('aria-expanded', String(willExpand));
+            target.hidden = !willExpand;
+
+            if (icon) {
+                icon.textContent = willExpand ? '▼' : '▶';
+            }
+
+            if (note) {
+                note.textContent = willExpand ? expandedNote : collapsedNote;
+            }
+        }
+
+        toggles.forEach(function (toggle) {
+            toggle.addEventListener('click', function () {
+                const willExpand = toggle.getAttribute('aria-expanded') !== 'true';
+                setArchiveYearState(toggle, willExpand);
+            });
+        });
+
+        document.querySelectorAll('[data-archive-expand-all]').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const archive = button.closest('.content-box');
+                const archiveToggles = archive
+                    ? archive.querySelectorAll('[data-archive-year-toggle]')
+                    : toggles;
+
+                archiveToggles.forEach(function (toggle) {
+                    if (!toggle.hasAttribute('data-archive-spoiler')) {
+                        setArchiveYearState(toggle, true);
+                    }
+                });
+            });
+        });
+
+        document.querySelectorAll('[data-archive-collapse-all]').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const archive = button.closest('.content-box');
+                const archiveToggles = archive
+                    ? archive.querySelectorAll('[data-archive-year-toggle]')
+                    : toggles;
+
+                archiveToggles.forEach(function (toggle) {
+                    setArchiveYearState(toggle, false);
+                });
+            });
+        });
+    }
     function setCookie(name, value, days) {
         let expires = '';
 
@@ -287,6 +349,7 @@
         startBannerRotation();
         setupLightboxGallery();
         setupImprintReveal();
+        setupArchiveYears();
         loadStatcounter();
         setupInfoBanner();
     }
