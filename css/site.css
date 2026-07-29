@@ -1198,6 +1198,7 @@ footer {
     border-bottom: 1px solid rgba(255,255,255,0.045);
     background: transparent;
     color: var(--color-text-primary);
+    font-size: inherit;
     line-height: 1.35;
     overflow-wrap: anywhere;
     vertical-align: top;
@@ -1339,7 +1340,7 @@ footer {
     }
 
     .info-table td {
-        font-size: 0.88rem;
+        font-size: inherit;
     }
 
     .production-tool-row {
