@@ -22,7 +22,7 @@
     /* Responsive Design System */
     /* Layout Utility Variables */
     --color-bg-primary: #1e1e1e;
-    --color-bg-secondary: #222222;
+    --color-bg-secondary: #222426;
     --color-text-primary: #d0d0d0;
     --color-accent-primary: #00b7ff;
     --color-accent-hover: #4bd1ca;
@@ -1177,7 +1177,7 @@ footer {
     border-collapse: separate;
     border-spacing: 0;
     border-radius: var(--radius-medium);
-    background: var(--color-bg-primary);
+    background: #1E1E1E;
     overflow: hidden;
 }
 
@@ -1608,7 +1608,21 @@ th {
 }
 
 .info-actions .action-bar {
-    margin: 0;
+    margin: 10px 0 0;
+    padding: 4px 12px;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    background: #1E1E1E;
+}
+
+.info-actions .action-group {
+    padding: 6px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.info-actions .action-group:first-child {
+    border-top: 0;
 }
 
 .info-actions-with-cover {
@@ -2001,9 +2015,10 @@ th {
 }
 .release-pending {
     margin: 10px 0 0;
-    padding: 9px 11px;
-    background: rgba(117, 204, 232, 0.04);
-    border-left: 3px solid #75cce8;
+    padding: 11px 12px;
+    background: #1E1E1E;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
     color: #cbd8de;
     font-size: 0.9rem;
     line-height: 1.5;
@@ -2528,7 +2543,7 @@ th {
 
 .contact-card-profile:hover,
 .contact-card-profile:focus-visible {
-    background: #292d30;
+    background: #242424;
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -2917,9 +2932,9 @@ th {
 .about-tool-group {
     min-width: 0;
     padding: 11px 12px;
-    border: 1px solid #3f494e;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-small);
-    background: #202326;
+    background: var(--color-bg-primary);
 }
 
 .about-tool-group h3 {
@@ -3206,10 +3221,10 @@ th {
     align-items: center;
     gap: 8px;
     padding: 8px 9px;
-    border: 1px solid #414a4f;
+    border: 1px solid var(--color-border);
     border-left: 3px solid var(--link-accent);
     border-radius: var(--radius-small);
-    background: #202326;
+    background: var(--color-bg-primary);
     color: #e1e7e9;
     transition: background-color var(--transition-default), border-color var(--transition-default), transform var(--transition-default);
 }
@@ -3251,7 +3266,7 @@ th {
 .link-nav-card:hover,
 .link-nav-card:focus-visible {
     border-color: var(--link-accent);
-    background: #292d30;
+    background: #242424;
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -3347,9 +3362,9 @@ th {
     min-width: 0;
     margin: 0;
     padding: 8px 9px 8px 22px;
-    border: 1px solid #394146;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-small);
-    background: #202326;
+    background: var(--color-bg-primary);
     color: #bfc9ce;
     font-size: 0.78rem;
     line-height: 1.42;
@@ -3368,8 +3383,8 @@ th {
 }
 
 .link-category .link-list li:hover {
-    border-color: #4b565c;
-    background: #272b2e;
+    border-color: #4a4a4a;
+    background: #242424;
     transform: translateY(-1px);
 }
 

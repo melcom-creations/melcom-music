@@ -220,7 +220,7 @@
     border-collapse: separate;
     border-spacing: 0;
     border-radius: var(--radius-medium);
-    background: var(--color-bg-primary);
+    background: #1E1E1E;
     overflow: hidden;
 }
 

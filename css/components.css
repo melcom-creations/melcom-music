@@ -250,7 +250,21 @@ th {
 }
 
 .info-actions .action-bar {
-    margin: 0;
+    margin: 10px 0 0;
+    padding: 4px 12px;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    background: #1E1E1E;
+}
+
+.info-actions .action-group {
+    padding: 6px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.info-actions .action-group:first-child {
+    border-top: 0;
 }
 
 .info-actions-with-cover {
