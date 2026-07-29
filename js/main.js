@@ -461,7 +461,7 @@
             link.addEventListener('click', function (event) {
                 const hash = link.getAttribute('href');
 
-                if (!openArchiveYear(hash, true)) {
+                if (!openArchiveYear(hash, false)) {
                     return;
                 }
 
@@ -483,6 +483,21 @@
                 if (window.location.hash !== hash) {
                     window.history.pushState(null, '', hash);
                 }
+
+                window.requestAnimationFrame(function () {
+                    const yearCell = document.getElementById(decodeURIComponent(hash.slice(1)));
+                    const yearToggle = yearCell
+                        ? yearCell.querySelector('[data-archive-year-toggle]')
+                        : null;
+
+                    if (yearCell) {
+                        yearCell.scrollIntoView({ block: 'start' });
+                    }
+
+                    if (yearToggle) {
+                        yearToggle.focus({ preventScroll: true });
+                    }
+                });
             });
         });
 
