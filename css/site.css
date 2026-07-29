@@ -281,7 +281,7 @@ footer {
     border: 1px solid transparent;
     border-radius: var(--radius-small);
     background: transparent;
-    color: #c0c0c0;
+    color: var(--color-text-primary);
     font-family: var(--font-family-base);
     font-size: 0.9rem;
     font-weight: normal;
@@ -306,7 +306,7 @@ footer {
 .site-navigation .nav-active {
     border-color: var(--nav-accent);
     background: var(--nav-tint);
-    color: #c0c0c0;
+    color: var(--color-text-primary);
 }
 
 .nav-button:hover,
@@ -356,7 +356,7 @@ footer {
     padding: 8px 10px;
     border: 1px solid transparent;
     border-radius: var(--radius-small);
-    color: #c0c0c0;
+    color: var(--color-text-primary);
     line-height: 1.2;
     white-space: normal;
     transition: border-color var(--transition-default), background-color var(--transition-default), color var(--transition-default), transform var(--transition-default);
@@ -387,7 +387,7 @@ footer {
 }
 
 .site-navigation .nav-dropdown-content strong {
-    color: #a8a8a8;
+    color: inherit;
     font-size: 0.82rem;
     line-height: 1.25;
 }
@@ -403,7 +403,7 @@ footer {
 .site-navigation .nav-dropdown-content a:focus-visible {
     border-color: #555555;
     background: #252525;
-    color: #d0d0d0;
+    color: var(--color-text-primary);
     transform: translateX(2px);
 }
 
@@ -432,7 +432,7 @@ footer {
     border: 1px solid #555555;
     border-radius: var(--radius-small);
     background: var(--color-bg-secondary);
-    color: #b8b8b8;
+    color: var(--color-text-primary);
     font-family: var(--font-family-base);
     font-size: 0.84rem;
     font-weight: bold;
@@ -446,7 +446,7 @@ footer {
 .page-dropdown-btn[aria-expanded="true"] {
     border-color: #666666;
     background: #282828;
-    color: #d0d0d0;
+    color: var(--color-text-primary);
 }
 
 .page-dropdown-btn:hover {
@@ -527,7 +527,7 @@ footer {
     border: 1px solid transparent;
     border-radius: var(--radius-small);
     background: var(--color-bg-secondary);
-    color: #b8b8b8;
+    color: var(--color-text-primary);
     font-size: 0.8rem;
     line-height: 1.2;
     white-space: nowrap;
@@ -538,14 +538,14 @@ footer {
 .page-year-menu a:focus-visible {
     border-color: #555555;
     background: #292929;
-    color: #d0d0d0;
+    color: var(--color-text-primary);
     transform: translateY(-1px);
 }
 
 .page-year-menu a.nav-active {
     border-color: #666666;
     background: #282828;
-    color: #d0d0d0;
+    color: var(--color-text-primary);
     font-weight: bold;
 }
 
@@ -1807,7 +1807,7 @@ th {
         border: 1px solid var(--color-border);
         border-radius: var(--radius-medium);
         background: var(--color-bg-primary);
-        color: #c0c0c0;
+        color: var(--color-text-primary);
         font: inherit;
         font-size: 0.88rem;
         font-weight: bold;
