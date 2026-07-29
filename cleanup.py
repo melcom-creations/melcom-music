@@ -3,16 +3,16 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from build import render_album_years, render_music_years
+from build import GENERATED_META_RE, render_album_years, render_music_years
 
 ROOT_DIR = Path(".")
 SRC_DIR = ROOT_DIR / "src"
 COMPONENTS_DIR = ROOT_DIR / "components"
 
 HEADER_RE = re.compile(r"<header>.*?</header>(?:[ \t]*\r?\n)+([ \t]*)(?=\S)", re.S)
-NAV_RE = re.compile(r"<nav>.*?</nav>(?:[ \t]*\r?\n)+([ \t]*)(?=\S)", re.S)
+NAV_RE = re.compile(r"<nav\b[^>]*>.*?</nav>(?:[ \t]*\r?\n)+([ \t]*)(?=\S)", re.S)
 SIDEBAR_RE = re.compile(r"<aside class=\"sidebar\">.*?</aside>(?:[ \t]*\r?\n)+([ \t]*)(?=\S)", re.S)
-FOOTER_RE = re.compile(r"<footer>.*?</footer>\s*<script src=\"js/main\.js\" defer></script>\s*", re.S)
+FOOTER_RE = re.compile(r"<footer>.*?<script src=\"js/main\.js\" defer></script>\s*", re.S)
 
 EXCLUDE = {
     "404.html",
@@ -70,6 +70,8 @@ def cleanup_content(content: str, page_name: str) -> str:
     )
     content = SIDEBAR_RE.sub(r"<!-- INCLUDE_SIDEBAR -->\n\1", content, count=1)
     content = FOOTER_RE.sub("<!-- INCLUDE_FOOTER -->\n", content, count=1)
+    content = GENERATED_META_RE.sub("", content)
+    content = content.replace("css/site.css", "css/style.css")
     return content
 
 
