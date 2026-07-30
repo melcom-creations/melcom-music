@@ -1,0 +1,167 @@
+/* =========================================================
+   13. RESPONSIVE STYLES
+   ========================================================= */
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+    .two-column-layout {
+        grid-template-columns: 1fr;
+}
+
+.screenshot-grid,
+    .screenshot-grid.galaxy-screenshots {
+        grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 10px;
+}
+
+.site-navigation {
+        padding: 10px;
+}
+
+.site-navigation.is-enhanced .nav-toggle {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 40px;
+        padding: 7px 12px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-medium);
+        background: var(--color-bg-primary);
+        color: var(--color-text-primary);
+        font: inherit;
+        font-size: 0.88rem;
+        font-weight: bold;
+        cursor: pointer;
+}
+
+.nav-toggle-icon {
+        display: inline-flex;
+        width: 17px;
+        flex-direction: column;
+        gap: 3px;
+}
+
+.nav-toggle-icon span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background: #888888;
+        transition: opacity var(--transition-default), transform var(--transition-default);
+}
+
+.site-navigation.is-expanded .nav-toggle-icon span:first-child {
+        transform: translateY(5px) rotate(45deg);
+}
+
+.site-navigation.is-expanded .nav-toggle-icon span:nth-child(2) {
+        opacity: 0;
+}
+
+.site-navigation.is-expanded .nav-toggle-icon span:last-child {
+        transform: translateY(-5px) rotate(-45deg);
+}
+
+.site-navigation .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 7px;
+        padding: 6px;
+}
+
+.site-navigation.is-enhanced .nav-container {
+        display: none;
+}
+
+.site-navigation.is-enhanced.is-expanded .nav-container {
+        display: flex;
+}
+
+.site-navigation .nav-dropdown {
+        width: 100%;
+}
+
+.site-navigation .nav-button,
+.site-navigation .nav-dropbtn {
+        width: 100%;
+        justify-content: flex-start;
+}
+
+.site-navigation .nav-chevron {
+        margin-left: auto;
+}
+
+.site-navigation .nav-dropdown-content {
+        position: static;
+        width: auto;
+        min-width: 0;
+        margin: 4px 0 2px;
+        box-shadow: none;
+}
+
+.site-navigation .nav-dropdown-content a:hover,
+.site-navigation .nav-dropdown-content a:focus-visible {
+        transform: none;
+}
+
+.page-dropdown-btn {
+        width: var(--mobile-full-width);
+}
+
+.page-year-dropdown {
+        width: var(--mobile-full-width);
+}
+
+.page-year-menu {
+        position: static;
+        width: auto;
+        min-width: 0;
+        margin-top: 4px;
+        box-shadow: none;
+}
+
+.page-year-menu-multi {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.page-year-menu-multi .year-column:last-child {
+        grid-column: 1 / -1;
+}
+
+.page-year-menu-albums {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.footer-content {
+        flex-direction: column;
+}
+
+.post {
+        padding: 18px;
+}
+
+.page-header {
+        flex-direction: column;
+}
+
+.info-banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+}
+
+.info-banner {
+        padding: 16px;
+}
+
+    body {
+        padding-bottom: 30px;
+}
+}
+

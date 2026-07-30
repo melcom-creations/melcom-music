@@ -1,0 +1,324 @@
+/* =========================================================
+   5. NAVIGATION
+   ========================================================= */
+
+.site-navigation {
+    margin-bottom: 0;
+    padding: 14px 20px;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    background: #1e1e1e;
+}
+
+.nav-shell {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-default);
+    background: var(--color-bg-primary);
+    box-shadow: var(--shadow-default);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.site-navigation .nav-dropdown {
+    position: relative;
+    min-width: 0;
+}
+
+.nav-item {
+    --nav-accent: var(--color-border-interactive);
+    --nav-tint: #252525;
+}
+
+.nav-button,
+.nav-dropbtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 35px;
+    padding: 6px 11px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-small);
+    background: transparent;
+    color: var(--color-text-primary);
+    font-family: var(--font-family-base);
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color var(--transition-default), background-color var(--transition-default), color var(--transition-default), transform var(--transition-default);
+}
+
+.nav-icon {
+    flex: 0 0 auto;
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible,
+.nav-dropbtn:hover,
+.nav-dropbtn:focus-visible,
+.nav-dropbtn[aria-expanded="true"],
+.site-navigation .nav-dropdown.is-open > .nav-dropbtn,
+.site-navigation .nav-active {
+    border-color: var(--nav-accent);
+    background: var(--nav-tint);
+    color: var(--color-text-primary);
+}
+
+.nav-button:hover,
+.nav-dropbtn:hover {
+    transform: translateY(-1px);
+}
+
+.site-navigation .nav-active {
+    font-weight: bold;
+    box-shadow: inset 0 -2px 0 var(--nav-accent);
+}
+
+.nav-chevron {
+    width: 0;
+    height: 0;
+    margin-left: 1px;
+    border-top: 5px solid currentColor;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: transform var(--transition-default);
+}
+
+.nav-dropbtn[aria-expanded="true"] .nav-chevron {
+    transform: rotate(180deg);
+}
+
+.site-navigation .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    z-index: 1000;
+    min-width: 260px;
+    padding: 6px;
+    border: 1px solid var(--color-border);
+    border-top: 2px solid var(--nav-accent);
+    border-radius: var(--radius-medium);
+    background: var(--color-bg-primary);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.site-navigation .nav-dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: auto;
+    min-width: 0;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-small);
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    white-space: normal;
+    transition: border-color var(--transition-default), background-color var(--transition-default), color var(--transition-default), transform var(--transition-default);
+}
+
+.site-navigation .nav-dropdown-content a + a {
+    margin-top: 3px;
+}
+
+.nav-menu-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    min-height: 24px;
+    font-size: 1rem;
+}
+
+.site-navigation .nav-dropdown-content a > span:last-child {
+    display: block;
+    min-width: 0;
+}
+
+.site-navigation .nav-dropdown-content strong,
+.site-navigation .nav-dropdown-content small {
+    display: block;
+}
+
+.site-navigation .nav-dropdown-content strong {
+    color: inherit;
+    font-size: 0.82rem;
+    line-height: 1.25;
+}
+
+.site-navigation .nav-dropdown-content small {
+    margin-top: 2px;
+    color: var(--color-text-muted);
+    font-size: 0.74rem;
+    line-height: 1.35;
+}
+
+.site-navigation .nav-dropdown-content a:hover,
+.site-navigation .nav-dropdown-content a:focus-visible {
+    border-color: var(--color-border-interactive);
+    background: #252525;
+    color: var(--color-text-primary);
+    transform: translateX(2px);
+}
+
+.site-navigation .nav-dropdown.is-open .nav-dropdown-content {
+    display: block;
+}
+
+@media (min-width: 701px) {
+    .site-navigation .nav-dropdown:hover .nav-dropdown-content {
+        display: block;
+    }
+}
+/* Page-level music and album year selectors */
+.page-year-dropdown {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.page-dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 36px;
+    padding: 6px 11px;
+    border: 1px solid var(--color-border-interactive);
+    border-radius: var(--radius-small);
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-base);
+    font-size: 0.84rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color var(--transition-default), background-color var(--transition-default), color var(--transition-default), transform var(--transition-default);
+}
+
+.page-dropdown-btn:hover,
+.page-dropdown-btn:focus-visible,
+.page-dropdown-btn[aria-expanded="true"] {
+    border-color: var(--color-focus);
+    background: #282828;
+    color: var(--color-text-primary);
+}
+
+.page-dropdown-btn:hover {
+    transform: translateY(-1px);
+}
+
+.page-dropdown-chevron {
+    width: 0;
+    height: 0;
+    border-top: 5px solid currentColor;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: transform var(--transition-default);
+}
+
+.page-dropdown-btn[aria-expanded="true"] .page-dropdown-chevron {
+    transform: rotate(180deg);
+}
+
+.page-year-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% - 1px);
+    right: 0;
+    z-index: 1000;
+    gap: 7px;
+    min-width: 280px;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-top: 2px solid var(--color-border-interactive);
+    border-radius: var(--radius-medium);
+    background: var(--color-bg-primary);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.page-year-menu-multi {
+    grid-template-columns: repeat(3, minmax(92px, 1fr));
+    min-width: 355px;
+}
+
+.page-year-menu-albums {
+    grid-template-columns: repeat(3, minmax(72px, 1fr));
+}
+
+.page-year-dropdown.is-open .page-year-menu {
+    display: grid;
+}
+
+@media (min-width: 701px) {
+    .page-year-dropdown:hover .page-year-menu {
+        display: grid;
+    }
+}
+
+.year-column {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.year-group-label {
+    padding: 3px 8px 5px;
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.page-year-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 31px;
+    padding: 5px 9px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-small);
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    font-size: 0.8rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: border-color var(--transition-default), background-color var(--transition-default), color var(--transition-default), transform var(--transition-default);
+}
+
+.page-year-menu a:hover,
+.page-year-menu a:focus-visible {
+    border-color: var(--color-border-interactive);
+    background: #292929;
+    color: var(--color-text-primary);
+    transform: translateY(-1px);
+}
+
+.page-year-menu a.nav-active {
+    border-color: var(--color-border-interactive);
+    background: #282828;
+    color: var(--color-text-primary);
+    font-weight: bold;
+    box-shadow: inset 3px 0 0 var(--color-focus);
+}
