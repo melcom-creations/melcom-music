@@ -43,6 +43,22 @@
     const COOKIE_MAX_AGE_DAYS = 365;
     const BANNER_DISPLAY_DURATION = 10000;
     const BANNER_FADE_DURATION = 1000;
+    const INITIAL_HASH = window.location.hash;
+
+    let initialHashDeferred = false;
+
+    if (INITIAL_HASH) {
+        try {
+            window.history.replaceState(
+                window.history.state,
+                '',
+                window.location.pathname + window.location.search
+            );
+            initialHashDeferred = true;
+        } catch (error) {
+            initialHashDeferred = false;
+        }
+    }
 
     let backToTopButton = null;
     let lightboxBackground = [];
@@ -50,6 +66,19 @@
 
     function getScrollTop() {
         return document.body.scrollTop || document.documentElement.scrollTop || 0;
+    }
+
+    function restoreInitialHash() {
+        if (!initialHashDeferred) {
+            return;
+        }
+
+        window.history.replaceState(
+            window.history.state,
+            '',
+            window.location.pathname + window.location.search + INITIAL_HASH
+        );
+        initialHashDeferred = false;
     }
 
     function toggleBackToTopButton() {
@@ -550,7 +579,7 @@
             });
         });
 
-        openArchiveYear(window.location.hash, false);
+        openArchiveYear(INITIAL_HASH || window.location.hash, false);
 
         window.addEventListener('hashchange', function () {
             openArchiveYear(window.location.hash, true);
@@ -667,6 +696,90 @@
         });
     }
 
+    function setupInitialHashAlignment() {
+        const initialHash = INITIAL_HASH || window.location.hash;
+
+        if (!initialHash) {
+            return;
+        }
+
+        let targetId;
+
+        try {
+            targetId = decodeURIComponent(initialHash.slice(1));
+        } catch (error) {
+            return;
+        }
+
+        const target = document.getElementById(targetId);
+
+        if (!target) {
+            return;
+        }
+
+        let cancelledByUser = false;
+        let alignmentIntervalId = null;
+        let alignmentTimeoutId = null;
+        const cancellationEvents = ['pointerdown', 'touchstart', 'wheel', 'keydown'];
+
+        function stopAlignment() {
+            if (alignmentIntervalId !== null) {
+                window.clearInterval(alignmentIntervalId);
+                alignmentIntervalId = null;
+            }
+
+            if (alignmentTimeoutId !== null) {
+                window.clearTimeout(alignmentTimeoutId);
+                alignmentTimeoutId = null;
+            }
+
+            cancellationEvents.forEach(function (eventName) {
+                window.removeEventListener(eventName, cancelAlignment);
+            });
+        }
+
+        function cancelAlignment() {
+            cancelledByUser = true;
+            stopAlignment();
+        }
+
+        function alignTarget() {
+            if (!cancelledByUser && document.contains(target)) {
+                target.scrollIntoView({ block: 'start', behavior: 'instant' });
+            }
+        }
+
+        cancellationEvents.forEach(function (eventName) {
+            window.addEventListener(eventName, cancelAlignment, {
+                once: true,
+                passive: eventName !== 'keydown'
+            });
+        });
+
+        alignTarget();
+        alignmentIntervalId = window.setInterval(alignTarget, 100);
+        alignmentTimeoutId = window.setTimeout(stopAlignment, 3000);
+
+        window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(alignTarget);
+        });
+
+        window.addEventListener('load', alignTarget, { once: true });
+
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(alignTarget);
+        }
+
+        Array.from(document.images).forEach(function (image) {
+            const targetFollowsImage = image.compareDocumentPosition(target)
+                & Node.DOCUMENT_POSITION_FOLLOWING;
+
+            if (targetFollowsImage && !image.complete) {
+                image.addEventListener('load', alignTarget, { once: true });
+                image.addEventListener('error', alignTarget, { once: true });
+            }
+        });
+    }
     function setCookie(name, value, days) {
         let expires = '';
 
@@ -765,10 +878,14 @@
         setupArchiveYears();
         setupLinkExplorer();
         setupRandomTrack();
+        setupInitialHashAlignment();
         loadStatcounter();
         setupInfoBanner();
     }
 
     document.addEventListener('DOMContentLoaded', initialize);
+    window.addEventListener('load', function () {
+        window.setTimeout(restoreInitialHash, 0);
+    }, { once: true });
     window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
 }());
