@@ -193,9 +193,9 @@
 }
 
 .info-story > p {
-    max-width: 86ch;
+    max-width: 78ch;
     margin: 0 0 14px;
-    line-height: 1.72;
+    line-height: 1.65;
 }
 
 .info-story > p:last-child {
@@ -229,19 +229,19 @@
 .info-table {
     width: var(--mobile-full-width);
     table-layout: fixed;
-    border: 1px solid var(--color-border);
+    border: 1px solid #393d40;
     border-collapse: separate;
     border-spacing: 0;
     border-radius: var(--radius-medium);
-    background: var(--color-bg-inset);
+    background: #202224;
     overflow: hidden;
 }
 
 .info-table th {
-    padding: 10px 13px;
-    background: #262626;
-    border-bottom: 1px solid var(--color-border);
-    color: #c0c0c0;
+    padding: 9px 12px;
+    background: #242628;
+    border-bottom: 1px solid #393d40;
+    color: #c3c7c9;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.035em;
@@ -250,25 +250,20 @@
 }
 
 .info-table td {
-    padding: 9px 13px;
+    padding: 9px 12px;
     border: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.045);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
     background: transparent;
     color: var(--color-text-primary);
     font-size: inherit;
-    line-height: 1.35;
+    line-height: 1.4;
     overflow-wrap: anywhere;
     vertical-align: top;
-    transition: background-color var(--transition-default);
 }
 
 .info-table th + th,
 .info-table td + td {
-    border-left: 1px solid var(--color-border);
-}
-
-.info-table tbody tr:hover td {
-    background: #242424;
+    border-left: 1px solid #393d40;
 }
 
 .info-table tr:last-child td {
@@ -277,15 +272,14 @@
 
 .info-table td b {
     display: block;
-    margin-bottom: 2px;
-    color: #a0a0a0;
-    font-size: 0.68rem;
+    margin-bottom: 3px;
+    color: #9fa8ac;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.055em;
     line-height: 1.25;
     text-transform: uppercase;
 }
-
 .production-notes {
     max-width: 86ch;
     margin: 24px 0 0;

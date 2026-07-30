@@ -219,7 +219,7 @@
 
     function openLightbox(modal, modalImage, thumbnails, closeButton, triggerLink) {
         const image = triggerLink.querySelector('img');
-        const parentGroup = triggerLink.closest('.screenshot-grid');
+        const parentGroup = triggerLink.closest('.content-box') || triggerLink.closest('.screenshot-grid');
 
         if (thumbnails) {
             thumbnails.innerHTML = '';
