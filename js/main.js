@@ -63,6 +63,7 @@
     let backToTopButton = null;
     let lightboxBackground = [];
     let previousBodyOverflow = '';
+    let cancelInitialHashAlignment = function () {};
 
     function getScrollTop() {
         return document.body.scrollTop || document.documentElement.scrollTop || 0;
@@ -90,6 +91,7 @@
     }
 
     function scrollToTop() {
+        cancelInitialHashAlignment();
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
@@ -336,7 +338,6 @@
         }
 
         modal.hidden = false;
-        modal.setAttribute('aria-hidden', 'false');
         modalImage.src = triggerLink.href;
         modalImage.alt = image ? image.alt : 'Enlarged image';
         previousBodyOverflow = document.body.style.overflow;
@@ -352,7 +353,6 @@
 
     function closeLightbox(modal, restoreTarget) {
         modal.hidden = true;
-        modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = previousBodyOverflow;
         lightboxBackground.forEach(function (element) {
             element.inert = false;
@@ -742,6 +742,8 @@
             cancelledByUser = true;
             stopAlignment();
         }
+
+        cancelInitialHashAlignment = cancelAlignment;
 
         function alignTarget() {
             if (!cancelledByUser && document.contains(target)) {
