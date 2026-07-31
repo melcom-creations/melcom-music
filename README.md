@@ -1,10 +1,10 @@
-# melcom - Music and Creations
+# 🎵 melcom - Music and Creations
 
 This repository contains the source and generated files for the official website of melcom, a demoscene musician and hobby developer from Germany.
 
 Visit the website: [www.melcom-music.de](https://www.melcom-music.de/)
 
-## About the website
+## 🌐 About the website
 
 The website brings together:
 
@@ -17,7 +17,7 @@ The website brings together:
 
 The design is built around a dark, accessible interface that keeps the focus on the music, artwork, and creative projects.
 
-## Project structure
+## 🗂️ Project structure
 
 | Path | Purpose |
 | --- | --- |
@@ -32,7 +32,7 @@ The design is built around a dark, accessible interface that keeps the focus on 
 
 The HTML files in the repository root are generated deployment files. Content changes should normally be made in `src/` or in the shared files under `components/`.
 
-## Building the website
+## 🔨 Building the website
 
 The build scripts use only the Python standard library and require Python 3.9 or newer.
 
@@ -52,9 +52,9 @@ The build process:
 
 After the build finishes, open `index.html` in a browser for a local check.
 
-## Recreating the source templates
+## ♻️ Recreating the source templates
 
-`cleanup.py` is a maintenance tool, not a normal build cleanup command. It transfers the generated root HTML pages back into `src/`, restores their component placeholders, and then deletes those generated HTML files from the repository root.
+⚠️ `cleanup.py` is a maintenance tool, not a normal build cleanup command. It transfers the generated root HTML pages back into `src/`, restores their component placeholders, and then deletes those generated HTML files from the repository root.
 
 Use it only when you intentionally want to transfer changes from generated pages back into the source templates:
 
@@ -64,19 +64,19 @@ python cleanup.py
 
 Create a backup or commit your current work before running it.
 
-## HTML and accessibility
+## ♿ HTML and accessibility
 
 The generated pages are maintained as valid HTML5 and can be checked with the [Nu HTML Checker](https://validator.w3.org/nu/?doc=https://www.melcom-music.de).
 
 The interface includes responsive layouts, keyboard focus states, descriptive link and image text, accessible navigation states, and reduced-motion support where appropriate.
 
-## Deployment
+## 🚀 Deployment
 
 The generated files in the repository root are published through GitHub Pages. The public website uses the custom domain:
 
 [https://www.melcom-music.de/](https://www.melcom-music.de/)
 
-## Content and license
+## 📜 Content and license
 
 Copyright 2014 - 2026 melcom, Andreas Thomas Urban.
 
@@ -84,6 +84,6 @@ The music published on the website is licensed under the [Creative Commons Attri
 
 Other source files, software projects, images, and third-party assets may have their own terms. See the website pages and linked project repositories for details.
 
-## Contact
+## ✉️ Contact
 
 Questions, feedback, or collaboration ideas are welcome through the [contact page](https://www.melcom-music.de/contact.html).
