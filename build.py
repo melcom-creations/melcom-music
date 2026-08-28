@@ -37,6 +37,7 @@ CSS_PARTS = (
     "responsive.css",
     "refinements.css",
     "design-system.css",
+    "scene-flow.css",
 )
 GENERATED_META_RE = re.compile(
     r"\s*<!-- GENERATED_META_START -->.*?<!-- GENERATED_META_END -->",

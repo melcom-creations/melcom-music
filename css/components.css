@@ -20,7 +20,7 @@ th {
 .download-button {
     display: inline-block;
     padding: 10px 18px;
-    background: #303030;
+    background: var(--color-surface-soft);
     border: 1px solid #3f3f3f;
     border-radius: var(--radius-default);
     color: #dfefff;
@@ -29,7 +29,7 @@ th {
 }
 
 .download-button:hover {
-    background: #3a3a3a;
+    background: var(--color-surface-hover);
     transform: translateY(-2px);
 }
 
@@ -227,7 +227,7 @@ th {
 }
 
 #info-banner-learn-more {
-    background: #3a3a3a;
+    background: var(--color-surface-hover);
     color: #ffffff;
     border: 1px solid #4a4a4a;
 }

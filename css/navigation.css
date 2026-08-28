@@ -7,7 +7,7 @@
     padding: 14px 20px;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
-    background: #1e1e1e;
+    background: var(--color-shell);
 }
 
 .nav-shell {
@@ -175,7 +175,7 @@
 .site-navigation .nav-dropdown-content a:hover,
 .site-navigation .nav-dropdown-content a:focus-visible {
     border-color: var(--color-border-interactive);
-    background: #252525;
+    background: var(--color-surface-soft);
     color: var(--color-text-primary);
     transform: translateX(2px);
 }
@@ -218,7 +218,7 @@
 .page-dropdown-btn:focus-visible,
 .page-dropdown-btn[aria-expanded="true"] {
     border-color: var(--color-focus);
-    background: #282828;
+    background: var(--color-surface-hover);
     color: var(--color-text-primary);
 }
 
@@ -310,14 +310,14 @@
 .page-year-menu a:hover,
 .page-year-menu a:focus-visible {
     border-color: var(--color-border-interactive);
-    background: #292929;
+    background: var(--color-surface-hover);
     color: var(--color-text-primary);
     transform: translateY(-1px);
 }
 
 .page-year-menu a.nav-active {
     border-color: var(--color-border-interactive);
-    background: #282828;
+    background: var(--color-surface-hover);
     color: var(--color-text-primary);
     font-weight: bold;
     box-shadow: inset 3px 0 0 var(--color-focus);

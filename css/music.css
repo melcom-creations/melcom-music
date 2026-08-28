@@ -49,7 +49,7 @@
 
 .archive-control-button:hover,
 .archive-control-button:focus-visible {
-    background: #272d31;
+    background: var(--color-surface-hover);
     border-color: #75cce8;
     color: #ffffff;
 }
@@ -233,13 +233,13 @@
     border-collapse: separate;
     border-spacing: 0;
     border-radius: var(--radius-medium);
-    background: #202224;
+    background: var(--color-surface-inset);
     overflow: hidden;
 }
 
 .info-table th {
     padding: 8px 11px;
-    background: #242628;
+    background: var(--color-surface-raised);
     border-bottom: 1px solid #393d40;
     color: #c3c7c9;
     font-size: 0.82rem;

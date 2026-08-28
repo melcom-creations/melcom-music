@@ -1,0 +1,1189 @@
+/* ========================================================================== 
+   Scene Flow visual system
+   The last stylesheet layer defines the page hierarchy shared by all sections.
+   Large regions are separated primarily by tonal steps and spacing. Strong
+   borders are reserved for controls, focus states, media frames, and notices.
+   ========================================================================== */
+
+:root {
+    --flow-panel: var(--color-surface);
+    --flow-panel-head: var(--color-surface-raised);
+    --flow-panel-inset: var(--color-surface-inset);
+    --flow-row: #2a3237;
+    --flow-row-alt: #2d363b;
+    --flow-hover: #3a454c;
+    --flow-divider: #48555d;
+    --flow-divider-soft: #3d484f;
+    --flow-divider-strong: #5c6a72;
+    --flow-sidebar: #293136;
+    --flow-sidebar-head: #323c42;
+    --flow-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    --flow-radius: 10px;
+}
+
+/* Page shell and navigation */
+.container {
+    border: 0;
+    background: var(--color-shell);
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.28);
+}
+
+header,
+.site-navigation {
+    background: var(--color-shell);
+}
+
+.site-navigation {
+    border-top: 1px solid var(--flow-divider-soft);
+    border-bottom: 1px solid var(--flow-divider-soft);
+}
+
+.nav-container {
+    gap: 0.2rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.nav-button,
+.nav-dropbtn {
+    min-height: 38px;
+    padding: 0.5rem 0.72rem;
+    border: 0;
+    border-radius: 6px;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible,
+.nav-dropbtn:hover,
+.nav-dropbtn:focus-visible,
+.nav-dropbtn[aria-expanded="true"],
+.site-navigation .nav-dropdown.is-open > .nav-dropbtn {
+    border-color: transparent;
+    background: rgba(255, 255, 255, 0.055);
+    transform: none;
+}
+
+.site-navigation .nav-active {
+    border: 0;
+    background: rgba(255, 255, 255, 0.075);
+    color: var(--color-text-strong);
+    font-weight: 700;
+    box-shadow: inset 0 -2px 0 var(--nav-accent, var(--color-accent-primary));
+}
+
+.site-navigation .nav-active::after {
+    display: none;
+}
+
+.site-navigation .nav-dropdown-content,
+.page-year-menu {
+    border-color: var(--color-border-strong);
+    background: var(--flow-panel-inset);
+}
+
+.site-navigation .nav-dropdown-content a,
+.page-year-menu a {
+    background: #242a2f;
+}
+
+.site-navigation .nav-dropdown-content a:hover,
+.site-navigation .nav-dropdown-content a:focus-visible,
+.site-navigation .nav-dropdown-content a.nav-sub-active,
+.page-year-menu a:hover,
+.page-year-menu a:focus-visible {
+    background: var(--flow-hover);
+}
+
+/* Page headings and spacing */
+.main-content {
+    gap: 1.7rem;
+}
+
+.page-header {
+    margin-bottom: 1.15rem;
+    padding-bottom: 0.85rem;
+    border-bottom-color: var(--flow-divider-strong);
+}
+
+.post-separator {
+    margin: 1.4rem 0;
+    border-top-color: var(--flow-divider-soft);
+}
+
+/* Notices keep a colored edge because the edge conveys a semantic callout. */
+.intro-highlight-box {
+    margin: 0.9rem 0 1.35rem;
+    padding: 0.95rem 1.05rem 1rem;
+    border: 0;
+    border-left: 3px solid var(--color-accent-warm);
+    border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
+    background: #2b2b28;
+    box-shadow: none;
+}
+
+.intro-highlight-title {
+    color: var(--color-accent-warm);
+}
+
+.contact-feedback,
+.creations-page .creation-note {
+    border-left-width: 3px;
+}
+
+/* Major content regions */
+.content-box,
+.link-box,
+.about-box,
+.news-card,
+.about-profile-card,
+.contact-card {
+    overflow: hidden;
+    border: 0;
+    border-left: 0;
+    border-radius: var(--flow-radius);
+    background: var(--flow-panel);
+    box-shadow: var(--flow-shadow);
+}
+
+.content-box {
+    margin-bottom: 1.35rem;
+}
+
+.content-box-title,
+.news-card .content-box-title,
+.about-box .content-box-title,
+.link-box-header {
+    margin: 0;
+    padding: 0.8rem 1.05rem 0.72rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-strong);
+    background: var(--flow-panel-head);
+}
+
+.box-content,
+.news-card .box-content,
+.about-box .box-content,
+.link-category .link-list {
+    background: var(--flow-panel);
+}
+
+.box-content,
+.news-card .box-content,
+.about-box .box-content {
+    padding: 0.95rem 1.1rem 1.1rem;
+}
+
+/* Category colors remain identity cues, but structure does not depend on color. */
+.news-card .content-box-title {
+    background: color-mix(in srgb, var(--news-accent, var(--color-accent-primary)) 6%, var(--flow-panel-head));
+}
+
+.link-box-header {
+    background: color-mix(in srgb, var(--link-accent, var(--color-accent-primary)) 6%, var(--flow-panel-head));
+}
+
+.about-box .content-box-title {
+    background: color-mix(in srgb, var(--about-accent, var(--color-accent-primary)) 6%, var(--flow-panel-head));
+}
+
+/* Music and album detail pages read as one document inside each release panel. */
+.info-box {
+    padding: 0.85rem 0;
+    border: 0;
+    background: transparent;
+}
+
+.content-box > .box-content > .info-box:first-child,
+.content-box > .info-box:first-child {
+    padding-top: 0;
+}
+
+.info-box + .info-box,
+.info-actions + .info-box,
+.info-box + .info-actions,
+.creations-page .box-content > h3 {
+    border-top-color: var(--flow-divider-soft);
+}
+
+.info-box > h3,
+.info-actions-title {
+    margin: 0 0 0.65rem;
+    padding: 0;
+    border: 0;
+}
+
+.info-story::before {
+    display: none;
+}
+
+.info-actions {
+    margin: 0;
+    padding: 0.85rem 0;
+    border: 0;
+}
+
+.info-actions .action-bar {
+    margin: 0.55rem 0 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.info-actions .action-group {
+    padding: 0.45rem 0;
+    border-bottom-color: var(--flow-divider-soft);
+}
+
+.info-actions .action-group:last-child {
+    border-bottom: 0;
+}
+
+/* Tables use an inset data surface with a stronger header and horizontal rhythm. */
+.info-table,
+.album-table {
+    border: 0;
+    border-collapse: collapse;
+    border-radius: 0;
+    background: var(--flow-panel-inset);
+    box-shadow: inset 0 1px 0 var(--flow-divider-strong), inset 0 -1px 0 var(--flow-divider-strong);
+}
+
+.info-table th,
+.album-table thead,
+.album-table th {
+    background: var(--flow-panel-head);
+}
+
+.info-table th,
+.album-table th {
+    padding: 0.58rem 0.78rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-strong);
+}
+
+.info-table td,
+.album-table td {
+    padding: 0.54rem 0.78rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider);
+    background: var(--flow-row);
+}
+
+.info-table tr:nth-child(even) td,
+.album-table tbody[id] tr:nth-child(even) td {
+    background: var(--flow-row-alt);
+}
+
+.info-table th + th,
+.info-table td + td {
+    border-left: 1px solid var(--flow-divider-soft);
+}
+
+.info-table tr:last-child td,
+.album-table tbody[id] tr:last-child td {
+    border-bottom-color: var(--flow-divider-strong);
+}
+
+.info-table tr:hover td,
+.album-table tbody[id] tr:hover td {
+    background: var(--flow-hover);
+}
+
+/* Archive overviews separate controls, years, and track rows into distinct levels. */
+.no-padding {
+    background: var(--flow-panel-inset);
+}
+
+.archive-controls {
+    padding: 0.55rem 0.72rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-strong);
+    background: var(--flow-panel-inset);
+}
+
+.album-table thead th {
+    background: var(--flow-panel-head);
+}
+
+.year-separator td {
+    padding: 0.2rem 0.8rem;
+    border: 0;
+    border-top: 1px solid var(--flow-divider-strong);
+    border-bottom: 1px solid var(--flow-divider-strong);
+    background: #313a40;
+}
+
+.archive-year-toggle {
+    min-height: 36px;
+    padding: 0.34rem 0;
+}
+
+.archive-year-note {
+    color: var(--color-accent-warm-soft);
+}
+
+/* Album track lists use flat rows rather than individual cards. */
+.tracklist {
+    gap: 0 1.1rem;
+    margin-top: 1rem;
+}
+
+.tracklist li {
+    min-height: 40px;
+    padding: 0.58rem 0.55rem 0.58rem 2.45rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-soft);
+    border-radius: 0;
+    background: var(--flow-row);
+}
+
+.tracklist li:nth-child(even) {
+    background: var(--flow-row-alt);
+}
+
+.tracklist li:hover {
+    background: var(--flow-hover);
+}
+
+.tracklist li::before {
+    top: 50%;
+    left: 0.55rem;
+    transform: translateY(-50%);
+}
+
+.production-tool-list {
+    border-left: 0;
+    background: var(--flow-panel-inset);
+}
+
+.production-tool-row {
+    padding: 0.5rem 0.7rem;
+    border-bottom-color: var(--flow-divider-soft);
+}
+
+/* Homepage discovery and news */
+.discovery-grid {
+    gap: 0 1rem;
+}
+
+.discovery-card,
+.creation-jump-nav a {
+    min-height: 44px;
+    padding: 0.55rem 0.65rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-soft);
+    border-radius: 0;
+    background: var(--flow-row);
+}
+
+.discovery-card:nth-child(even),
+.creation-jump-nav a:nth-child(even) {
+    background: var(--flow-row-alt);
+}
+
+.discovery-card:hover,
+.discovery-card:focus-visible,
+.creation-jump-nav a:hover,
+.creation-jump-nav a:focus-visible {
+    border-color: transparent;
+    background: var(--flow-hover);
+    transform: none;
+}
+
+.news-card {
+    margin-bottom: 1.3rem;
+}
+
+.news-card .box-content {
+    padding-top: 0.9rem;
+}
+
+/* Links directory */
+.link-explorer {
+    margin-bottom: 1.2rem;
+    padding: 0.95rem 1rem;
+    border: 0;
+    border-radius: var(--flow-radius);
+    background: var(--flow-panel-head);
+    box-shadow: var(--flow-shadow);
+}
+
+.link-search input {
+    border-color: var(--color-border-interactive);
+    background: var(--flow-panel-inset);
+}
+
+.link-category-nav {
+    gap: 0 0.9rem;
+    margin-top: 0.65rem;
+}
+
+.link-nav-card {
+    min-height: 40px;
+    padding: 0.46rem 0.45rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-soft);
+    border-radius: 0;
+    background: var(--flow-row);
+}
+
+.link-nav-card:nth-child(even) {
+    background: var(--flow-row-alt);
+}
+
+.link-nav-card:hover,
+.link-nav-card:focus-visible {
+    border-color: transparent;
+    background: var(--flow-hover);
+    transform: none;
+}
+
+.link-category {
+    margin-bottom: 1rem;
+}
+
+.link-box-header {
+    padding: 0.8rem 1rem 0.7rem;
+}
+
+.link-category .link-list {
+    gap: 0 1rem;
+    padding: 0.3rem 1rem 0.7rem;
+}
+
+.link-category .link-list li {
+    min-height: 38px;
+    padding: 0.48rem 0.42rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-soft);
+    border-radius: 0;
+    background: var(--flow-row);
+}
+
+.link-category .link-list li:nth-child(even) {
+    background: var(--flow-row-alt);
+}
+
+.link-category .link-list li:hover {
+    border-color: transparent;
+    background: var(--flow-hover);
+    transform: none;
+}
+
+/* About page */
+.about-profile-card {
+    background: var(--flow-panel);
+}
+
+.about-jump-nav {
+    padding: 0.6rem 0.72rem;
+    border: 0;
+    border-radius: var(--radius-medium);
+    background: var(--flow-panel-head);
+}
+
+.about-jump-nav a {
+    min-height: 30px;
+    padding: 0.28rem 0.58rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-soft);
+    border-radius: 0;
+    background: var(--flow-row);
+}
+
+.about-jump-nav a:hover,
+.about-jump-nav a:focus-visible {
+    border-color: transparent;
+    background: var(--flow-hover);
+    transform: none;
+}
+
+.about-group-heading {
+    margin-top: 1.5rem;
+    border-bottom-color: var(--flow-divider-strong);
+}
+
+.about-tool-group {
+    padding: 0.65rem 0.75rem;
+    border: 0;
+    border-radius: 0;
+    background: var(--flow-row);
+}
+
+.about-tool-group:nth-of-type(even) {
+    border-left: 0;
+    background: var(--flow-row-alt);
+}
+
+.about-tool-group .tool-list li {
+    border-top-color: var(--flow-divider-soft);
+}
+
+.alias-list li,
+.about-profile-facts li {
+    border-color: var(--flow-divider-strong);
+    background: var(--flow-row);
+}
+
+/* Contact */
+.contact-card {
+    padding: 0.9rem 1rem;
+}
+
+.contact-card-profile:hover,
+.contact-card-profile:focus-visible {
+    background: var(--flow-hover);
+    transform: none;
+}
+
+.contact-addresses > span {
+    padding: 0.55rem 0.65rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-soft);
+    border-radius: 0;
+    background: var(--flow-row);
+}
+
+.contact-feedback {
+    border: 0;
+    border-left: 3px solid #c2a7e2;
+    border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
+    background: #2c2a31;
+}
+
+/* Sidebar uses a darker inset layer so it belongs to the shell without merging into it. */
+.widget {
+    border: 0;
+    border-radius: var(--flow-radius);
+    background: var(--flow-sidebar);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.widget-title {
+    min-height: 38px;
+    padding: 0.58rem 0.7rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-soft);
+    background: var(--flow-sidebar-head);
+}
+
+.social-icons,
+.site-info-content {
+    background: var(--flow-sidebar);
+}
+
+.social-link {
+    min-height: 44px;
+    border-color: color-mix(in srgb, var(--social-accent) 48%, var(--color-border));
+    background: #252b30;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    background: color-mix(in srgb, var(--social-accent) 12%, #2c3338);
+}
+
+.site-info-link {
+    border-color: var(--color-border-interactive);
+    background: #252b30;
+}
+
+/* Controls keep a clear boundary even where surrounding content stays open. */
+.action-link,
+.news-action,
+.download-button,
+.archive-control-button,
+.site-info-link {
+    min-height: 30px;
+    padding: 0.32rem 0.62rem;
+}
+
+.archive-control-button,
+.action-link,
+.news-action,
+.download-button {
+    border-color: var(--color-border-interactive);
+    background: #252b30;
+}
+
+.archive-control-button:hover,
+.archive-control-button:focus-visible,
+.action-link:hover,
+.action-link:focus-visible,
+.news-action:hover,
+.news-action:focus-visible,
+.download-button:hover,
+.download-button:focus-visible {
+    background: var(--flow-hover);
+}
+
+.page-dropdown-btn {
+    min-height: 38px;
+    padding: 0.52rem 0.72rem;
+}
+
+.page-year-menu a {
+    min-height: 36px;
+    padding: 0.48rem 0.62rem;
+}
+
+/* Tablet layout */
+@media (max-width: 1000px) {
+    .container {
+        box-shadow: none;
+    }
+
+    .sidebar {
+        padding-top: 0.2rem;
+        border-top: 1px solid var(--flow-divider-strong);
+    }
+}
+
+@media (max-width: 800px) {
+    .about-tool-group:nth-of-type(even) {
+        border-left: 0;
+    }
+
+    .about-tool-group + .about-tool-group {
+        border-top: 1px solid var(--flow-divider-soft);
+    }
+}
+
+/* Phone layout keeps touch targets large and turns archive tables into readable records. */
+@media (max-width: 700px) {
+    .container {
+        background: var(--color-shell);
+    }
+
+    .site-navigation {
+        border-top: 0;
+    }
+
+    .site-navigation .nav-container {
+        padding: 0;
+        background: transparent;
+    }
+
+    .site-navigation .nav-button,
+    .site-navigation .nav-dropbtn,
+    .page-dropdown-btn,
+    .page-year-menu a {
+        min-height: 44px;
+    }
+
+    .content-box-title,
+    .news-card .content-box-title,
+    .about-box .content-box-title,
+    .link-box-header {
+        padding: 0.75rem 0.9rem 0.68rem;
+    }
+
+    .box-content,
+    .news-card .box-content,
+    .about-box .box-content {
+        padding: 0.85rem 0.9rem 1rem;
+    }
+
+    .action-link,
+    .news-action,
+    .download-button,
+    .archive-control-button,
+    .site-info-link {
+        min-height: 40px;
+        padding: 0.48rem 0.72rem;
+    }
+
+    .tracklist {
+        gap: 0;
+    }
+
+    .tracklist li,
+    .link-nav-card,
+    .link-category .link-list li,
+    .creation-jump-nav a,
+    .discovery-card {
+        min-height: 44px;
+    }
+
+    .link-category-nav,
+    .link-category .link-list {
+        gap: 0;
+    }
+
+    .contact-card {
+        padding: 0.8rem 0.9rem;
+    }
+
+    .no-padding {
+        overflow: visible;
+    }
+
+    .album-table {
+        display: block;
+        min-width: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .album-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .album-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .album-table tbody[hidden] {
+        display: none !important;
+    }
+
+    .album-table tbody[id] tr {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        width: 100%;
+        border-bottom: 1px solid var(--flow-divider-strong);
+        background: var(--flow-row);
+    }
+
+    .album-table tbody[id] tr:nth-child(even) {
+        background: var(--flow-row-alt);
+    }
+
+    .album-table tbody[id] td {
+        display: block;
+        min-width: 0;
+        padding: 0.5rem 0.65rem;
+        border: 0;
+        border-bottom: 1px solid var(--flow-divider-soft);
+        background: transparent;
+    }
+
+    .album-table tbody[id] td:first-child {
+        position: static;
+        grid-column: 1 / -1;
+        padding-top: 0.65rem;
+        background: transparent;
+        box-shadow: none;
+        font-size: 1rem;
+    }
+
+    .album-table tbody[id] td:nth-child(2)::before,
+    .album-table tbody[id] td:nth-child(3)::before,
+    .album-table tbody[id] td:nth-child(4)::before {
+        display: block;
+        margin-bottom: 0.15rem;
+        color: var(--color-text-muted);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .album-table tbody[id] td:nth-child(2)::before {
+        content: "Date";
+    }
+
+    .album-table tbody[id] td:nth-child(3)::before {
+        content: "Type";
+    }
+
+    .album-table tbody[id] td:nth-child(4) {
+        grid-column: 1 / -1;
+        border-bottom: 0;
+    }
+
+    .album-table tbody[id] td:nth-child(4)::before {
+        content: "Info";
+    }
+
+    .year-separator,
+    .year-separator td {
+        display: block;
+        width: 100%;
+    }
+
+    .year-separator td {
+        padding: 0.25rem 0.65rem;
+    }
+
+    .archive-year-toggle {
+        width: 100%;
+        min-height: 44px;
+        align-items: flex-start;
+        gap: 0.45rem;
+        padding: 0.5rem 0;
+    }
+
+    .archive-year-note {
+        white-space: normal;
+        text-align: right;
+    }
+
+    .info-table th,
+    .info-table td {
+        padding: 0.5rem 0.55rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .archive-year-toggle {
+        display: grid;
+        grid-template-columns: auto auto minmax(0, 1fr);
+    }
+
+    .archive-year-note {
+        line-height: 1.35;
+    }
+}
+
+@media (forced-colors: active) {
+    .content-box,
+    .link-box,
+    .about-box,
+    .news-card,
+    .intro-highlight-box,
+    .contact-card,
+    .widget {
+        border: 2px solid CanvasText;
+        box-shadow: none;
+    }
+}
+
+/* Small supporting text uses the shared secondary roles on raised surfaces. */
+#link-search-status,
+.contact-addresses small,
+.contact-card-profile small,
+.contact-card .contact-tip,
+.creation-jump-nav small,
+.production-tool-description,
+.link-box-header p,
+.about-group-heading p,
+.news-section-header p,
+.news-archive-intro {
+    color: var(--color-text-muted);
+}
+
+.discovery-card small,
+.link-nav-card small,
+.about-jump-nav small,
+.production-tool-row dt,
+.info-table td b,
+.action-group-label {
+    color: var(--color-text-secondary);
+}
+
+
+/* ========================================================================== 
+   Surface coherence
+   Nested information regions use the same cool gray family as their parent
+   panels. Dark inset surfaces are reserved for compact controls and data rows.
+   ========================================================================== */
+
+/* Legacy variables still referenced by older modules resolve to the shared roles. */
+:root {
+    --color-bg-primary: var(--color-canvas);
+    --color-bg-secondary: var(--color-surface-soft);
+    --color-bg-inset: var(--color-surface-inset);
+}
+
+/* Keep the shell, sidebar, and main panels inside one tonal family. */
+.container,
+header,
+.site-navigation {
+    background: var(--color-shell);
+}
+
+.widget,
+.social-icons,
+.site-info-content {
+    background: var(--flow-sidebar);
+}
+
+.widget-title {
+    background: var(--flow-sidebar-head);
+}
+
+.social-link,
+.site-info-link,
+.archive-control-button,
+.action-link,
+.news-action,
+.download-button {
+    background: var(--color-surface-soft);
+}
+
+/* Content panels share one body surface and one raised heading surface. */
+.content-box,
+.link-box,
+.about-box,
+.news-card,
+.about-profile-card,
+.contact-card {
+    background: var(--color-surface);
+}
+
+.content-box-title,
+.news-card .content-box-title,
+.about-box .content-box-title,
+.link-box-header {
+    background: var(--color-surface-raised);
+}
+
+.box-content,
+.news-card .box-content,
+.about-box .box-content,
+.link-category .link-list {
+    background: var(--color-surface);
+}
+
+/* Track stories are secondary reading regions, not near-black slabs. */
+.info-box.info-story {
+    margin-top: 0.85rem;
+    padding: 0.95rem 1rem 1rem;
+    border: 0;
+    border-radius: var(--radius-medium);
+    background: var(--color-surface-soft);
+    box-shadow: inset 0 0 0 1px var(--flow-divider-soft);
+}
+
+.info-box.info-story > h3 {
+    margin: 0 0 0.7rem;
+    padding: 0 0 0.6rem;
+    border: 0;
+    border-bottom: 1px solid var(--flow-divider-soft);
+}
+
+.info-box.info-story > p {
+    max-width: 82ch;
+}
+
+.info-story::before {
+    display: none;
+}
+
+.production-notes {
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--flow-divider-soft);
+}
+
+.production-notes h4 {
+    color: var(--color-text-secondary);
+}
+
+.production-tool-list {
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-medium);
+    background: var(--color-surface-inset);
+    box-shadow: inset 0 0 0 1px var(--flow-divider-soft);
+}
+
+.production-tool-row {
+    padding: 0.52rem 0.75rem;
+    border-bottom: 1px solid var(--flow-divider-soft);
+    background: transparent;
+}
+
+.production-tool-row:nth-child(even) {
+    background: color-mix(in srgb, var(--color-surface-raised) 18%, transparent);
+}
+
+/* Creation sub-panels stay visibly related to the parent section. */
+.creations-page #samples .two-column-layout {
+    gap: 1rem;
+}
+
+.creations-page #samples .column {
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--flow-divider-soft);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface-soft);
+    box-shadow: none;
+}
+
+.creations-page #samples .column p:last-child,
+.creations-page #samples .column ul:last-child {
+    margin-bottom: 0;
+}
+
+.creation-jump-nav a,
+.discovery-card,
+.link-nav-card,
+.link-category .link-list li,
+.about-tool-group,
+.contact-addresses > span,
+.tracklist li {
+    background: var(--flow-row);
+}
+
+.creation-jump-nav a:nth-child(even),
+.discovery-card:nth-child(even),
+.link-nav-card:nth-child(even),
+.link-category .link-list li:nth-child(even),
+.about-tool-group:nth-of-type(even),
+.tracklist li:nth-child(even) {
+    background: var(--flow-row-alt);
+}
+
+/* Tables and archives remain distinct without dropping to an unrelated black. */
+.info-table,
+.album-table,
+.no-padding,
+.archive-controls {
+    background: var(--color-surface-inset);
+}
+
+.info-table {
+    overflow: hidden;
+    border-radius: var(--radius-medium);
+    box-shadow: inset 0 0 0 1px var(--flow-divider-soft);
+}
+
+.info-table th,
+.album-table th {
+    background: var(--color-surface-raised);
+}
+
+.info-table td,
+.album-table tbody[id] td {
+    background: var(--flow-row);
+}
+
+.info-table tr:nth-child(even) td,
+.album-table tbody[id] tr:nth-child(even) td {
+    background: var(--flow-row-alt);
+}
+
+.year-separator td {
+    background: #333e44;
+}
+
+/* Menus and compact inputs may be inset, but remain part of the same palette. */
+.site-navigation .nav-dropdown-content,
+.page-year-menu,
+.link-search input {
+    background: var(--color-surface-inset);
+}
+
+.site-navigation .nav-dropdown-content a,
+.page-year-menu a {
+    background: var(--color-surface-soft);
+}
+
+@media (max-width: 700px) {
+    .info-box.info-story {
+        margin-top: 0.7rem;
+        padding: 0.85rem 0.9rem 0.9rem;
+    }
+
+    .creations-page #samples .column {
+        padding: 0.8rem 0.9rem;
+    }
+}
+
+/* ========================================================================== 
+   Interaction and subpanel consistency
+   Repeated rows that contain links use one hover language across the site.
+   Static About Me tool groups use matching card surfaces so column position
+   never changes their visual weight.
+   ========================================================================== */
+
+/* About Me tool groups are peer cards, not alternating table rows. */
+.about-box-tools .box-content,
+.about-box-vst .box-content {
+    gap: 0.75rem;
+}
+
+.about-tool-group,
+.about-tool-group:nth-of-type(even) {
+    overflow: hidden;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--flow-divider-soft);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface-soft);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.018);
+}
+
+.about-tool-group h3 {
+    margin-bottom: 0.5rem;
+}
+
+.about-tool-group .tool-list li {
+    margin: 0 -0.35rem;
+    padding: 0.34rem 0.35rem 0.34rem 1.05rem;
+    border-top: 1px solid var(--flow-divider-soft);
+    border-radius: 4px;
+    transition: background-color var(--transition-default), color var(--transition-default);
+}
+
+.about-tool-group .tool-list li::before {
+    left: 0.42rem;
+}
+
+/* Full-row links use the same hover treatment regardless of grid position. */
+.link-nav-card:hover,
+.link-nav-card:focus-visible,
+.creation-jump-nav a:hover,
+.creation-jump-nav a:focus-visible,
+.discovery-card:hover,
+.discovery-card:focus-visible,
+.about-jump-nav a:hover,
+.about-jump-nav a:focus-visible {
+    background: var(--flow-hover);
+    color: var(--color-text-strong);
+    transform: none;
+}
+
+.link-nav-card:hover,
+.link-nav-card:focus-visible {
+    background: color-mix(in srgb, var(--link-accent) 8%, var(--flow-hover));
+}
+
+/* Link-containing rows remain equally responsive in both grid columns. */
+.link-category .link-list li:hover,
+.link-category .link-list li:focus-within {
+    background: color-mix(in srgb, var(--link-accent) 8%, var(--flow-hover));
+}
+
+.tracklist li:hover,
+.tracklist li:focus-within,
+.production-tool-row:hover,
+.production-tool-row:focus-within,
+.about-tool-group .tool-list li:hover,
+.about-tool-group .tool-list li:focus-within {
+    background: var(--flow-hover);
+}
+
+/* Keyboard focus inside row-based collections gets the same location cue as hover. */
+.link-category .link-list li:focus-within,
+.tracklist li:focus-within,
+.production-tool-row:focus-within,
+.about-tool-group .tool-list li:focus-within {
+    box-shadow: inset 0 0 0 1px var(--color-border-interactive);
+}
+
+@media (max-width: 800px) {
+    .about-tool-group + .about-tool-group {
+        border-top: 1px solid var(--flow-divider-soft);
+    }
+}
+
+@media (forced-colors: active) {
+    .about-tool-group {
+        border: 1px solid CanvasText;
+        box-shadow: none;
+    }
+}
