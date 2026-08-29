@@ -46,6 +46,7 @@
     const INITIAL_HASH = window.location.hash;
 
     let initialHashDeferred = false;
+    let cancelInitialHashAlignment = function () {};
 
     if (INITIAL_HASH) {
         try {
@@ -90,6 +91,7 @@
     }
 
     function scrollToTop() {
+        cancelInitialHashAlignment();
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
@@ -715,12 +717,15 @@
             return;
         }
 
-        let cancelledByUser = false;
+        let alignmentActive = true;
         let alignmentIntervalId = null;
         let alignmentTimeoutId = null;
-        const cancellationEvents = ['pointerdown', 'touchstart', 'wheel', 'keydown'];
+        const cancellationEvents = ['pointerdown', 'touchstart', 'touchmove', 'wheel', 'keydown'];
+        const pendingImages = [];
 
         function stopAlignment() {
+            alignmentActive = false;
+
             if (alignmentIntervalId !== null) {
                 window.clearInterval(alignmentIntervalId);
                 alignmentIntervalId = null;
@@ -734,18 +739,27 @@
             cancellationEvents.forEach(function (eventName) {
                 window.removeEventListener(eventName, cancelAlignment);
             });
+
+            window.removeEventListener('load', alignTarget);
+
+            pendingImages.forEach(function (image) {
+                image.removeEventListener('load', alignTarget);
+                image.removeEventListener('error', alignTarget);
+            });
         }
 
         function cancelAlignment() {
-            cancelledByUser = true;
             stopAlignment();
         }
 
         function alignTarget() {
-            if (!cancelledByUser && document.contains(target)) {
+            if (alignmentActive && document.contains(target)) {
                 target.scrollIntoView({ block: 'start', behavior: 'instant' });
             }
         }
+
+        cancelInitialHashAlignment();
+        cancelInitialHashAlignment = cancelAlignment;
 
         cancellationEvents.forEach(function (eventName) {
             window.addEventListener(eventName, cancelAlignment, {
@@ -773,6 +787,7 @@
                 & Node.DOCUMENT_POSITION_FOLLOWING;
 
             if (targetFollowsImage && !image.complete) {
+                pendingImages.push(image);
                 image.addEventListener('load', alignTarget, { once: true });
                 image.addEventListener('error', alignTarget, { once: true });
             }
