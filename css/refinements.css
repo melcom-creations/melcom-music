@@ -650,10 +650,10 @@
     gap: 12px;
     margin-top: 18px;
     padding: 14px 16px;
-    border: 1px solid #665784;
-    border-left: 3px solid #c2a7e2;
+    border: 1px solid #4d5c64;
+    border-left: 3px solid #70848e;
     border-radius: var(--radius-medium);
-    background: rgba(194, 167, 226, 0.035);
+    background: rgba(45, 53, 58, 0.55);
 }
 
 .contact-feedback-icon {
@@ -664,7 +664,7 @@
 
 .contact-feedback h2 {
     margin: 0;
-    color: #c2a7e2;
+    color: var(--color-text-primary);
     font-size: 1.08rem;
     line-height: 1.25;
 }

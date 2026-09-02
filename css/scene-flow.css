@@ -550,9 +550,13 @@ header,
 
 .contact-feedback {
     border: 0;
-    border-left: 3px solid #c2a7e2;
+    border-left: 3px solid #70848e;
     border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
-    background: #2c2a31;
+    background: rgba(45, 53, 58, 0.55);
+}
+
+.contact-feedback h2 {
+    color: var(--color-text-primary);
 }
 
 /* Sidebar uses a darker inset layer so it belongs to the shell without merging into it. */
