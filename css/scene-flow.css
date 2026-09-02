@@ -113,19 +113,19 @@ header,
     border-top-color: var(--flow-divider-soft);
 }
 
-/* Notices keep a colored edge because the edge conveys a semantic callout. */
+/* Intro boxes use one calm, neutral treatment across the site. */
 .intro-highlight-box {
     margin: 0.9rem 0 1.35rem;
     padding: 0.95rem 1.05rem 1rem;
     border: 0;
-    border-left: 3px solid var(--color-accent-warm);
+    border-left: 3px solid #70848e;
     border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
-    background: #2b2b28;
+    background: rgba(45, 53, 58, 0.55);
     box-shadow: none;
 }
 
 .intro-highlight-title {
-    color: var(--color-accent-warm);
+    color: var(--color-text-primary);
 }
 
 .contact-feedback,
