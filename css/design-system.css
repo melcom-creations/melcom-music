@@ -19,7 +19,7 @@
     --color-text-strong: #f5f7f8;
     --color-text-primary: #dce4e8;
     --color-text-secondary: #bac5ca;
-    --color-text-muted: #a3b0b6;
+    --color-text-muted: #aab7bd;
     --color-accent-primary: #59d3ff;
     --color-accent-hover: #9ae8ff;
     --color-accent-warm: #ffb24d;
@@ -49,7 +49,6 @@
     --space-6: 1.5rem;
     --space-7: 2rem;
     --space-8: 2.5rem;
-    --content-measure: 100%;
     --transition-default: 0.18s ease;
 }
 
@@ -126,12 +125,6 @@ p {
     margin-block: 0 1rem;
 }
 
-.content p,
-.content li,
-.info-story p,
-.post-content p {
-    max-width: var(--content-measure);
-}
 
 .content a:not(.nav-button):not(.news-action):not(.action-link):not(.download-button):not(.track-image-link):not(.screenshot-link):not(.discovery-card):not(.link-nav-card):not(.contact-card):not(.site-info-link):not(.creation-jump-nav a):not(.about-jump-nav a):not(.content-box-title a),
 footer a {
@@ -433,6 +426,22 @@ header > a:not(.skip-link) {
     text-decoration: none;
 }
 
+/* Heading permalinks remain visually compact while meeting pointer target guidance. */
+.content-box-title > a[href^="#"] {
+    display: inline-flex;
+    min-width: 28px;
+    min-height: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-small);
+    vertical-align: middle;
+}
+
+.content-box-title > a[href^="#"]:hover,
+.content-box-title > a[href^="#"]:focus-visible {
+    background: color-mix(in srgb, var(--color-accent-primary) 12%, transparent);
+}
+
 .box-content {
     padding: 1.1rem;
 }
@@ -488,13 +497,13 @@ header > a:not(.skip-link) {
 .info-table td b {
     margin-bottom: 0.25rem;
     color: var(--color-text-secondary);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
 }
 
 .action-group-label {
     color: var(--color-text-secondary);
-    font-size: 0.78rem;
-    line-height: 1.2;
+    font-size: 0.8rem;
+    line-height: 1.25;
 }
 
 .action-link,
@@ -593,7 +602,7 @@ header > a:not(.skip-link) {
 
 .archive-year-note {
     color: var(--color-accent-warm-soft);
-    font-size: 0.82rem;
+    font-size: 0.875rem;
 }
 
 .archive-year-toggle:hover .archive-year-label,
@@ -741,7 +750,7 @@ header > a:not(.skip-link) {
 .about-jump-nav small,
 .link-nav-card small {
     color: var(--color-text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.875rem;
 }
 
 .news-section-header p,
@@ -768,7 +777,7 @@ header > a:not(.skip-link) {
 .news-category,
 .new-tag,
 .recommended-tag {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     line-height: 1.45;
 }
 
@@ -921,14 +930,6 @@ footer {
 
     .site-navigation {
         padding: 0.75rem;
-    }
-
-    .site-navigation.is-enhanced .nav-toggle {
-        min-height: 48px;
-        border-color: var(--color-border-strong);
-        background: var(--color-surface-inset);
-        color: var(--color-text-strong);
-        font-size: 0.96rem;
     }
 
     .site-navigation .nav-container {

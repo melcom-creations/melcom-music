@@ -28,9 +28,6 @@
     box-shadow: var(--shadow-default);
 }
 
-.nav-toggle {
-    display: none;
-}
 
 .site-navigation .nav-dropdown {
     position: relative;
