@@ -193,6 +193,7 @@
 }
 
 .info-story > p {
+    max-width: 78ch;
     margin: 0 0 14px;
     line-height: 1.65;
 }
@@ -280,6 +281,7 @@
     text-transform: uppercase;
 }
 .production-notes {
+    max-width: 86ch;
     margin: 24px 0 0;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.13);
