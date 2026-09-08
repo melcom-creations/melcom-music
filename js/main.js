@@ -98,6 +98,40 @@
 
     function setupNavigation() {
         const dropdowns = document.querySelectorAll('.nav-dropdown');
+        const siteNavigation = document.querySelector('.site-navigation');
+        const navToggle = siteNavigation ? siteNavigation.querySelector('.nav-toggle') : null;
+        const navMenu = siteNavigation ? siteNavigation.querySelector('.nav-container') : null;
+        function setNavigationExpanded(willExpand) {
+            if (!siteNavigation || !navToggle) {
+                return;
+            }
+
+            siteNavigation.classList.toggle('is-expanded', willExpand);
+            navToggle.setAttribute('aria-expanded', String(willExpand));
+        }
+
+        if (siteNavigation && navToggle && navMenu) {
+            siteNavigation.classList.add('is-enhanced');
+
+            navToggle.addEventListener('click', function () {
+                const willExpand = navToggle.getAttribute('aria-expanded') !== 'true';
+                setNavigationExpanded(willExpand);
+            });
+
+            navMenu.addEventListener('click', function (event) {
+                if (event.target.closest('a') && window.matchMedia('(max-width: 700px)').matches) {
+                    setNavigationExpanded(false);
+                }
+            });
+
+            siteNavigation.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && window.matchMedia('(max-width: 700px)').matches) {
+                    setNavigationExpanded(false);
+                    navToggle.focus();
+                }
+            });
+        }
+
         function closeDropdown(dropdown, returnFocus) {
             const button = dropdown.querySelector('.nav-dropbtn, .page-dropdown-btn');
 
@@ -422,8 +456,7 @@
             const label = dropdown ? dropdown.querySelector('.page-dropdown-label') : null;
 
             if (label) {
-                const selectedLabel = link.textContent.trim();
-                label.textContent = selectedLabel === 'Older Tracks' ? 'Archive: Older Tracks' : 'Year: ' + selectedLabel;
+                label.textContent = 'Year: ' + link.textContent.trim();
             }
 
             link.setAttribute('aria-current', currentValue);
