@@ -4929,11 +4929,24 @@ footer {
 .site-info-widget .site-info-link {
     width: fit-content;
     max-width: 100%;
-    min-height: 30px;
+    min-height: 24px;
     margin: 0 auto 0.45rem;
-    padding: 0.3rem 0.4rem;
-    font-size: 0.75rem;
+    padding: 0.15rem 0.2rem;
+    background: transparent;
+    border: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.72rem;
     white-space: normal;
+}
+
+.site-info-widget .site-info-link:hover,
+.site-info-widget .site-info-link:focus-visible {
+    background: transparent;
+    border-color: transparent;
+    color: var(--color-text-strong);
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+    transform: none;
 }
 
 .site-info-widget .site-badges {
