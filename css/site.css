@@ -4857,6 +4857,10 @@ footer {
     }
 }
 /* Compact sidebar utilities */
+.sidebar {
+    width: 180px;
+}
+
 .social-widget .widget-title,
 .site-info-widget .widget-title {
     min-height: 38px;
@@ -4879,7 +4883,7 @@ footer {
 }
 
 .sidebar .social-group .social-icons {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.25rem;
     padding: 0;
     background: transparent;
@@ -4923,16 +4927,19 @@ footer {
 }
 
 .site-info-widget .site-info-link {
+    width: fit-content;
+    max-width: 100%;
     min-height: 30px;
-    margin-bottom: 0.45rem;
+    margin: 0 auto 0.45rem;
     padding: 0.3rem 0.4rem;
     font-size: 0.75rem;
+    white-space: normal;
 }
 
 .site-info-widget .site-badges {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 0.35rem;
+    grid-template-columns: max-content;
+    gap: 0.25rem;
     justify-content: center;
     padding-top: 0;
 }
