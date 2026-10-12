@@ -5102,6 +5102,45 @@ header,
     border-left-width: 3px;
 }
 
+/* Voluntary project support uses the site's existing typography and controls. */
+.creations-page .project-support {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--flow-divider-soft);
+}
+
+.creations-page .project-support[hidden] {
+    display: none;
+}
+
+.creations-page .project-support h3 {
+    margin: 0 0 var(--space-2);
+    padding: 0;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.creations-page .project-support p {
+    max-width: none;
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.creations-page .project-support-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 40px;
+    max-width: 100%;
+    margin-top: var(--space-3);
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
 /* Major content regions */
 .content-box,
 .link-box,
