@@ -6199,3 +6199,18 @@ header,
         box-shadow: none;
     }
 }
+
+#ffmpeg .screenshot-grid.edition-cover {
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+}
+
+/* Unavailable download mirrors retain the existing control layout. */
+.creations-page #ffmpeg .action-link[aria-disabled="true"],
+.creations-page #ffmpeg .action-link[aria-disabled="true"]:hover {
+    color: var(--color-text-muted);
+    border-color: var(--color-border);
+    background: var(--color-surface-soft);
+    cursor: default;
+}
