@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modules &amp; MP3 Files 2026 - melcom</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon"> </head>
+
+<body>
+
+<!-- Main Content -->
+<div class="container">
+
+<!-- Header -->
+<!-- INCLUDE_HEADER -->
+<!-- Navigation -->
+<!-- INCLUDE_NAV: music -->
+<!-- Main Content -->
+<div class="main-content">
+
+<!-- Sidebar -->
+<!-- INCLUDE_SIDEBAR -->
+<!-- Main Content -->
+<main id="main-content" class="content">
+				<!-- Page Header -->
+<div class="page-header">
+					<h1 class="page-title no-border">💾 Modules &amp; MP3s: 2026</h1>                    <!-- INCLUDE_MUSIC_YEARS -->
+</div>
+
+<!-- Intro Text -->
+<div class="intro-highlight-box">
+    <h2 class="intro-highlight-title">🚧 Planned Tracks for 2026</h2>
+    <p>Tracks currently planned for release during 2026. Download and streaming links will be added when each track becomes publicly available.</p>
+    <p>Release dates and details may change. Updates will be posted on the <a href="index.html">news page</a> and my social media channels.</p>
+</div>
+
+<hr class="post-separator">
+
+<!-- Track: Quantum Deception -->
+<div id="quantum_deception" class="content-box">
+    <h2 class="content-box-title"><a href="#quantum_deception">🔗</a> Quantum Deception</h2>
+    <div class="box-content">
+        <div class="info-box info-specs">
+            <div class="info-actions">
+                <div class="info-actions-content">
+                    <h3 class="info-actions-title">💾 Downloads &amp; Streaming</h3>
+                    <p class="release-pending"><b>Release pending:</b> Download and streaming links will be added when the track is released later in 2026.</p>
+                </div>
+
+            </div>
+            <h3>📋 General Information</h3>
+            <table class="info-table single-col">
+<caption class="visually-hidden">Download formats and production details for 📋 General Information</caption>
+                <thead><tr><th>MP3 Download</th></tr></thead>
+                <tbody>
+                    <tr><td><b>Production date:</b> TBA</td></tr>
+                    <tr><td><b>File:</b> TBA</td></tr>
+                    <tr><td><b>Size:</b> TBA</td></tr>
+                    <tr><td><b>Length:</b> TBA</td></tr>
+                    <tr><td><b>Format:</b> MPEG1 layer 3</td></tr>
+                    <tr><td><b>Bitrate:</b> 320 kbps</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="info-box info-story">
+            <h3>🔊 Track Information</h3>
+            <p>Full track details, including the description and production tools used, will be added on release day.</p>
+        </div>
+    </div>
+</div>
+
+<hr class="post-separator">
+
+<!-- Track: Desolate Runner 5 -->
+<div id="desolate_runner_5" class="content-box">
+    <h2 class="content-box-title"><a href="#desolate_runner_5">🔗</a> Desolate Runner 5: The Void Within</h2>
+    <div class="box-content">
+        <div class="info-box info-specs">
+            <div class="info-actions">
+                <div class="info-actions-content">
+                    <h3 class="info-actions-title">💾 Downloads &amp; Streaming</h3>
+                    <p class="release-pending"><b>Release pending:</b> Download and streaming links will be added when the track is released later in 2026.</p>
+                </div>
+
+            </div>
+            <h3>📋 General Information</h3>
+            <table class="info-table single-col">
+<caption class="visually-hidden">Download formats and production details for 📋 General Information</caption>
+                <thead><tr><th>MP3 Download</th></tr></thead>
+                <tbody>
+                    <tr><td><b>Production date:</b> TBA</td></tr>
+                    <tr><td><b>File:</b> TBA</td></tr>
+                    <tr><td><b>Size:</b> TBA</td></tr>
+                    <tr><td><b>Length:</b> TBA</td></tr>
+                    <tr><td><b>Format:</b> MPEG1 layer 3</td></tr>
+                    <tr><td><b>Bitrate:</b> 320 kbps</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="info-box info-story">
+            <h3>🔊 Track Information</h3>
+            <p>Full track details, including the description and production tools used, will be added on release day.</p>
+        </div>
+    </div>
+</div>
+
+<hr class="post-separator">
+
+<!-- Track: Night Watch -->
+<div id="night_watch" class="content-box">
+    <h2 class="content-box-title"><a href="#night_watch">🔗</a> Night Watch</h2>
+    <div class="box-content">
+        <div class="info-box info-specs">
+            <div class="info-actions">
+                <div class="info-actions-content">
+                    <h3 class="info-actions-title">💾 Downloads &amp; Streaming</h3>
+                    <p class="release-pending"><b>Release pending:</b> Download and streaming links will be added when the track is released later in 2026.</p>
+                </div>
+
+            </div>
+            <h3>📋 General Information</h3>
+            <table class="info-table single-col">
+<caption class="visually-hidden">Download formats and production details for 📋 General Information</caption>
+                <thead><tr><th>MP3 Download</th></tr></thead>
+                <tbody>
+                    <tr><td><b>Production date:</b> TBA</td></tr>
+                    <tr><td><b>File:</b> TBA</td></tr>
+                    <tr><td><b>Size:</b> TBA</td></tr>
+                    <tr><td><b>Length:</b> TBA</td></tr>
+                    <tr><td><b>Format:</b> MPEG1 layer 3</td></tr>
+                    <tr><td><b>Bitrate:</b> TBA</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="info-box info-story">
+            <h3>🔊 Track Information</h3>
+            <p>Full track details, including the description and production tools used, will be added on release day.</p>
+        </div>
+    </div>
+</div>
+			</main>
+		</div>
+
+<!-- Footer -->
+<!-- INCLUDE_FOOTER -->
+</body>
+</html>
+
+

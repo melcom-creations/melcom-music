@@ -62,7 +62,24 @@ Use it only when you intentionally want to transfer changes from generated pages
 python cleanup.py
 ```
 
-Create a backup or commit your current work before running it.
+Preview the operation without changing any files:
+
+```powershell
+python cleanup.py --dry-run
+```
+
+Cleanup checks all pages before making changes. If a generated page differs from what its current source template would produce, it stops without changing any files. This protects source edits that have not been built yet. Matching source files are kept unchanged.
+
+If you intentionally edited the generated pages and want to import those changes into `src/`, review both versions first, then use:
+
+```powershell
+python cleanup.py --dry-run --overwrite-existing
+python cleanup.py --overwrite-existing
+```
+
+Every actual cleanup run first creates and verifies byte-for-byte backups of the generated pages and existing source files under `.cleanup-backups/<run>/`. The original relative paths are preserved there. Generated pages are removed only after all source files have been prepared. These backups are for local recovery only; do not upload the backup directory.
+
+Hidden directories, backup directories, asset directories, symbolic links, and junctions are excluded. Run cleanup from the repository root. Keep an independent backup or commit as well, especially before intentionally replacing source files.
 
 ## ♿ HTML and accessibility
 
