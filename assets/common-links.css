@@ -1,0 +1,79 @@
+/* Share text-link colors and compact jump controls across the website. */
+a[target="_blank"] {
+    --text-link-color: var(--lime);
+}
+a:hover,
+a:focus-visible {
+    --text-link-color: #efffcc;
+}
+main.wrap:is(.content-page, .library-page) a[href]:not(:where(
+    .button, .action-link, .news-action, .art-play, .permalink,
+    .track-image-link, .about-portrait-link, .info-actions-cover,
+    .contact-card-profile,
+    h1 a, h2 a, h3 a, h4 a,
+    .release-art a, .library-tabs a, .year-pills a,
+    .creation-jump-nav a, .about-jump-nav a, .link-category-nav a,
+    .social-link-grid a
+)),
+.site-footer :is(.footer-socials, .footer-pages, .footer-bottom) a[href],
+.player-help a[href] {
+    color: var(--text-link-color, var(--text));
+    text-decoration-line: underline !important;
+    text-decoration-color: #6c805244 !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 4px;
+}
+main.wrap:is(.content-page, .library-page) a[href]:not(:where(
+    .button, .action-link, .news-action, .art-play, .permalink,
+    .track-image-link, .about-portrait-link, .info-actions-cover,
+    .contact-card-profile,
+    h1 a, h2 a, h3 a, h4 a,
+    .release-art a, .library-tabs a, .year-pills a,
+    .creation-jump-nav a, .about-jump-nav a, .link-category-nav a,
+    .social-link-grid a
+)):is(:hover, :focus-visible),
+.site-footer :is(.footer-socials, .footer-pages, .footer-bottom) a[href]:is(:hover, :focus-visible),
+.player-help a[href]:is(:hover, :focus-visible) {
+    text-decoration-color: currentColor !important;
+}
+.aboutme-page .about-jump-nav > div,
+.links-page .link-category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.aboutme-page .about-jump-nav > div > a,
+.links-page .link-nav-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-decoration: none;
+}
+.aboutme-page .about-jump-nav > div > a:hover,
+.links-page .link-nav-card:hover {
+    border-color: #758c53;
+    background: var(--surface2);
+    color: var(--lime);
+}
+.aboutme-page .about-jump-nav,
+.links-page .link-explorer {
+    margin-bottom: 30px;
+}
+.links-page .link-category {
+    margin-top: 30px;
+}
+@media (max-width: 700px) {
+    .aboutme-page .about-jump-nav > div > a,
+    .links-page .link-nav-card {
+        min-height: 44px;
+    }
+}

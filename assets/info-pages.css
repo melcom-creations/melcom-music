@@ -1,0 +1,209 @@
+/* Match the reading rhythm of the music and project pages. */
+:is(.aboutme-page, .links-page, .contact-page, .imprint-page) p {
+    margin: 0 0 .65em;
+    font-size: 15px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+.content-page .page-intro.open-intro {
+    padding: 60px 0 32px;
+}
+.content-page .open-intro h1 {
+    margin: 15px 0 0;
+    font-size: 48px;
+    line-height: 1.12;
+    letter-spacing: -.035em;
+}
+.content-page .open-intro > p {
+    max-width: 780px;
+    margin: 15px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    text-wrap: balance;
+}
+.aboutme-page .content-box {
+    margin: 24px 0 32px;
+}
+.aboutme-page .about-profile-card {
+    gap: 32px;
+    margin: 12px 0 24px;
+}
+.aboutme-page .box-content:has(> .about-tool-group) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 32px;
+}
+.aboutme-page .box-content:has(> .about-tool-group) > p {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+.aboutme-page .about-tool-group {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+.aboutme-page .about-tool-group h3 {
+    margin: 0 0 8px;
+}
+.aboutme-page .tool-list {
+    margin: 0;
+}
+.aboutme-page .box-content .tool-list li {
+    margin: 3px 0;
+    padding-block: 0;
+    line-height: 1.4;
+}
+.aboutme-page .box-content > .tool-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+    max-width: 1000px;
+}
+.aboutme-page .about-wishlist {
+    margin: 12px 0 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    gap: 6px 14px;
+    font-size: 13px;
+}
+.aboutme-page .about-wishlist p {
+    margin: 0;
+    font-size: 14px;
+}
+.aboutme-page .archive-banners {
+    margin-top: 32px;
+    padding-top: 24px;
+}
+.aboutme-page .archive-banners > p {
+    margin-top: 8px;
+}
+.links-page .link-explorer {
+    margin-top: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+.contact-page .contact-hub > h2 {
+    margin-top: 0;
+}
+.imprint-page #imprint-request {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+.aboutme-page .box-content li,
+.imprint-page li {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+.aboutme-page .box-content h3,
+.imprint-page h3 {
+    font-size: 20px;
+    line-height: 1.35;
+}
+.aboutme-page .about-profile-facts li {
+    font-size: 12px;
+    line-height: 1.4;
+}
+.aboutme-page .about-profile-actions {
+    font-size: 12px;
+}
+.aboutme-page .about-jump-nav {
+    display: block;
+}
+.aboutme-page .about-jump-nav > h2 {
+    margin: 0 0 12px;
+    font-size: 23px;
+    line-height: 1.3;
+}
+.links-page .link-box {
+    padding-top: 4px;
+    scroll-margin-top: 10px;
+}
+.links-page .link-box-header {
+    display: block;
+}
+.links-page .link-box-header > p {
+    margin: 14px 0 0;
+    font-size: 14px;
+}
+.links-page .link-list li {
+    min-width: 0;
+    margin: 0;
+    padding: 12px 0;
+    font-size: 14px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+.links-page .link-list span {
+    font-size: 13px;
+}
+.links-page .new-tag,
+.links-page .recommended-tag {
+    font-size: 11px !important;
+}
+.links-page .link-search > label,
+.links-page .link-search > p {
+    font-size: 12px;
+    line-height: 1.4;
+}
+.links-page .link-search input {
+    font-size: 13px;
+}
+.links-page .link-search button {
+    font-size: 12px;
+}
+.contact-page .contact-tip {
+    font-size: 13px !important;
+    line-height: 1.45;
+}
+.contact-page .contact-addresses small {
+    color: var(--muted);
+    font-size: 12px;
+}
+.contact-page .contact-card-profile small {
+    font-size: 12px;
+}
+.contact-page .contact-recommended {
+    font-size: 11px;
+}
+.contact-page .contact-username {
+    font-size: 13px;
+}
+@media (max-width: 900px) {
+    .content-page .open-intro h1 {
+        font-size: 42px;
+    }
+}
+@media (max-width: 700px) {
+    .aboutme-page .box-content:has(> .about-tool-group),
+    .aboutme-page .box-content > .tool-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .links-page .link-search input,
+    .links-page .link-search button {
+        min-height: 44px;
+    }
+}
+@media (max-width: 600px) {
+    .aboutme-page .about-profile-card {
+        gap: 18px;
+    }
+    .content-page .page-intro.open-intro {
+        padding: 38px 0 24px;
+    }
+    .content-page .open-intro h1 {
+        margin-top: 13px;
+        font-size: 36px;
+    }
+    .content-page .open-intro > p {
+        margin-top: 13px;
+        font-size: 13px;
+    }
+}

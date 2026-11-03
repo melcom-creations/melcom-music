@@ -1,0 +1,2724 @@
+[
+  {
+    "id": "quantum_deception",
+    "title": "Quantum Deception",
+    "year": "2026",
+    "kind": "track",
+    "href": "music-2026.html#quantum_deception",
+    "cover": "images/singlecovers/track-quantum_deception.jpg",
+    "summary": "This track features intentional audio glitches and sharp sound artifacts. I drew inspiration for these experimental elements from Virgill and Console (Martin Gretschmann). Thank you both - I hope I managed to capture at least a small part of your spirit and influence.",
+    "providers": [],
+    "video": "",
+    "length": "TBA",
+    "formats": "MP3",
+    "upcoming": true
+  },
+  {
+    "id": "desolate_runner_5",
+    "title": "Desolate Runner 5: The Void Within",
+    "year": "2026",
+    "kind": "track",
+    "href": "music-2026.html#desolate_runner_5",
+    "cover": "images/singlecovers/track-desolate-runner-5.jpg",
+    "summary": "The work on \"Desolate Runner 5: The Void Within\" has been a very long journey. I spent nearly two years working on and refining this track, trying to keep the spirit and atmosphere of the previous entries alive while also pushing my sound further than ever before.",
+    "providers": [],
+    "video": "",
+    "length": "TBA",
+    "formats": "MP3",
+    "upcoming": true
+  },
+  {
+    "id": "night_watch",
+    "title": "Night Watch",
+    "year": "2026",
+    "kind": "track",
+    "href": "music-2026.html#night_watch",
+    "cover": "images/singlecovers/track-night_watch.jpg",
+    "summary": "For the past two years, I've been working on a new album called \"Klangwelten\".",
+    "providers": [],
+    "video": "",
+    "length": "5:30",
+    "formats": "MP3",
+    "upcoming": true
+  },
+  {
+    "id": "monsters",
+    "title": "Monsters",
+    "year": "2025",
+    "kind": "track",
+    "href": "music-2025.html#monsters",
+    "cover": "images/singlecovers/track-monsters.jpg",
+    "summary": "A dark audiovisual journey through fear, conformity, and quiet descent. Composed with OpenMPT using my own samples and instruments - some from \" Fernweh 2 \" and \" Fernweh .\"",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/monsters",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/monsters",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2025/melcom-monsters.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/vlnemj9ik2y2c109m9so7/melcom-monsters.zip?rlkey=4rjk5hs0sfx0m5hhkl9oqsr20&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=SIff5gdZEHo",
+        "group": "Watch"
+      }
+    ],
+    "video": "SIff5gdZEHo",
+    "length": "9:00",
+    "formats": ".MP3",
+    "upcoming": false
+  },
+  {
+    "id": "silk_and_sax",
+    "title": "Silk & Sax",
+    "year": "2025",
+    "kind": "track",
+    "href": "music-2025.html#silk_and_sax",
+    "cover": "images/singlecovers/track-silk-and-sax.jpg",
+    "summary": "This track has been in the making for a very long time. One day, while I was working on it, my girlfriend heard what I was creating. Since she plays both saxophone and violin, she offered to support me with her sax. That moment marked the beginning of our very first collaboration. Thank you, Flo - truly, from the bottom of my heart.",
+    "providers": [
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2025/melcom_feat._florence_heart-silk_n_sax.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/yk39x2upzmj7vlu8mrsoc/melcom_feat._florence_heart-silk_-_sax.zip?rlkey=1ev3rctfw5orfix0pzwkdv6j5&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=mfR6truNy5s",
+        "group": "Watch"
+      }
+    ],
+    "video": "mfR6truNy5s",
+    "length": "7:15",
+    "formats": ".MP3",
+    "upcoming": false
+  },
+  {
+    "id": "fernweh_3_echofall",
+    "title": "Fernweh 3: Echofall",
+    "year": "2025",
+    "kind": "track",
+    "href": "music-2025.html#fernweh_3_echofall",
+    "cover": "images/singlecovers/track-fernweh-3.jpg",
+    "summary": "The track has a dark and heavy tone . Towards the middle, it feels to me like it takes on the vibe of a track from the Wild West. You won't find any banjos or typical western sounds, but for me, it just has that feeling. It perfectly captures the mood of a lone wanderer in a fallen, empty world.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/fernweh-3-echofall",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2025/melcom-fernweh_3-echofall.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/nuxhwkko14vyx832l9ex2/melcom-fernweh_3-echofall.zip?rlkey=1bwadbdt988ij3i3ekbi1ix4f&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=lxn2RcIlpQc",
+        "group": "Watch"
+      }
+    ],
+    "video": "lxn2RcIlpQc",
+    "length": "7:36",
+    "formats": ".MP3",
+    "upcoming": false
+  },
+  {
+    "id": "pixelvielfalt",
+    "title": "Pixelvielfalt [TEST]",
+    "year": "2025",
+    "kind": "track",
+    "href": "music-2025.html#pixelvielfalt",
+    "cover": "images/singlecovers/track-pixelvielfalt.jpg",
+    "summary": "This track is essentially a 'sample test.' I've gotten into the habit of testing my custom-created samples and instruments by writing 'small' songs that aren't intended for the public. These songs are never perfect and often contain many flaws; they're just audio sketches.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/pixelvielfalt-test",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2025/melcom-pixelvielfalt.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/dbgkjysfidxjtnrp49zbo/melcom-pixelvielfalt.zip?rlkey=zp429053ya0i7hv0bz4frppp0&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=YsbNbC3MCTo",
+        "group": "Watch"
+      }
+    ],
+    "video": "YsbNbC3MCTo",
+    "length": "4:51",
+    "formats": ".MP3",
+    "upcoming": false
+  },
+  {
+    "id": "splintered_mindscape",
+    "title": "Splintered Mindscape",
+    "year": "2025",
+    "kind": "track",
+    "href": "music-2025.html#splintered_mindscape",
+    "cover": "images/singlecovers/track-splintered-mindscape.jpg",
+    "summary": "Splintered Mindscape, a track that captures the splintered reality of my fragmented mind. The track takes you on a surreal journey through the shards of my thoughts. An emotional experience that blurs the boundaries between reality and fantasy. I invite you to piece together the fragments of my mind.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/splintered-mindscape",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2025/melcom-splintered_mindscape.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/wu0aisrt9okicjs4sxh2a/melcom-splintered_mindscape.zip?rlkey=d6n3gn960ehxk8z2xsiyx4tja&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=Vd7tFMilGx8",
+        "group": "Watch"
+      }
+    ],
+    "video": "Vd7tFMilGx8",
+    "length": "4:56",
+    "formats": ".MP3",
+    "upcoming": false
+  },
+  {
+    "id": "tsom-album",
+    "title": "The sound of melcom",
+    "year": "2025",
+    "kind": "album",
+    "href": "albums-2025.html#tsom-album",
+    "cover": "images/albumcovers/the_sound_of_melcom.jpg",
+    "summary": "This album contains all my tracks from 2020 to early 2025. On Bandcamp, I added each track to the album with every release. There is no download link for the entire album or a music disc that contains all the .mp3s or module files (.it files). The only way to download the complete album is through Bandcamp.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/the-sound-of-melcom",
+        "group": "Listen"
+      }
+    ],
+    "video": "",
+    "length": "n/a",
+    "formats": ".IT / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "pixelmoves",
+    "title": "Pixel Moves [Preview]",
+    "year": "2024",
+    "kind": "track",
+    "href": "music-2024.html#pixelmoves",
+    "cover": "images/singlecovers/track-pixel-moves.jpg",
+    "summary": "This is a preview of my latest track, \"Pixel Moves.\" I hope you enjoy the sneak peek Music was created using FL Studio and VST instruments. Additionally, I partially used the program \"OpenMPT.\" All Samples / Instruments by me!!",
+    "providers": [
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2024/pixel_moves_prev__by_melcom.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/mghbj0pjn36edhrvs6ivx/pixel_moves_by_melcom.zip?rlkey=cuv965pid9oz6xnherkg083b4&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=mkOHJQMT4TI",
+        "group": "Watch"
+      }
+    ],
+    "video": "mkOHJQMT4TI",
+    "length": "3:42",
+    "formats": "MP3",
+    "upcoming": false
+  },
+  {
+    "id": "crumble",
+    "title": "Crumble's Theme",
+    "year": "2024",
+    "kind": "track",
+    "href": "music-2024.html#crumble",
+    "cover": "images/singlecovers/track-crumbles-theme.jpg",
+    "summary": "\"Crumble's Theme\" is my first attempt at getting acquainted with FL Studio. This track is a unique blend of traditional tracking techniques from OpenMPT and an experimental evolution. The track was then further developed using FL Studio .",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/crumbles-theme",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/crumbles-theme",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2024/melcom-crumblestheme.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/55jbrowis7qnrpiumpq7e/melcom-crumblestheme.zip?rlkey=odi5u46ldku8bzlnop81b9k9c&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=DB93tdgDgz4",
+        "group": "Watch"
+      }
+    ],
+    "video": "DB93tdgDgz4",
+    "length": "4:17",
+    "formats": "MP3",
+    "upcoming": false
+  },
+  {
+    "id": "pyramidsong",
+    "title": "Pyramid Song",
+    "year": "2023",
+    "kind": "track",
+    "href": "music-2023.html#pyramidsong",
+    "cover": "images/singlecovers/track-pyramid-song.jpg",
+    "summary": "This is my contribution to The Sound of SceneSat Vol. 7!",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/pyramid-song",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/pyramid-song",
+        "group": "Listen"
+      },
+      {
+        "name": "spotify.com",
+        "url": "https://open.spotify.com/intl-de/track/2XP7dXL635CnPcckzLQkxL",
+        "group": "Listen"
+      },
+      {
+        "name": "scenes.at",
+        "url": "https://sound.of.scenes.at/vol/7/tune/7",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2023/melcom-pyramid_song.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/l84jdmgmyth4t39qef39k/melcom-pyramid_song.zip?rlkey=38n2wmsz63dw7b69gbdofg40z&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/module.php?202110",
+        "group": "IT"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/psong.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/qapaexydocpngdrx6lgze/psong.zip?rlkey=5uy2igisdxp6acdye26tjz9ai&dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=hmdANDkvoM4",
+        "group": "Watch"
+      }
+    ],
+    "video": "hmdANDkvoM4",
+    "length": "3:56",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "rotten",
+    "title": "Rotten",
+    "year": "2023",
+    "kind": "track",
+    "href": "music-2023.html#rotten",
+    "cover": "images/singlecovers/track-rotten.jpg",
+    "summary": "This is my contribution to The Sound of SceneSat Vol. 7!",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/rotten",
+        "group": "Listen"
+      },
+      {
+        "name": "spotify.com",
+        "url": "https://open.spotify.com/intl-de/track/2nehtrk4fCaZ7ATrqpKiBN",
+        "group": "Listen"
+      },
+      {
+        "name": "scenes.at",
+        "url": "https://sound.of.scenes.at/vol/7/tune/36",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2023/melcom-rotten.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/xetcqa3xlyxqr5elnmdgg/melcom-rotten.zip?rlkey=la0k2hyh31uyebf3bo9lx53l5&dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/module.php?202111",
+        "group": "IT"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/rotten.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/scl/fi/bj9mvvh5pzvfhnktkqh5v/rotten.zip?rlkey=6u9hehhjzujtwtm1yx4sh8vvy&dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=U_BD1tMAPrk",
+        "group": "Watch"
+      }
+    ],
+    "video": "U_BD1tMAPrk",
+    "length": "5:30",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "fernweh2",
+    "title": "Fernweh 2",
+    "year": "2022",
+    "kind": "track",
+    "href": "music-2022.html#fernweh2",
+    "cover": "images/singlecovers/track-fernweh-2.jpg",
+    "summary": "Actually, I had planned to completely rework my track Fernweh from 2018. The Mod file is not very well composed. However, in the middle of the work, I changed my mind and worked on a second part. Many of the samples were created by myself. The drum set was specifically created for this track.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/fernweh-2-2",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2022/melcom-fernweh_2.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/ijeyfpvt4nww6bk/melcom-fernweh_2.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/index.php?request=view_by_moduleid&query=199496",
+        "group": "IT"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/fernweh2.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/3zald9vl8zjtgg2/fernweh2.zip?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=ufDtlIQat_Y",
+        "group": "Watch"
+      }
+    ],
+    "video": "ufDtlIQat_Y",
+    "length": "7:33",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "stroke",
+    "title": "Stroke",
+    "year": "2022",
+    "kind": "track",
+    "href": "music-2022.html#stroke",
+    "cover": "images/singlecovers/track-stroke.png",
+    "summary": "I would like to thank SagaMusic.de for their excellent samples. He also accompanied me for weeks and gave me advice and tips bit by bit. Since a short time I compose my tracks with OpenMPT and SagaMusix has always supported me in IRC during all this time. He was always there even in my hardest times. In times when I had depression. Thank you for everything, and I hope I didn't disappoint you with this track. Thank you for your helpful lessons!",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/stroke",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/stroke",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2022/melcom-stroke.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/xiyuqrfcy2enj6a/melcom-stroke.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/module.php?196946",
+        "group": "IT"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/stroke.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/xiyuqrfcy2enj6a/stroke.zip?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=zeFJgBy-MCk",
+        "group": "Watch"
+      }
+    ],
+    "video": "zeFJgBy-MCk",
+    "length": "5:48",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "nightair",
+    "title": "Night Air",
+    "year": "2021",
+    "kind": "track",
+    "href": "music-2021.html#nightair",
+    "cover": "images/singlecovers/track-night-air.jpg",
+    "summary": "My contribution to The Sound of SceneSat Volume 6!",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/night-air",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com",
+        "group": "Listen"
+      },
+      {
+        "name": "scenes.at",
+        "url": "https://sound.of.scenes.at/vol/6/tune/32",
+        "group": "Listen"
+      },
+      {
+        "name": "scenesat.com",
+        "url": "https://music.scenesat.com/track/night-air",
+        "group": "Listen"
+      },
+      {
+        "name": "spotify.com",
+        "url": "https://open.spotify.com/track/5XRAAxvfQlOy7B9wat5Ye0?si=bf9a72b5ee7941dd",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2021/melcom-night_air.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/d7fn1jbog7zqss4/melcom-night_air.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/module.php?196453",
+        "group": "IT"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/nightair.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/1ggig9hbaq6dug7/nightair.zip?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=VQ0xa29Cypo",
+        "group": "Watch"
+      }
+    ],
+    "video": "VQ0xa29Cypo",
+    "length": "4:41",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "haunted",
+    "title": "Haunted",
+    "year": "2021",
+    "kind": "track",
+    "href": "music-2021.html#haunted",
+    "cover": "images/singlecovers/track-haunted.jpg",
+    "summary": "Haunted consists of 70% of my own creation of samples. It was only a small experiment at first, and the track was never meant to be released to the public. Actually, I just wanted to play around with my samples. But in the end, I decided to release the track.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/haunted",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2021/melcom-haunted.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/wwi1ofsreyxqkbk/melcom-haunted.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/module.php?196452",
+        "group": "IT"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/haunted.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/5ibfos9by3xcumx/haunted.zip?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=dyVv6merlJ4",
+        "group": "Watch"
+      }
+    ],
+    "video": "dyVv6merlJ4",
+    "length": "4:37",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "headlock",
+    "title": "Headlock",
+    "year": "2021",
+    "kind": "track",
+    "href": "music-2021.html#headlock",
+    "cover": "images/singlecovers/track-headlock.jpg",
+    "summary": "Headlock is the first track I composed in OpenMPT ! It was a long journey. Schism Tracker has been with me for many years. And I love this music tracker!",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/headlock",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/headlock",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2021/melcom-headlock.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/97cngrx2bgephzm/melcom-headlock.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/module.php?191270",
+        "group": "IT"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/headlock.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/5deqz7hsoe87auc/headlock.zip?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=18Cd8wACflc",
+        "group": "Watch"
+      }
+    ],
+    "video": "18Cd8wACflc",
+    "length": "5:18",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "thespaceweare",
+    "title": "Desolate Runner 4: The Space We Are",
+    "year": "2020",
+    "kind": "track",
+    "href": "music-2020.html#thespaceweare",
+    "cover": "images/singlecovers/track-desolate-runner-4.jpg",
+    "summary": "This is the fourth part of the \"Desolate Runner\" saga. \"Desolate Runners\" are humanoids / aliens who fight against the regime and system of their world. They live underground and operate in secret, and they are constantly on the run.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/desolate-runner-4-the-space-we-are",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/desolate-runner-4-the-space-we-are",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2020/melcom-the_space_we_are.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/sgoy0ey798feuqg/melcom-the_space_we_are.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/dr4-tswa.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/module.php?190892",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/i5dzjlu2dqjjo34/dr4-tswa.zip?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=NtxQzlBroHg",
+        "group": "Watch"
+      }
+    ],
+    "video": "NtxQzlBroHg",
+    "length": "4:54",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "mechlovesong",
+    "title": "Mechanical Love Song",
+    "year": "2020",
+    "kind": "track",
+    "href": "music-2020.html#mechlovesong",
+    "cover": "images/singlecovers/track-mechanical-love-song.jpg",
+    "summary": "A very special song only for robots.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/mechanical-love-song",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/mechanical-love-song",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2020/melcom-mechanical_love_song.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/906r7agwrv3urpb/melcom-mechanical_love_song.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mechlove.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/module.php?190830",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/58dwtdggugqmz44/mechlove.zip?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=nzztkXGvQlE",
+        "group": "Watch"
+      }
+    ],
+    "video": "nzztkXGvQlE",
+    "length": "5:09",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "methmad",
+    "title": "MeThOd & MaDnEsS",
+    "year": "2020",
+    "kind": "track",
+    "href": "music-2020.html#methmad",
+    "cover": "images/singlecovers/track-method-and-madness.jpg",
+    "summary": "It is the first track of mine this year (2020). The track has a long history. In 2020, I had a lot of black days. Whenever I was depressed, I worked on this track for a while. Maybe you can hear it out that I wasn't always doing so well. I want to apologize for that.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/track/method-madness",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/method-madness",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2020/melcom-method_and_madness.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/r5slkjew8aycehk/melcom-method_and_madness.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/methmadc.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/mkoibongjlnq3qg/methmad.zip?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=UfUoEL26E8U",
+        "group": "Watch"
+      }
+    ],
+    "video": "UfUoEL26E8U",
+    "length": "4:14",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "tsom-classics",
+    "title": "The sound of melcom - Classics",
+    "year": "2020",
+    "kind": "album",
+    "href": "albums-2020.html#tsom-classics",
+    "cover": "images/albumcovers/the_sound_of_melcom_-_classics.jpg",
+    "summary": "We celebrate the 1st year of www.melcom-music.de",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/the-sound-of-melcom-classics",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2020/melcom-the_sound_of_melcom_-_classics_(mp3_album).zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/auxv1ovyrnfepdq/melcom-the_sound_of_melcom_-_classics_%28mp3_album%29.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/disks/tsomclassics.zip",
+        "group": "S3M / IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/jpajmvs6rgd684o/tsomclassics.zip?dl=1",
+        "group": "S3M / IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=l77ssCwhCQs",
+        "group": "Watch"
+      }
+    ],
+    "video": "l77ssCwhCQs",
+    "length": "01:06:34",
+    "formats": ".S3M & .IT / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "wunderwelt-album",
+    "title": "Wunderwelt",
+    "year": "2020",
+    "kind": "album",
+    "href": "albums-2020.html#wunderwelt-album",
+    "cover": "images/albumcovers/wunderwelt.jpg",
+    "summary": "This album contains a selection of my most popular songs of the last years. Every track was completely reworked by me! Sometimes I changed the melody a little bit or corrected mistakes, which I only heard much later.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/wunderwelt",
+        "group": "Listen"
+      },
+      {
+        "name": "Archive.org",
+        "url": "https://archive.org/details/wunderwelt",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2020/melcom-wunderwelt_(mp3_album).zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/5x37rmbsehg56q3/melcom-wunderwelt_%28mp3_album%29.zip?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=ekPKtk-N07o",
+        "group": "Watch"
+      }
+    ],
+    "video": "ekPKtk-N07o",
+    "length": "00:51:03",
+    "formats": ".MP3",
+    "upcoming": false
+  },
+  {
+    "id": "amartiansong",
+    "title": "A Martian Song",
+    "year": "2019",
+    "kind": "track",
+    "href": "music-2019.html#amartiansong",
+    "cover": "images/singlecovers/track-a-martian-song.jpg",
+    "summary": "I dedicate this track to all Martians! And not only that ... you can even hear them singing in this track in a small choir. Yes, really, believe me. They really exist",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/a-martian-song",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2019/melcom-a_martian-song.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/sykzmc8kig06lzd/melcom-a_martian-song.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/martian.zip",
+        "group": "IT"
+      },
+      {
+        "name": "modarchive.com",
+        "url": "http://modarchive.org/module.php?187176",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/gvw9gv6gi5xbreb/martian.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=KnSdeIvasCY",
+        "group": "Watch"
+      }
+    ],
+    "video": "KnSdeIvasCY",
+    "length": "5:28",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "oblivion",
+    "title": "Oblivion",
+    "year": "2019",
+    "kind": "track",
+    "href": "music-2019.html#oblivion",
+    "cover": "images/singlecovers/track-oblivion.jpg",
+    "summary": "",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/oblivion",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2019/melcom-oblivion.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/ry3xi0t6x9yj4a6/melcom-oblivion.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/oblivion.zip",
+        "group": "IT"
+      },
+      {
+        "name": "modarchive.com",
+        "url": "http://modarchive.org/module.php?185021",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/uzq7mx96l3lrbij/oblivion.7z?dl=1",
+        "group": "IT"
+      }
+    ],
+    "video": "",
+    "length": "4:32",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "remainsoftheday",
+    "title": "The Remains of the Day",
+    "year": "2019",
+    "kind": "track",
+    "href": "music-2019.html#remainsoftheday",
+    "cover": "images/singlecovers/track-remains-of-the-day.jpg",
+    "summary": "Renoise Space Echo Kotelnikov Version (MP3)",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/the-remains-of-the-day",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2019/melcom-the_remains_of_the_day.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/01qnwvdqsppo223/melcom-the_remains_of_the_day.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/trotd.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/hrge27xqw2bertj/trotd.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=doKCYDchnxE",
+        "group": "Watch"
+      }
+    ],
+    "video": "doKCYDchnxE",
+    "length": "4:32",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "desolaterunner3",
+    "title": "Desolate Runner 3: Cosmic Waves",
+    "year": "2019",
+    "kind": "track",
+    "href": "music-2019.html#desolaterunner3",
+    "cover": "images/singlecovers/track-desolate-runner-3.jpg",
+    "summary": "My contribution to The Sound of SceneSat Volume 5 - Happy 10th birthday to SceneSat! Image by Thomas Budach. Thanks!",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/desolate-runner-3-cosmic-waves",
+        "group": "Listen"
+      },
+      {
+        "name": "scenes.at",
+        "url": "https://sound.of.scenes.at/vol/5/tune/16",
+        "group": "Listen"
+      },
+      {
+        "name": "scenesat.com",
+        "url": "https://music.scenesat.com/track/desolate-runner-3-cosmic-waves",
+        "group": "Listen"
+      },
+      {
+        "name": "spotify.com",
+        "url": "https://open.spotify.com/track/78TX65c4yS7pGqigQWTlf5",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2019/melcom-cosmic_waves.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/ik0lwb9j5hjowbm/melcom-cosmic_waves.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/dr3cwaves.zip",
+        "group": "IT"
+      },
+      {
+        "name": "modarchive.com",
+        "url": "http://modarchive.org/module.php?184736",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/04xemo4lwaihz4e/dr3cwaves.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=dz7dP6a0TiE",
+        "group": "Watch"
+      }
+    ],
+    "video": "dz7dP6a0TiE",
+    "length": "n/a",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "cyberpunk",
+    "title": "Cyberpunk",
+    "year": "2018",
+    "kind": "track",
+    "href": "music-2018.html#cyberpunk",
+    "cover": "images/singlecovers/track-cyberpunk.jpg",
+    "summary": "Merry Christmas",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/cyberpunk",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2018/melcom-cyberpunk.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/cyberpunk.zip",
+        "group": "IT"
+      }
+    ],
+    "video": "",
+    "length": "n/a",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "weltenzauber",
+    "title": "Weltenzauber",
+    "year": "2018",
+    "kind": "track",
+    "href": "music-2018.html#weltenzauber",
+    "cover": "images/singlecovers/track-weltenzauber.png",
+    "summary": "For u",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/weltenzauber",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2018/melcom-weltenzauber.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/weltenzauber.zip",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=XnNzytm8PRU",
+        "group": "Watch"
+      }
+    ],
+    "video": "XnNzytm8PRU",
+    "length": "n/a",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "iamthenight",
+    "title": "I Am The Night",
+    "year": "2018",
+    "kind": "track",
+    "href": "music-2018.html#iamthenight",
+    "cover": "images/singlecovers/track-iamthenight.png",
+    "summary": "This track was made after my album: ASSAULT ON ARKHAM . Maybe one day there will be an extended album together with this track here.",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/i-am-the-night",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2018/melcom-i_am_the_night.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/iamtn.zip",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=RVM3eJzlyDs",
+        "group": "Watch"
+      }
+    ],
+    "video": "RVM3eJzlyDs",
+    "length": "n/a",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "wunderwelt",
+    "title": "Wunderwelt",
+    "year": "2018",
+    "kind": "track",
+    "href": "music-2018.html#wunderwelt",
+    "cover": "images/singlecovers/track-wunderwelt.png",
+    "summary": "For u",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/wunderwelt",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2018/melcom-wunderwelt.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/wunderwelt.zip",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=R3UK8fYWR_0",
+        "group": "Watch"
+      }
+    ],
+    "video": "R3UK8fYWR_0",
+    "length": "n/a",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "fernweh",
+    "title": "Fernweh",
+    "year": "2018",
+    "kind": "track",
+    "href": "music-2018.html#fernweh",
+    "cover": "images/singlecovers/track-fernweh.jpg",
+    "summary": "My contribution to The Sound of SceneSat Volume 4 .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/fernweh",
+        "group": "Listen"
+      },
+      {
+        "name": "scenes.at",
+        "url": "https://sound.of.scenes.at/vol/4/tune/53",
+        "group": "Listen"
+      },
+      {
+        "name": "scenesat.com",
+        "url": "https://music.scenesat.com/track/fernweh",
+        "group": "Listen"
+      },
+      {
+        "name": "spotify.com",
+        "url": "https://open.spotify.com/track/0W7CzenDP53MwZniEpoG5J",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2018/melcom-fernweh.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/fernweh.zip",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=m7-0L56nyaM",
+        "group": "Watch"
+      }
+    ],
+    "video": "m7-0L56nyaM",
+    "length": "n/a",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "iambatman",
+    "title": "I Am Batman",
+    "year": "2018",
+    "kind": "track",
+    "href": "music-2018.html#iambatman",
+    "cover": "images/singlecovers/track-iambatman.jpg",
+    "summary": "This track was made after my album: ASSAULT ON ARKHAM . Maybe one day there will be an extended album together with this track here.",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/i-am-batman",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2018/melcom-i_am_batman.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/iambatman.zip",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=SDe62GTfQyI",
+        "group": "Watch"
+      }
+    ],
+    "video": "SDe62GTfQyI",
+    "length": "n/a",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "gothambymidnight",
+    "title": "Gotham By Midnight",
+    "year": "2017",
+    "kind": "track",
+    "href": "music-2017.html#gothambymidnight",
+    "cover": "images/singlecovers/track-gotham-by-midnight.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM . Maybe one day there will be an extended album together with this track here.",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/gotham-by-midnight",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2017/melcom-gotham_by_midnight.7z",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/47v601fiahrf8cc/melcom-gotham_by_midnight.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/gothambm.7z",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/us1tflorrg12x1z/gothambm.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=w_M76WCtgNM",
+        "group": "Watch"
+      }
+    ],
+    "video": "w_M76WCtgNM",
+    "length": "2:44",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "desolaterunner2",
+    "title": "Desolate Runner 2",
+    "year": "2017",
+    "kind": "track",
+    "href": "music-2017.html#desolaterunner2",
+    "cover": "images/singlecovers/track-desolate-runner-2.jpg",
+    "summary": "Part II of a whole collection of tracks.",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/desolate-runner-2",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2017/melcom-desolate_runner_2.7z",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/sf7kfvshhbfqlg8/melcom-desolate_runner_2.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/desorun2.7z",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/h8n75ap9f1fo21t/desorun2.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=0rqvyhWZSIA",
+        "group": "Watch"
+      }
+    ],
+    "video": "0rqvyhWZSIA",
+    "length": "4:48",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "anighttoremember",
+    "title": "A Night To Remember",
+    "year": "2017",
+    "kind": "track",
+    "href": "music-2017.html#anighttoremember",
+    "cover": "images/singlecovers/track-a-night-to-remember.jpg",
+    "summary": "Special version of my track \" It Ends Tonight \" from 2016. This track was made after my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/a-night-to-remember",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2017/melcom-a_night_to_remember.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/3dkjk427hr6dffj/melcom-a_night_to_remember.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Mod Archive",
+        "url": "https://modarchive.org/index.php?request=view_by_moduleid&query=179962",
+        "group": "IT"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/remember.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/49vnl4pji71ewix/remember.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=f8iy-wyJ_lk",
+        "group": "Watch"
+      }
+    ],
+    "video": "f8iy-wyJ_lk",
+    "length": "3:42",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "iamvengeance",
+    "title": "I Am Vengeance",
+    "year": "2017",
+    "kind": "track",
+    "href": "music-2017.html#iamvengeance",
+    "cover": "images/singlecovers/track-i-am-vengeance.jpg",
+    "summary": "Special version of my track \" I Am Suicide \" from 2016. This track was made after my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/i-am-vengeance",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2017/melcom-i_am_vengeance.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/zq9slcrp1gu6xyr/melcom-i_am_vengeance.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/vengeance.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/5x7ii8h49pkskcj/vengeance.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=-Gv3MZVRlNc",
+        "group": "Watch"
+      }
+    ],
+    "video": "-Gv3MZVRlNc",
+    "length": "3:02",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "desolaterunner",
+    "title": "Desolate Runner",
+    "year": "2017",
+    "kind": "track",
+    "href": "music-2017.html#desolaterunner",
+    "cover": "images/singlecovers/track-desolate-runner.jpg",
+    "summary": "Part I of a whole collection of tracks.",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/desolate-runner",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2017/melcom-desolate_runner.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/qeu9uuabwx8qr3j/melcom-desolate_runner.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/desorun.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/sg21st3urj8t211/desorun.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=-no_-Jt_B5c",
+        "group": "Watch"
+      }
+    ],
+    "video": "-no_-Jt_B5c",
+    "length": "3:35",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "iamsuicide",
+    "title": "I Am Suicide",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#iamsuicide",
+    "cover": "images/singlecovers/track-i-am-suicide.png",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham-i-am-suicide",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-i_am_suicide.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/8ir7jyxx2rviry6/melcom-i_am_suicide.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/suicide.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/1fn9eiovkis9t5p/suicide.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=NdzpbajleQM",
+        "group": "Watch"
+      }
+    ],
+    "video": "NdzpbajleQM",
+    "length": "3:50",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "seasonsong",
+    "title": "Season Song",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#seasonsong",
+    "cover": "images/singlecovers/track-season-song.png",
+    "summary": "Have Fun",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/season-song",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-season_song.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/c8ndoqbcxkvih0m/melcom-season_song.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/ssong.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/7rqi6j6tnksead5/ssong.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=L0k0wgGbMms",
+        "group": "Watch"
+      }
+    ],
+    "video": "L0k0wgGbMms",
+    "length": "4:51",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "capedcrusadersuite",
+    "title": "Caped Crusader Suite",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#capedcrusadersuite",
+    "cover": "images/singlecovers/track-caped-crusader-suite.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham-caped-crusader-suite",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-caped_crusader_suite.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/xgow6dfud624xi1/melcom-caped_crusader_suite.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/ccsuite.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/q1zc4hjqvf1qvt5/ccsuite.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=yLngkRWZe6c",
+        "group": "Watch"
+      }
+    ],
+    "video": "yLngkRWZe6c",
+    "length": "3:50",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "ambush",
+    "title": "Ambush",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#ambush",
+    "cover": "images/singlecovers/track-ambush.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham-ambush",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-ambush.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/8ir7jyxx2rviry6/melcom-i_am_suicide.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/ambush.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/nbjyzf53ubeqb98/ambush.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=HAse5hLJaGo",
+        "group": "Watch"
+      }
+    ],
+    "video": "HAse5hLJaGo",
+    "length": "3:42",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "streetsofgotham",
+    "title": "Streets of Gotham",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#streetsofgotham",
+    "cover": "images/singlecovers/track-streets-of-gotham.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham-streets-of-gotham",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-streets_of_gotham.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/rpz38rkyij4y18c/melcom-streets_of_gotham.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/sog.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/b0tcjlx8lzn02yy/sog.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=9uv3msu4Bgo",
+        "group": "Watch"
+      }
+    ],
+    "video": "9uv3msu4Bgo",
+    "length": "3:29",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "itendstonight",
+    "title": "It Ends Tonight",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#itendstonight",
+    "cover": "images/singlecovers/track-it-ends-tonight.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM . This track was also used for the music disc \" Bitfellas Analysis \".",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham-it-ends-tonight",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-it_ends_tonight.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/sjbjgqe76fdivmf/melcom-it_ends_tonight.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/itends.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/oyl5jv4kw9g10rh/itends.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=HOx20t32hIw",
+        "group": "Watch"
+      }
+    ],
+    "video": "HOx20t32hIw",
+    "length": "5:42",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "abattlewithin",
+    "title": "A Battle Within",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#abattlewithin",
+    "cover": "images/singlecovers/track-a-battle-within.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham-a-battle-within",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-a_battle_within.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/7m0w6we4dwjzbhr/melcom-a_battle_within.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/abwithin.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/qjcj3e55eroppwj/abwithin.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=V9SNeXs4ONw",
+        "group": "Watch"
+      }
+    ],
+    "video": "V9SNeXs4ONw",
+    "length": "5:54",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "taskforcex",
+    "title": "Task Force X",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#taskforcex",
+    "cover": "images/singlecovers/track-task-force-x.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM . This track was also used for the music disc \" Bitfellas Analysis \".",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham-task-force-x",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-task_force_x.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/qk9td9j8w500nuu/melcom-task_force_x.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/tforcex.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/2e63id5pvd5bi5x/tforcex.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=TLzDAuTnCbA",
+        "group": "Watch"
+      }
+    ],
+    "video": "TLzDAuTnCbA",
+    "length": "5:12",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "onerule",
+    "title": "One Rule",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#onerule",
+    "cover": "images/singlecovers/track-one-rule.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/one-rule",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-one_rule.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/gnbcaypkjmrb0jh/melcom-one_rule.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/onerule.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/q9gjkp9mdoohd4b/onerule.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=aubxBMgHNQM",
+        "group": "Watch"
+      }
+    ],
+    "video": "aubxBMgHNQM",
+    "length": "4:23",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "fallenknight",
+    "title": "Fallen Knight",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#fallenknight",
+    "cover": "images/singlecovers/track-fallen-knight.png",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/fallen-knight",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-fallen_knight.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/d16wss8zkzk6rov/melcom-fallen_knight.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/fknight.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/dtc4dkf26y1rnse/fknight.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=LvvtvNG1mCI",
+        "group": "Watch"
+      }
+    ],
+    "video": "LvvtvNG1mCI",
+    "length": "2:41",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "penguinescapes",
+    "title": "Penguin Escapes",
+    "year": "2016",
+    "kind": "track",
+    "href": "music-2016.html#penguinescapes",
+    "cover": "images/singlecovers/track-penguin-escapes.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM . Composed 04-Dec-2014 / edited: 12-Jan-2016",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/penguin-escapes",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom-penguin_escapes.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/807wkn3km40lobx/melcom-penguin_escapes.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/pescapes.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/5tw3v6e4u5pf8ra/pescapes.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=g_k_eArHISY",
+        "group": "Watch"
+      }
+    ],
+    "video": "g_k_eArHISY",
+    "length": "4:48",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "aoa-album",
+    "title": "Assault on Arkham",
+    "year": "2016",
+    "kind": "album",
+    "href": "albums-2016.html#aoa-album",
+    "cover": "images/albumcovers/assault_on_arkham.jpg",
+    "summary": "My tribute to the Batman Arkham game series.",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/sets/assault-on-arkham-full",
+        "group": "Listen"
+      },
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/assault-on-arkham",
+        "group": "Listen"
+      },
+      {
+        "name": "Archive.org",
+        "url": "https://archive.org/details/melcom-assault_on_arkham",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2016/melcom_-_assault_on_arkham_(mp3_album).zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/xenid0hwu4ntk5d/melcom-assault_on_arkham_%28mp3_album%29.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/disks/arkham.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/va491lj3gxclni0/arkham.7z?dl=1",
+        "group": "IT"
+      }
+    ],
+    "video": "",
+    "length": "01:02:28",
+    "formats": ".IT / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "gothamprotector",
+    "title": "Gotham Protector",
+    "year": "2015",
+    "kind": "track",
+    "href": "music-2015.html#gothamprotector",
+    "cover": "images/singlecovers/track-gotham-protector.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM . This track was also used for the music disc \" Bitfellas Analysis \".",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham-gotham-protector",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2015/melcom-gotham_protector.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/l6nz9756gpmgo50/melcom-gotham_protector.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/gothamp.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/m0sdhe60uqk5gyi/gothamp.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=xccKkiW1ShM",
+        "group": "Watch"
+      }
+    ],
+    "video": "xccKkiW1ShM",
+    "length": "3:21",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "aggravatedassault",
+    "title": "Aggravated Assault",
+    "year": "2014",
+    "kind": "track",
+    "href": "music-2014.html#aggravatedassault",
+    "cover": "images/singlecovers/track-aggravated-assault.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/aggravated-assault",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2014/melcom-aggravated_assault.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/86bcbfz99z4c5rn/melcom-aggravated_assault.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/aggravated.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/cw0n93h95q2i6mu/aggravated.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=vejtpnONyUY",
+        "group": "Watch"
+      }
+    ],
+    "video": "vejtpnONyUY",
+    "length": "5:24",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "victorzsasz",
+    "title": "Victor Zsasz",
+    "year": "2014",
+    "kind": "track",
+    "href": "music-2014.html#victorzsasz",
+    "cover": "images/singlecovers/track-victor-zsasz.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/victor-zsasz",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2014/melcom-victor_zsasz.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/oswa0zelgs8sp0c/melcom-victor_zsasz.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/victor.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/pagq32ugjmxvsgm/victor.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=QhaLf70uYuE",
+        "group": "Watch"
+      }
+    ],
+    "video": "QhaLf70uYuE",
+    "length": "4:05",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "aoa-main",
+    "title": "Assault on Arkham (Main Theme)",
+    "year": "2014",
+    "kind": "track",
+    "href": "music-2014.html#aoa-main",
+    "cover": "images/singlecovers/track-assault-on-arkham-main.jpg",
+    "summary": "This track was written for my album: ASSAULT ON ARKHAM .",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/assault-on-arkham",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2014/melcom-assault_on_arkham.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/e2bb3mq645j3cq3/melcom-assault_on_arkham.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/aoarkham.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/rff59jmkzsejmqr/aoarkham.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=Vy9WD2T0cuw",
+        "group": "Watch"
+      }
+    ],
+    "video": "Vy9WD2T0cuw",
+    "length": "6:00",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "thelastdaysonmars",
+    "title": "The Last Days On Mars",
+    "year": "2014",
+    "kind": "track",
+    "href": "music-2014.html#thelastdaysonmars",
+    "cover": "images/singlecovers/track-the-last-days-on-mars.jpg",
+    "summary": "My first track after a break of over 10 years.",
+    "providers": [
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2014/melcom-the_last_days_on_mars.zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/6bqhr6de425k4v5/melcom-the_last_days_on_mars.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/tldomars.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/7upcol91c2juqo9/tldomars.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=bN4k1BArOUI",
+        "group": "Watch"
+      }
+    ],
+    "video": "bN4k1BArOUI",
+    "length": "5:48",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "explodingfist2k14",
+    "title": "Exploding Fist (2014 Edition)",
+    "year": "2014",
+    "kind": "track",
+    "href": "music-2014.html#explodingfist2k14",
+    "cover": "images/singlecovers/track-exploding-fist-2014.png",
+    "summary": "Composed 27-Dec-1999 / revised 09-Jul-2014",
+    "providers": [
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2014/exploding_fist_(2014_edition).zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/tx5apszuln8ffug/exploding_fist_%282014_edition%29.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/exfisted.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/ptp6hdcs6r0e80a/exfisted.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=sCsSnITZc_s",
+        "group": "Watch"
+      }
+    ],
+    "video": "sCsSnITZc_s",
+    "length": "6:08",
+    "formats": ".IT / MP3",
+    "upcoming": false
+  },
+  {
+    "id": "jagged",
+    "title": "Jagged - Transformers",
+    "year": "1999",
+    "kind": "album",
+    "href": "albums-1999.html#jagged",
+    "cover": "images/albumcovers/jagged_-_transformers.jpg",
+    "summary": "If I remember correctly, this was for the Japanese group \"Typhoon JP\". They were working on a strategy game called \"Jagged - Transformers\". Over the years we have lost contact. I can't tell if the game has ever been released.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/jagged-transformers",
+        "group": "Listen"
+      },
+      {
+        "name": "Archive.org",
+        "url": "https://archive.org/details/AndreasMelcomUrban-Jagged-Transformers",
+        "group": "Listen"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/8txme01jnbcc6bq/melcom_-_jagged_-transformers_%28mp3_album%29.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/06cw7r7yyxuesdd/jagged.7z?dl=1",
+        "group": "IT"
+      }
+    ],
+    "video": "",
+    "length": "00:37:42",
+    "formats": ".IT / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "dts4",
+    "title": "Dark Trooper Symphony 4",
+    "year": "1999",
+    "kind": "album",
+    "href": "albums-1999.html#dts4",
+    "cover": "images/albumcovers/dark_trooper_symphony_4.jpg",
+    "summary": "My fourth Dark Trooper Symphony music disk.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/dark-trooper-symphony-4",
+        "group": "Listen"
+      },
+      {
+        "name": "Archive.org",
+        "url": "https://archive.org/details/AndreasMelcomUrban-DarkTropperSymphony4",
+        "group": "Listen"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/im19kg733lpigli/melcom_-_a_dark_tropper_symphony_4_%28mp3_album%29.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/disks/dts4.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/ywnqe2ftnn8pg9k/dts4.7z?dl=1",
+        "group": "IT"
+      }
+    ],
+    "video": "",
+    "length": "00:22:25",
+    "formats": ".IT / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "darkbreed",
+    "title": "Dark Breed",
+    "year": "1998",
+    "kind": "album",
+    "href": "albums-1998.html#darkbreed",
+    "cover": "images/albumcovers/dark_breed.jpg",
+    "summary": "Just a music disk.",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/dark-breed",
+        "group": "Listen"
+      },
+      {
+        "name": "Archive.org",
+        "url": "https://archive.org/details/AndreasMelcomUrban-DarkBreed",
+        "group": "Listen"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/vvtv9obv242whp0/melcom_-_dark_breed_%28mp3_album%29.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/disks/dbreed.zip",
+        "group": "IT"
+      }
+    ],
+    "video": "",
+    "length": "00:11:14",
+    "formats": ".IT / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "trashrida",
+    "title": "Trash Rida",
+    "year": "1998",
+    "kind": "album",
+    "href": "albums-1998.html#trashrida",
+    "cover": "images/albumcovers/trash_rida.jpg",
+    "summary": "10 Tracks for the Action-Game Trash Rida. To my knowledge, the game was never finished / released. I wrote the soundtrack for the former group \"Digital Brotherhood\".",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/trash-rida",
+        "group": "Listen"
+      },
+      {
+        "name": "Archive.org",
+        "url": "https://archive.org/details/AndreasMelcomUrban-TrashRida",
+        "group": "Listen"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/q8dybxe8ypwy0nj/melcom_-_trash_rida_%28mp3_album%29.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/disks/tr.zip",
+        "group": "IT"
+      }
+    ],
+    "video": "",
+    "length": "00:22:24",
+    "formats": ".IT / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "spaceinvaders",
+    "title": "Space Invaders",
+    "year": "1997",
+    "kind": "album",
+    "href": "albums-1997.html#spaceinvaders",
+    "cover": "images/albumcovers/space_invaders_.jpg",
+    "summary": "Tribute to the Game \"Space Invaders\".",
+    "providers": [
+      {
+        "name": "Bandcamp",
+        "url": "https://melcom.bandcamp.com/album/space-invaders",
+        "group": "Listen"
+      },
+      {
+        "name": "Archive.org",
+        "url": "https://archive.org/details/AndreasMelcomUrban-SpaceInvaders",
+        "group": "Listen"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/t840abng5827e84/melcom_-_space_invaders_%28mp3_album%29.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/disks/invaders.zip",
+        "group": "S3M"
+      }
+    ],
+    "video": "",
+    "length": "00:49:41",
+    "formats": ".S3M / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "doom",
+    "title": "(My) DOOM v1.0b",
+    "year": "old",
+    "kind": "track",
+    "href": "music-old.html#doom",
+    "cover": "images/singlecovers/track-doom.png",
+    "summary": "My tribute to the game DOOM. * New Version! Composed: 16-Apr-2000 - Revised 05-Dec-2020",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/doom",
+        "group": "Listen"
+      },
+      {
+        "name": "bandcamp.com *",
+        "url": "https://melcom.bandcamp.com/track/doom-v10b",
+        "group": "Listen"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/darkrhythms/2000/melcom-mydoom.mp3",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/v8tr1yp50c844wx/melcom-mydoom.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "files.scene.org *",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2020/melcom-the_sound_of_melcom_-_classics_(mp3_album).zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/doom.zip",
+        "group": "IT"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/rz7v6d5vkfiwrhz/doom.7z?dl=1",
+        "group": "IT"
+      },
+      {
+        "name": "files.scene.org *",
+        "url": "https://files.scene.org/view/music/artists/melcom/disks/tsomclassics.zip",
+        "group": "IT"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=0qQi7ANyRB4",
+        "group": "Watch"
+      }
+    ],
+    "video": "0qQi7ANyRB4",
+    "length": "3:40",
+    "formats": ".IT / .MP3",
+    "upcoming": false
+  },
+  {
+    "id": "spaceinvadersv11",
+    "title": "Space Invaders v1.1b",
+    "year": "old",
+    "kind": "track",
+    "href": "music-old.html#spaceinvadersv11",
+    "cover": "images/singlecovers/track-doom.png",
+    "summary": "My tribute to the game Space Invaders. * New Version! Composed: Sometime 1996 - Revised 05-Dec-2020",
+    "providers": [
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/space-invaders",
+        "group": "Listen"
+      },
+      {
+        "name": "bandcamp.com *",
+        "url": "https://melcom.bandcamp.com/track/space-invaders-v11b",
+        "group": "Listen"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/melcom/space-invaders",
+        "group": "MP3"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/qc299546somypcx/melcom-space_invaders_v1_1.7z?dl=1",
+        "group": "MP3"
+      },
+      {
+        "name": "files.scene.org *",
+        "url": "https://files.scene.org/view/music/artists/melcom/mp3/the_sound_of_melcom/2020/melcom-the_sound_of_melcom_-_classics_(mp3_album).zip",
+        "group": "MP3"
+      },
+      {
+        "name": "Scene.org",
+        "url": "https://files.scene.org/view/music/artists/melcom/space1_1.zip",
+        "group": "S3M"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/s/jcq73ck1dzm95xr/space1_1.7z?dl=1",
+        "group": "S3M"
+      },
+      {
+        "name": "files.scene.org *",
+        "url": "https://files.scene.org/view/music/artists/melcom/disks/tsomclassics.zip",
+        "group": "S3M"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/watch?v=32mR6NgojBw",
+        "group": "Watch"
+      }
+    ],
+    "video": "32mR6NgojBw",
+    "length": "6:15",
+    "formats": ".S3M / .MP3",
+    "upcoming": false
+  }
+]
