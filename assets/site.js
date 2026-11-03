@@ -1,4 +1,4 @@
-/* Client-side controls for melcom's music archive. No third-party scripts on load. */
+/* Client-side controls for melcom's music archive. */
 (() => {
   'use strict';
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -207,7 +207,9 @@
     function positionBackToTop() {
       positionQueued = false;
       const footerTop = footer ? footer.getBoundingClientRect().top : window.innerHeight;
-      const bottom = Math.ceil(Math.max(20, window.innerHeight - footerTop + 16));
+      const banner = $('#info-banner');
+      const bannerHeight = banner && !banner.hidden ? banner.getBoundingClientRect().height : 0;
+      const bottom = Math.ceil(Math.max(20, bannerHeight ? bannerHeight + 16 : 0, window.innerHeight - footerTop + 16));
       const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
       const buttonTop = window.innerHeight - bottom - 52;
       backToTop.style.setProperty('--back-to-top-bottom', `${bottom}px`);
@@ -227,6 +229,7 @@
     window.addEventListener('resize', queueBackToTopPosition);
     window.addEventListener('load', queueBackToTopPosition);
     window.addEventListener('pageshow', queueBackToTopPosition);
+    window.addEventListener('info-banner-change', queueBackToTopPosition);
     window.visualViewport?.addEventListener('resize', queueBackToTopPosition);
 
     // Filtering, expanded details and loaded artwork can move the footer without scrolling.
