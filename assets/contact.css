@@ -1,0 +1,158 @@
+/* Match the open sections and compact reading rhythm of About Me. */
+.contact-page .content-box {
+    margin: 24px 0 32px;
+}
+.contact-page .contact-section-header > p {
+    margin: 20px 0 0;
+}
+.contact-page .contact-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 24px 48px;
+    max-width: 1100px;
+    margin-top: 22px;
+}
+.contact-page .contact-method {
+    min-width: 0;
+}
+.contact-page .contact-method h3,
+.contact-page .contact-social-group h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.35;
+}
+.contact-page .contact-method-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 12px;
+    margin-bottom: 8px;
+}
+.contact-page .contact-method-heading h3 {
+    margin: 0;
+}
+.contact-page .contact-addresses {
+    display: grid;
+    gap: 8px;
+    margin: 12px 0 14px;
+}
+.contact-page .contact-addresses > span {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 10px;
+}
+.contact-page .contact-addresses small {
+    font-size: 13px;
+}
+.contact-page .contact-addresses code {
+    min-width: 0;
+    font: 15px/1.45 Lato, Arial, sans-serif;
+}
+.contact-page .contact-other-methods {
+    display: grid;
+    gap: 24px;
+    min-width: 0;
+}
+.contact-page .contact-username {
+    color: var(--muted);
+    font-size: 13px;
+}
+.contact-page .contact-community-links,
+.contact-page .contact-social-list {
+    display: grid;
+    gap: 0;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.contact-page .contact-community-links li,
+.contact-page .contact-social-list li {
+    min-width: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.contact-page .contact-community-links a,
+.contact-page .contact-social-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 26px;
+    padding: 3px 0;
+}
+.contact-page .contact-profile-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    gap: 12px 24px;
+}
+.contact-page .contact-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    min-height: 44px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+.contact-page .contact-profile-link img {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+.contact-page .contact-profile-link strong {
+    font-weight: 400;
+}
+.contact-page .contact-profile-link small {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+}
+.contact-page .contact-feedback {
+    padding: 4px 0 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+}
+.contact-page .contact-feedback > p {
+    max-width: 1000px;
+    margin: 20px 0 0;
+}
+.contact-page .contact-social-groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px 32px;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+.contact-page .contact-social-list {
+    margin-top: 0;
+}
+.contact-page .contact-social-list .icon {
+    width: 11px;
+    height: 11px;
+    opacity: .6;
+}
+@media (max-width: 700px) {
+    .contact-page .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+}
+@media (max-width: 600px) {
+    .contact-page .contact-social-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+    .contact-page .contact-profile-links {
+        column-gap: 16px;
+    }
+    .contact-page .contact-profile-link {
+        gap: 8px;
+    }
+}
