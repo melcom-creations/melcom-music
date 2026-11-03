@@ -12,7 +12,7 @@ Keep `CNAME` with the exact content `www.melcom-music.de`. Keep `.nojekyll` in t
 
 For the repository's existing Pages configuration, preserve the current publishing source. If the site is published from the `main` branch and its root folder, the supplied layout matches that configuration.
 
-The site runs as plain HTML, CSS and JavaScript. There is no ChatGPT sign-in or dependency on Sites hosting. External music and download links retain their existing destinations. YouTube videos are loaded only when a visitor chooses a play button. No visitor analytics script is included.
+The site runs as plain HTML, CSS and JavaScript. There is no ChatGPT sign-in or dependency on Sites hosting. External music and download links retain their existing destinations. YouTube videos are loaded only when a visitor chooses a play button. Statcounter uses the original website's project for visitor statistics. The analytics notice follows the browser language (German or US English), and its OK button remembers dismissal for 365 days using the original cookie.
 
 ## Edit and rebuild
 
@@ -36,6 +36,7 @@ python build.py
 | `assets/site.css` | Responsive layouts, typography and visual design |
 | `assets/common-links.css` | Shared colors for external and internal text links, plus consistent category navigation controls |
 | `assets/site.js` | Search, filters, list/grid controls, galleries and click-to-load video players |
+| `assets/info-banner.css` and `assets/info-banner.js` | Bilingual analytics notice, original dismissal cookie and Statcounter integration |
 | `assets/catalog.js` | Generated catalog used by the browser |
 | `images/` | Original artwork, project screenshots, banners and profile images |
 | `fonts/` | Locally hosted Lato font files and their license |

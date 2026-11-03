@@ -126,6 +126,12 @@ def back_to_top():
     return '<button type="button" id="myBtn" title="Go to top" aria-label="Back to top" hidden><img src="images/melcom-puzzle-icon.png" alt="" width="48" height="48" aria-hidden="true"></button>'
 
 
+def info_banner():
+    return '''<div id="info-banner" class="info-banner" role="region" aria-label="Analytics notice" hidden>
+<div class="info-banner-content wrap"><p id="info-banner-text" class="info-banner-text">This website uses an analytics service to understand which content is popular. By continuing to use this site, you agree to this.</p>
+<div class="info-banner-buttons"><a id="info-banner-learn-more" href="imprint.html#cookies" class="info-banner-button">Learn More</a><button type="button" id="btn-dismiss-banner" class="info-banner-button">OK</button></div></div></div>'''
+
+
 def dialogs():
     return f'''<dialog id="media-dialog" class="media-dialog" aria-labelledby="media-title"><div class="dialog-heading"><p id="media-title"></p><button class="icon-button" data-close-dialog aria-label="Close player">{icon('close')}</button></div><div id="media-content"></div><p class="player-help">Player unavailable? <a id="media-external" href="https://youtube.com/@melcom" target="_blank" rel="noopener noreferrer">Open on YouTube {icon('external')}</a></p></dialog>
 <dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-title"><div class="dialog-heading"><p id="gallery-title">Artwork</p><button class="icon-button" data-close-dialog aria-label="Close image viewer">{icon('close')}</button></div><div class="gallery-stage"><button class="gallery-prev icon-button" aria-label="Previous image">←</button><img id="gallery-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""><button class="gallery-next icon-button" aria-label="Next image">→</button></div><div id="gallery-thumbnails"></div><p class="gallery-caption" aria-live="polite"></p></dialog>'''
@@ -139,7 +145,7 @@ def page(name, title, description, body, active='', cls='', news=False, release=
     reading_assets = '<link rel="stylesheet" href="assets/info-pages.css?v=20261103-small-type">' if name in {'creations.html', 'aboutme.html', 'links.html', 'contact.html', 'imprint.html'} else ''
     links_assets = '<link rel="stylesheet" href="assets/links.css?v=20261103-small-type"><script defer src="assets/links.js?v=20261103-links"></script>' if name == 'links.html' else ''
     content = f'''<!doctype html>
-<html lang="en" id="top"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{base}<title>{escape(title)} - melcom</title><meta name="description" content="{escape(description,quote=True)}"><meta name="theme-color" content="#111411"><link rel="icon" href="images/favicon.ico"><link rel="canonical" href="{ORIGIN}/{name}"><meta property="og:title" content="{escape(title,quote=True)} - melcom"><meta property="og:description" content="{escape(description,quote=True)}"><meta property="og:image" content="{ORIGIN}/images/singlecovers/track-fernweh-3.jpg"><meta property="og:type" content="website"><link rel="stylesheet" href="assets/site.css?v=20261103-footer-4"><script defer src="assets/catalog.js"></script><script defer src="assets/site.js?v=20261103-top"></script>{news_assets}{release_assets}{creation_assets}{reading_assets}{links_assets}<link rel="stylesheet" href="assets/common-links.css?v=20261103-link-style"></head><body class="{cls}">{header(active)}{body}{footer()}{back_to_top()}{dialogs()}</body></html>'''
+<html lang="en" id="top"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{base}<title>{escape(title)} - melcom</title><meta name="description" content="{escape(description,quote=True)}"><meta name="theme-color" content="#111411"><link rel="icon" href="images/favicon.ico"><link rel="canonical" href="{ORIGIN}/{name}"><meta property="og:title" content="{escape(title,quote=True)} - melcom"><meta property="og:description" content="{escape(description,quote=True)}"><meta property="og:image" content="{ORIGIN}/images/singlecovers/track-fernweh-3.jpg"><meta property="og:type" content="website"><link rel="stylesheet" href="assets/site.css?v=20261103-footer-4"><script defer src="assets/catalog.js"></script><script defer src="assets/site.js?v=20261103-banner"></script>{news_assets}{release_assets}{creation_assets}{reading_assets}{links_assets}<link rel="stylesheet" href="assets/common-links.css?v=20261103-link-style"><link rel="stylesheet" href="assets/info-banner.css?v=20261103-banner"><script defer src="assets/info-banner.js?v=20261103-banner"></script></head><body class="{cls}">{header(active)}{body}{footer()}{info_banner()}{back_to_top()}{dialogs()}</body></html>'''
     target = OUT / name
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(apply_link_policy(content, ORIGIN + '/' + name), encoding='utf-8')
@@ -385,12 +391,8 @@ def transform_main(d,name):
         all_social+=''.join(f'<a href="{u}" target="_blank" rel="noopener noreferrer">{n} {icon("external")}</a>' for n,u in more)+'</div></section>'
         m.append(html.fromstring(all_social))
     if name=='imprint.html':
-        # No legacy visitor-tracking code is carried into the new website.
-        cookies=m.xpath('.//*[@id="cookies"]')[0]
-        cookies.clear();cookies.set('id','cookies')
-        cookies.append(html.fromstring('<div><h2>About this website</h2><p>This version of the website does not use Statcounter or another visitor analytics service. Music and video players connect to YouTube only after you choose to open a player. External links and downloads are provided by their respective services.</p></div>'))
         for p in m.xpath('.//*['+has_class('intro-highlight-box')+']//p'):
-            p.text='Legal disclosure, contact information and the original disclaimers regarding this website and external links.'
+            p.text='Legal disclosure, contact information and the original disclaimers regarding this website, analytics and external links.'
     if name in {'creations.html', 'aboutme.html', 'links.html', 'contact.html', 'imprint.html'}:
         layout_page_intro(m)
     m.set('class','wrap content-page '+('release-page' if year else name.replace('.html','')+'-page'))
