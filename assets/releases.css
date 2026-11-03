@@ -90,6 +90,9 @@
     font-size: 12px;
     line-height: 1.4;
 }
+.release-layout .info-table tbody > tr:last-child > td {
+    border-bottom: 0;
+}
 .release-layout .info-table td b {
     margin-bottom: 2px;
     font-size: 11px;

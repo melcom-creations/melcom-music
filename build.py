@@ -134,7 +134,7 @@ def page(name, title, description, body, active='', cls='', news=False, release=
     depth = len(Path(name).parts)-1
     base = '<base href="'+'../'*depth+'">' if depth else ''
     news_assets = '<link rel="stylesheet" href="assets/news.css?v=20261103-small-type"><script defer src="assets/news.js?v=20261103-news"></script>' if news else ''
-    release_assets = '<link rel="stylesheet" href="assets/releases.css?v=20261103-tracklist">' if release else ''
+    release_assets = '<link rel="stylesheet" href="assets/releases.css?v=20261103-info-border">' if release else ''
     creation_assets = '<link rel="stylesheet" href="assets/creations.css?v=20261103-small-type">' if name == 'creations.html' else ''
     reading_assets = '<link rel="stylesheet" href="assets/info-pages.css?v=20261103-small-type">' if name in {'creations.html', 'aboutme.html', 'links.html', 'contact.html', 'imprint.html'} else ''
     links_assets = '<link rel="stylesheet" href="assets/links.css?v=20261103-small-type"><script defer src="assets/links.js?v=20261103-links"></script>' if name == 'links.html' else ''
