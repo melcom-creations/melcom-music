@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /content/
+Sitemap: https://www.melcom-music.de/sitemap.xml
