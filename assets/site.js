@@ -107,9 +107,11 @@
     galleryIndex = index;
     const link = galleryLinks[index];
     const source = $('img', link);
-    $('#gallery-image').src = link.href;
-    $('#gallery-image').alt = source?.alt || 'Artwork by melcom';
-    $('#gallery-title').textContent = source?.title || source?.alt || 'Artwork';
+    const galleryImage = $('#gallery-image');
+    galleryImage.src = link.href;
+    galleryImage.alt = source?.alt || 'Artwork by melcom';
+    galleryImage.title = source?.title || source?.alt || 'Artwork by melcom';
+    $('#gallery-title').textContent = galleryImage.title;
     $('.gallery-caption').textContent = `${index + 1} / ${galleryLinks.length} · ${source?.alt || 'Artwork'}`;
     $('.gallery-prev').disabled = index === 0;
     $('.gallery-next').disabled = index === galleryLinks.length - 1;
@@ -127,11 +129,14 @@
     galleryIndex = galleryLinks.indexOf(link);
     if (galleryIndex < 0) { galleryLinks = [link]; galleryIndex = 0; }
     const thumbnails = galleryLinks.map((imageLink, index) => {
+      const source = $('img', imageLink);
+      const title = source.title || source.alt || 'Artwork';
       const button = document.createElement('button');
       button.type = 'button';
-      button.setAttribute('aria-label', `Show image ${index + 1}: ${$('img', imageLink)?.alt || 'Artwork'}`);
+      button.setAttribute('aria-label', `Show image ${index + 1}: ${title}`);
+      button.title = button.getAttribute('aria-label');
       const image = document.createElement('img');
-      image.src = $('img', imageLink).src; image.alt = '';
+      image.src = source.src; image.alt = ''; image.title = title;
       button.append(image);
       button.addEventListener('click', () => showImage(index));
       return button;
