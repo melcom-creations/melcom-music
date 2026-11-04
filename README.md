@@ -34,6 +34,7 @@ python build.py
 | `build.py` | Generates the redesigned pages and music catalog directly in the repository root; includes the homepage composition |
 | `link_policy.py` | Opens off-site web links in a new tab with `noopener noreferrer` and keeps internal links in the current tab |
 | `assets/site.css` | Responsive layouts, typography and visual design |
+| `assets/contact.css` | Open contact sections, compact profile links and responsive contact layout |
 | `assets/common-links.css` | Shared colors for external and internal text links, plus consistent category navigation controls |
 | `assets/site.js` | Search, filters, list/grid controls, galleries and click-to-load video players |
 | `assets/info-banner.css` and `assets/info-banner.js` | Bilingual analytics notice, original dismissal cookie and Statcounter integration |

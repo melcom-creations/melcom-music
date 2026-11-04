@@ -84,7 +84,7 @@ def brand():
     return f'<a class="brand" href="index.html" aria-label="melcom home">{icon("sound")}<span>melcom<span class="brand-dot">.</span></span></a>'
 
 def header(active):
-    nav = [('index.html','Discover','home'),('music.html','Music','music'),('albums.html','Albums','albums'),('creations.html','Creations','creations'),('aboutme.html','About','about'),('links.html','Links','links')]
+    nav = [('index.html','Home','home'),('music.html','Music','music'),('albums.html','Albums','albums'),('creations.html','Creations','creations'),('aboutme.html','About','about'),('links.html','Links','links')]
     links = ''.join(f'<a href="{url}"'+(' aria-current="page"' if active==key else '')+f'>{label}</a>' for url,label,key in nav)
     return f'''<a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="header-inner">{brand()}<button class="menu-toggle icon-button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">{icon('menu')}</button><nav id="site-nav" class="site-nav" aria-label="Main navigation">{links}</nav><a class="contact-link" href="contact.html">Let's talk {icon('external')}</a></div></header>'''
@@ -140,12 +140,13 @@ def page(name, title, description, body, active='', cls='', news=False, release=
     depth = len(Path(name).parts)-1
     base = '<base href="'+'../'*depth+'">' if depth else ''
     news_assets = '<link rel="stylesheet" href="assets/news.css?v=20261103-small-type"><script defer src="assets/news.js?v=20261103-news"></script>' if news else ''
-    release_assets = '<link rel="stylesheet" href="assets/releases.css?v=20261103-info-border">' if release else ''
-    creation_assets = '<link rel="stylesheet" href="assets/creations.css?v=20261103-small-type">' if name == 'creations.html' else ''
+    release_assets = '<link rel="stylesheet" href="assets/releases.css?v=20261104-format-tables">' if release else ''
+    creation_assets = '<link rel="stylesheet" href="assets/creations.css?v=20261103-support-type">' if name == 'creations.html' else ''
     reading_assets = '<link rel="stylesheet" href="assets/info-pages.css?v=20261103-small-type">' if name in {'creations.html', 'aboutme.html', 'links.html', 'contact.html', 'imprint.html'} else ''
+    contact_assets = '<link rel="stylesheet" href="assets/contact.css?v=20261103-contact">' if name == 'contact.html' else ''
     links_assets = '<link rel="stylesheet" href="assets/links.css?v=20261103-small-type"><script defer src="assets/links.js?v=20261103-links"></script>' if name == 'links.html' else ''
     content = f'''<!doctype html>
-<html lang="en" id="top"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{base}<title>{escape(title)} - melcom</title><meta name="description" content="{escape(description,quote=True)}"><meta name="theme-color" content="#111411"><link rel="icon" href="images/favicon.ico"><link rel="canonical" href="{ORIGIN}/{name}"><meta property="og:title" content="{escape(title,quote=True)} - melcom"><meta property="og:description" content="{escape(description,quote=True)}"><meta property="og:image" content="{ORIGIN}/images/singlecovers/track-fernweh-3.jpg"><meta property="og:type" content="website"><link rel="stylesheet" href="assets/site.css?v=20261103-footer-4"><script defer src="assets/catalog.js"></script><script defer src="assets/site.js?v=20261103-banner"></script>{news_assets}{release_assets}{creation_assets}{reading_assets}{links_assets}<link rel="stylesheet" href="assets/common-links.css?v=20261103-link-style"><link rel="stylesheet" href="assets/info-banner.css?v=20261103-banner"><script defer src="assets/info-banner.js?v=20261103-banner"></script></head><body class="{cls}">{header(active)}{body}{footer()}{info_banner()}{back_to_top()}{dialogs()}</body></html>'''
+<html lang="en" id="top"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{base}<title>{escape(title)} - melcom</title><meta name="description" content="{escape(description,quote=True)}"><meta name="theme-color" content="#111411"><link rel="icon" href="images/favicon.ico"><link rel="canonical" href="{ORIGIN}/{name}"><meta property="og:title" content="{escape(title,quote=True)} - melcom"><meta property="og:description" content="{escape(description,quote=True)}"><meta property="og:image" content="{ORIGIN}/images/singlecovers/track-fernweh-3.jpg"><meta property="og:type" content="website"><link rel="stylesheet" href="assets/site.css?v=20261103-footer-4"><script defer src="assets/catalog.js"></script><script defer src="assets/site.js?v=20261104-image-titles"></script>{news_assets}{release_assets}{creation_assets}{reading_assets}{contact_assets}{links_assets}<link rel="stylesheet" href="assets/common-links.css?v=20261103-link-style"><link rel="stylesheet" href="assets/info-banner.css?v=20261103-banner"><script defer src="assets/info-banner.js?v=20261103-banner"></script></head><body class="{cls}">{header(active)}{body}{footer()}{info_banner()}{back_to_top()}{dialogs()}</body></html>'''
     target = OUT / name
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(apply_link_policy(content, ORIGIN + '/' + name), encoding='utf-8')
@@ -160,7 +161,7 @@ def track_card(item, small=False):
         action=f'<a class="art-play" href="{e(listen)}" aria-label="Listen to {title}">{icon("external")}</a>' if not item['upcoming'] else ''
     duration=item['length'] if item['length'] not in ['n/a','TBA',''] else ''
     badge='UPCOMING' if item['upcoming'] else 'ARCHIVE' if item['year']=='old' else item['year']
-    return f'''<article class="release-card{' compact' if small else ''}" {'hidden' if item['upcoming'] else ''} data-year="{item['year']}" data-upcoming="{str(item['upcoming']).lower()}" data-search="{e((item['title']+' '+item['summary']).lower())}" data-formats="{e(item['formats'].lower())}"><div class="release-art"><a href="{item['href']}" tabindex="-1" aria-hidden="true"><img src="{item['cover']}" alt="" width="600" height="600" loading="lazy"></a>{action}<span class="art-badge">{badge}</span></div><div class="release-info"><div class="release-type">{'ALBUM / COLLECTION' if item['kind']=='album' else 'SINGLE / '+item['formats'].replace('.','').strip(' /')}<span>{duration}</span></div><h3><a href="{item['href']}">{title}</a></h3><p>{e(item['summary'][:130])}{'...' if len(item['summary'])>130 else ''}</p><a class="release-details" href="{item['href']}">{'Explore album' if item['kind']=='album' else 'Track story & downloads'} {icon('arrow')}</a></div></article>'''
+    return f'''<article class="release-card{' compact' if small else ''}" {'hidden' if item['upcoming'] else ''} data-year="{item['year']}" data-upcoming="{str(item['upcoming']).lower()}" data-search="{e((item['title']+' '+item['summary']).lower())}" data-formats="{e(item['formats'].lower())}"><div class="release-art"><a href="{item['href']}" tabindex="-1" aria-hidden="true"><img src="{item['cover']}" alt="" title="{title}" width="600" height="600" loading="lazy"></a>{action}<span class="art-badge">{badge}</span></div><div class="release-info"><div class="release-type">{'ALBUM / COLLECTION' if item['kind']=='album' else 'SINGLE / '+item['formats'].replace('.','').strip(' /')}<span>{duration}</span></div><h3><a href="{item['href']}">{title}</a></h3><p>{e(item['summary'][:130])}{'...' if len(item['summary'])>130 else ''}</p><a class="release-details" href="{item['href']}">{'Explore album' if item['kind']=='album' else 'Track story & downloads'} {icon('arrow')}</a></div></article>'''
 
 def section_head(kicker,title,url='',link='View all'):
     return f'<div class="section-heading"><div><span class="eyebrow">{kicker}</span><h2>{title}</h2></div>'+ (f'<a class="text-link" href="{url}">{link} {icon("arrow")}</a>' if url else '')+'</div>'
@@ -186,6 +187,32 @@ def library_page(kind):
 library_page('track')
 library_page('album')
 
+def split_download_tables(resources):
+    """Give each download format its own table in the download-link order."""
+    for table in resources.xpath('.//table[' + has_class('info-table') + ']'):
+        headers = table.xpath('./thead/tr/th')
+        if len(headers) < 2:
+            continue
+        rows = [row.xpath('./th | ./td') for row in table.xpath('./tbody/tr')]
+        if any(len(cells) != len(headers) for cells in rows):
+            raise ValueError('Unexpected download table columns')
+        order = sorted(range(len(headers)), key=lambda i: 'mp3' not in clean(''.join(headers[i].itertext())).lower())
+        group = etree.Element('div', {'class': 'download-formats'})
+        table.addprevious(group)
+        for index in order:
+            format_table = etree.SubElement(group, 'table', dict(table.attrib))
+            caption = etree.SubElement(format_table, 'caption', {'class': 'visually-hidden'})
+            caption.text = clean(''.join(headers[index].itertext())) + ' - production details'
+            heading = etree.SubElement(etree.SubElement(format_table, 'thead'), 'tr')
+            heading.append(copy.deepcopy(headers[index]))
+            body = etree.SubElement(format_table, 'tbody')
+            for cells in rows:
+                row = etree.SubElement(body, 'tr')
+                row.append(copy.deepcopy(cells[index]))
+        group.tail = table.tail
+        table.getparent().remove(table)
+
+
 def layout_release_sections(main):
     """Place artwork beside resources, followed by the release story."""
     for section in main.xpath('./*[' + has_class('content-box') + ']'):
@@ -201,6 +228,7 @@ def layout_release_sections(main):
         if len(actions) != 1:
             raise ValueError(f'Missing release actions: {section.get("id")}')
         actions = actions[0]
+        split_download_tables(resources)
         top = etree.Element('div', {'class': 'release-top'})
         body.insert(body.index(resources), top)
         top.append(cover)
@@ -384,17 +412,32 @@ def transform_main(d,name):
             email=clean(node.text_content()).replace(' ','')
             a=etree.Element('a',href='mailto:'+email);a.text=email
             node.clear();node.append(a)
-        all_social='<section class="all-socials"><h2>Find me elsewhere.</h2><div class="social-link-grid">'+socials()
-        socialdoc=doc('links.html')
-        # Preserve the original social profiles as well as the music destinations.
+        # Keep every contact destination in the same open groups as the rest of the page.
         more=[('Instagram','https://www.instagram.com/just.melcom/'),('Mastodon','https://mastodon.social/@melcom'),('Pinterest','https://www.pinterest.de/melcom_/'),('Threads','https://www.threads.net/@just.melcom'),('W Social','https://wsocial.eu/profile/melcom.wsocial.eu'),('X / Twitter','https://twitter.com/melcom_'),('Linktree','https://linktr.ee/melcom')]
-        all_social+=''.join(f'<a href="{u}" target="_blank" rel="noopener noreferrer">{n} {icon("external")}</a>' for n,u in more)+'</div></section>'
+        profiles = dict(SOCIALS + more)
+        groups = [
+            ('Music', ['Bandcamp', 'SoundCloud', 'Spotify', 'YouTube']),
+            ('Social', ['Bluesky', 'Instagram', 'Mastodon', 'Pinterest', 'Threads', 'W Social', 'X / Twitter']),
+            ('Profiles', ['GitHub', 'Linktree']),
+        ]
+        all_social = '<section class="content-box all-socials" id="social-profiles" aria-labelledby="social-profiles-heading"><h2 class="content-box-title" id="social-profiles-heading"><a href="#social-profiles" class="permalink" aria-label="Link to this section">#</a> Find me elsewhere.</h2><div class="contact-social-groups">'
+        for title, names in groups:
+            heading_id = 'contact-social-' + title.lower()
+            all_social += f'<section class="contact-social-group" aria-labelledby="{heading_id}"><h3 id="{heading_id}">{title}</h3><ul class="contact-social-list">'
+            all_social += ''.join(f'<li><a href="{escape(profiles[label], quote=True)}" target="_blank" rel="noopener noreferrer">{escape(label)} {icon("external")}</a></li>' for label in names)
+            all_social += '</ul></section>'
+        all_social += '</div></section>'
         m.append(html.fromstring(all_social))
     if name=='imprint.html':
         for p in m.xpath('.//*['+has_class('intro-highlight-box')+']//p'):
             p.text='Legal disclosure, contact information and the original disclaimers regarding this website, analytics and external links.'
     if name in {'creations.html', 'aboutme.html', 'links.html', 'contact.html', 'imprint.html'}:
         layout_page_intro(m)
+    # Native hover text is separate from an image's alternative text.
+    for image in m.xpath('.//img[not(normalize-space(@title))]'):
+        description = clean(image.get('alt') or '')
+        if description:
+            image.set('title', description)
     m.set('class','wrap content-page '+('release-page' if year else name.replace('.html','')+'-page'))
     return html.tostring(m,encoding='unicode')
 
