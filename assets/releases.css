@@ -65,7 +65,7 @@
     line-height: 1.45;
 }
 .release-layout .release-metadata {
-    max-width: 680px;
+    max-width: 760px;
     margin-top: 18px;
 }
 .release-layout .release-metadata:has(.single-col) {
@@ -79,6 +79,12 @@
 }
 .release-layout .info-table {
     margin: 0;
+}
+.release-layout .download-formats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    align-items: start;
+    gap: 20px;
 }
 .release-layout .info-table th {
     padding: 7px 8px;
