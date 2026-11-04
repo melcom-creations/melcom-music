@@ -201,48 +201,52 @@
     });
   }
 
-  // Raise the floating button as the footer enters the viewport.
-  const backToTop = $('#myBtn');
+  // Keep the page-top link visible without covering fixed notices or footer links.
+  const backToTop = $('#back-to-top');
   if (backToTop) {
     const footer = $('.site-footer');
     const header = $('.site-header');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let positionQueued = false;
+    const compactViewport = window.matchMedia('(max-width: 600px)');
+    let updateQueued = false;
 
-    function positionBackToTop() {
-      positionQueued = false;
+    function updateBackToTop() {
+      updateQueued = false;
+      const gap = compactViewport.matches ? 12 : 20;
       const footerTop = footer ? footer.getBoundingClientRect().top : window.innerHeight;
       const banner = $('#info-banner');
       const bannerHeight = banner && !banner.hidden ? banner.getBoundingClientRect().height : 0;
-      const bottom = Math.ceil(Math.max(20, bannerHeight ? bannerHeight + 16 : 0, window.innerHeight - footerTop + 16));
+      const bottom = Math.ceil(Math.max(gap, bannerHeight ? bannerHeight + 12 : 0, window.innerHeight - footerTop + 16));
       const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
-      const buttonTop = window.innerHeight - bottom - 52;
-      backToTop.style.setProperty('--back-to-top-bottom', `${bottom}px`);
-      backToTop.hidden = window.scrollY <= 240 || buttonTop < headerBottom + 12;
+      const height = backToTop.getBoundingClientRect().height || 44;
+      backToTop.style.setProperty('--back-to-top-offset', `${bottom}px`);
+      backToTop.hidden = window.scrollY < 200 || window.innerHeight - bottom - height < headerBottom + 12;
     }
 
-    function queueBackToTopPosition() {
-      if (positionQueued) return;
-      positionQueued = true;
-      window.requestAnimationFrame(positionBackToTop);
+    function queueBackToTopUpdate() {
+      if (updateQueued) return;
+      updateQueued = true;
+      window.requestAnimationFrame(updateBackToTop);
     }
 
-    backToTop.addEventListener('click', () => {
+    backToTop.addEventListener('click', event => {
+      event.preventDefault();
+      $('.site-header .brand')?.focus({preventScroll: true});
       window.scrollTo({top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth'});
     });
-    window.addEventListener('scroll', queueBackToTopPosition, {passive: true});
-    window.addEventListener('resize', queueBackToTopPosition);
-    window.addEventListener('load', queueBackToTopPosition);
-    window.addEventListener('pageshow', queueBackToTopPosition);
-    window.addEventListener('info-banner-change', queueBackToTopPosition);
-    window.visualViewport?.addEventListener('resize', queueBackToTopPosition);
+    window.addEventListener('scroll', queueBackToTopUpdate, {passive: true});
+    window.addEventListener('resize', queueBackToTopUpdate);
+    window.addEventListener('load', queueBackToTopUpdate);
+    window.addEventListener('pageshow', queueBackToTopUpdate);
+    window.addEventListener('info-banner-change', queueBackToTopUpdate);
+    window.visualViewport?.addEventListener('resize', queueBackToTopUpdate);
 
-    // Filtering, expanded details and loaded artwork can move the footer without scrolling.
+    // Content filters and expanded sections can move the footer without a scroll event.
     if ('ResizeObserver' in window) {
-      const observer = new ResizeObserver(queueBackToTopPosition);
+      const observer = new ResizeObserver(queueBackToTopUpdate);
       observer.observe(document.body);
       if (footer) observer.observe(footer);
     }
-    queueBackToTopPosition();
+    queueBackToTopUpdate();
   }
 })();
